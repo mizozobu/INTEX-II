@@ -168,12 +168,22 @@ WSGI_APPLICATION = 'FOMO.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'fomo',
+#         'USER': 'postgres',
+#         'PASSWORD': 'nanakuni0914',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432',
+#     }
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'fomo',
+        'NAME': 'souFomo',
         'USER': 'postgres',
-        'PASSWORD': 'nanakuni0914',
+        'PASSWORD': 'Ninaclark1!',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
