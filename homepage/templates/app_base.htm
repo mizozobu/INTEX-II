@@ -1,26 +1,54 @@
 <%inherit file="base.htm" />
 
+<%! from catalog import models as cmod %>
+
+<%! from account import models as amod %>
+
+
 <%block name="header">
 <nav class="navbar fixed-top navbar-light bg-faded">
-    <a class="navbar-brand" href="/homepage/">
-        <img src="${ STATIC_URL }homepage/media/images/logo.png" width="70" height="70" alt="family oriented music organization">
-    </a>
-    <ul class="nav nav-pills">
-        <li class="nav-item"><a class="nav-link ${'active' if request.dmp.app == 'homepage' and request.dmp.page == 'index' else '' }" href="/homepage/index/">Home</a></li>
-        <li class="nav-item"><a class="nav-link ${'active' if request.dmp.app == 'homepage' and request.dmp.page == 'about' else '' }" href="/homepage/about/">About</a></li>
-        <li class="nav-item"><a class="nav-link ${'active' if request.dmp.app == 'homepage' and request.dmp.page == 'faq' else '' }" href="/homepage/faq/">FAQ</a></li>
-        <li class="nav-item"><a class="nav-link ${'active' if request.dmp.app == 'homepage' and request.dmp.page == 'terms' else '' }" href="/homepage/terms/">Terms</a></li>
-        <li class="nav-item"><a class="nav-link ${'active' if request.dmp.app == 'homepage' and request.dmp.page == 'contact' else '' }" href="/homepage/contact/">Contact</a></li>
-        %if  request.user.is_authenticated:
-        <li class="nav-item dropdown">
-            <button class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account</button>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="/account/logout/">Log Out</a>
-            </div>
+    
+<a class="navbar-brand" href="/homepage/">
+        
+<img src="${ STATIC_URL }homepage/media/images/logo.png" width="70" height="70" alt="family oriented music organization">
+    
+</a>
+    
+<ul class="nav nav-pills">
+        
+<li class="nav-item"><a class="nav-link ${'active' if request.dmp.app == 'homepage' and request.dmp.page == 'index' else '' }" href="/homepage/index/">Home</a></li>
+        
+<li class="nav-item"><a class="nav-link ${'active' if request.dmp.app == 'homepage' and request.dmp.page == 'about' else '' }" href="/homepage/about/">About</a></li>
+        
+<li class="nav-item"><a class="nav-link ${'active' if request.dmp.app == 'homepage' and request.dmp.page == 'faq' else '' }" href="/homepage/faq/">FAQ</a></li>
+        
+<li class="nav-item"><a class="nav-link ${'active' if request.dmp.app == 'homepage' and request.dmp.page == 'terms' else '' }" href="/homepage/terms/">Terms</a></li>
+        
+<li class="nav-item"><a class="nav-link ${'active' if request.dmp.app == 'homepage' and request.dmp.page == 'contact' else '' }" href="/homepage/contact/">Contact</a></li>
+        
+<% cart = cmod.Order.objects.all().filter(user=amod.User.objects.get(email=request.user)).filter(status="cart").first() if request.user.is_authenticated else null%>
+        
+
+<!--<li class="nav-item"><a class="nav-link ${'active' if request.dmp.app == 'catalog' and request.dmp.page == 'cart' else ''}href="/catalog/cart/${cart.id}"> ${"Shopping Cart (" + str(cart.num_items()) + ")"}</a></li>
+   -->
+ 
+%if  request.user.is_authenticated:
+        
+<li class="nav-item dropdown">
+            
+<button class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account</button>
+            
+<div class="dropdown-menu">
+                
+<a class="dropdown-item" href="/account/logout/">Log Out</a>
+            
+</div>
         </li>
-        %else:
+        
+%else:
         <li class="nav-item dropdown">
-            <button class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Log In</button>
+            
+<button class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Log In</button>
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="/account/signup/">Sign Up</a>
                 <a class="dropdown-item" href="/account/login/">Log In</a>

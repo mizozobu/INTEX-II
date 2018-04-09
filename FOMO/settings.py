@@ -17,6 +17,10 @@ import stripe
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+STRIPE_PUBLIC_KEY = "pk_test_9BjzXIadxIUhMjaPOlj0mPr5"
+STRIPE_SECRET_KEY = "sk_test_2tCTUj3KW0MbXZYTF28M6lG0"
+STRIPE_LIVE_MODE = False
+stripe.api_key = STRIPE_SECRET_KEY
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -27,7 +31,7 @@ SECRET_KEY = '6o@sxgtj)#)8&^5l_b=k6x8*djjs!60e*q3_a87+-a0+zz(vu='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','127.0.0.1', 'www.familymusic.me']
 
 
 # Application definition
@@ -61,7 +65,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'catalog.history.LastFiveMiddleware',
-    'account.basicauth.BasicAuthMiddleware',
+    #'account.basicauth.BasicAuthMiddleware',
 ]
 
 ROOT_URLCONF = 'FOMO.urls'
@@ -164,14 +168,24 @@ WSGI_APPLICATION = 'FOMO.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'fomo',
+#         'USER': 'postgres',
+#         'PASSWORD': 'nanakuni0914',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432',
+#     }
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'fomo',
+        'NAME': 'FOMO',
         'USER': 'postgres',
-        'PASSWORD': 'nanakuni0914',
+        'PASSWORD': 'Ganderson1',
         'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'PORT': '8001',
     }
 }
 

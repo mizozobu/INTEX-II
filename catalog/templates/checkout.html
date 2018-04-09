@@ -2,22 +2,22 @@
 <%namespace name="fl" module="formlib.tags"/>
 
 <%block name="center">
-    <div class="content">
-        ${ form }
-        <%fl:render>
-            <div class="text-center">
-                <script
-                    src="https://checkout.stripe.com/checkout.js"
-                    class="stripe-button"
-                    data-key="${settings.STRIPE_PUBLIC_KEY}"
-                    data-amount="999"
-                    data-name="FOMO"
-                    data-description="Widget"
-                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-                    data-locale="auto"
-                    data-label="Pay Now">
-                </script>
-            </div>
-        </%fl:render>
-    </div>
+  <div id="form">
+    <!-- ${ form } -->
+    <%fl:render>
+      <div class="text-center">
+        <script
+          src="https://checkout.stripe.com/checkout.js"
+          class="stripe-button"
+          data-key="${settings.STRIPE_PUBLIC_KEY}"
+          data-amount="${order.total_price * 100}"
+          data-name="FOMO"
+          data-description="Widget"
+          data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+          data-locale="auto"
+          data-label="Pay Now">
+        </script>
+      </div>
+    </%fl:render>
+  </div>
 </%block>
