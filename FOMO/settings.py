@@ -17,6 +17,10 @@ import stripe
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+STRIPE_PUBLIC_KEY = "pk_test_9BjzXIadxIUhMjaPOlj0mPr5"
+STRIPE_SECRET_KEY = "sk_test_2tCTUj3KW0MbXZYTF28M6lG0"
+STRIPE_LIVE_MODE = False
+stripe.api_key = STRIPE_SECRET_KEY
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/

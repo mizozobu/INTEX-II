@@ -13,7 +13,10 @@
             <h1>${product.name}</h1>
             <p>${product.description}</p>
             <div class="action">
-                <form action="">
+              <div id="form">
+                  ${ form }
+              </div>
+                <!-- <form action="">
                     %if type(product) is m.BulkProduct:
                     <select name="quantity">
                         %for n in range(5):
@@ -23,7 +26,7 @@
                     </select>
                     %endif
                     <input type="submit" class="btn btn-react-white" value="Purchase" />
-                </form>
+                </form> -->
             </div>
         </div>
     </div>
