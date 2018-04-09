@@ -1,0 +1,39 @@
+<%inherit file="base.htm" />
+
+<%block name="header">
+<nav class="navbar fixed-top navbar-light bg-faded">
+    <a class="navbar-brand" href="/homepage/">
+        <img src="${ STATIC_URL }homepage/media/images/logo.png" width="70" height="70" alt="family oriented music organization">
+    </a>
+    <ul class="nav nav-pills">
+        <li class="nav-item"><a class="nav-link ${'active' if request.dmp.app == 'homepage' and request.dmp.page == 'index' else '' }" href="/homepage/index/">Home</a></li>
+        <li class="nav-item"><a class="nav-link ${'active' if request.dmp.app == 'homepage' and request.dmp.page == 'about' else '' }" href="/homepage/about/">About</a></li>
+        <li class="nav-item"><a class="nav-link ${'active' if request.dmp.app == 'homepage' and request.dmp.page == 'faq' else '' }" href="/homepage/faq/">FAQ</a></li>
+        <li class="nav-item"><a class="nav-link ${'active' if request.dmp.app == 'homepage' and request.dmp.page == 'terms' else '' }" href="/homepage/terms/">Terms</a></li>
+        <li class="nav-item"><a class="nav-link ${'active' if request.dmp.app == 'homepage' and request.dmp.page == 'contact' else '' }" href="/homepage/contact/">Contact</a></li>
+        %if  request.user.is_authenticated:
+        <li class="nav-item dropdown">
+            <button class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account</button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="/account/logout/">Log Out</a>
+            </div>
+        </li>
+        %else:
+        <li class="nav-item dropdown">
+            <button class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Log In</button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="/account/signup/">Sign Up</a>
+                <a class="dropdown-item" href="/account/login/">Log In</a>
+            </div>
+        </li>
+        %endif
+    </ul>
+</nav>
+</%block>
+
+<%block name="footer">
+    <p class="footer-text">
+        <%! from datetime import datetime %>
+        &copy; FOMO ${ datetime.now().year }. All rights reserved.
+    </p>
+</%block>

@@ -1,0 +1,323 @@
+commit 03dd5f3dc0712ff57ae79a32e6128ad0e4911468
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Sat Mar 17 20:30:05 2018 -0600
+
+    sprint6 complete
+
+commit 8f58a2be8b03d12c821eabfe0cf69a45da5d549a
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Sat Mar 17 18:20:01 2018 -0600
+
+    sessions
+
+commit 15aaa56d2cf745892641b6884d8299ebcdc914b5
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Sat Mar 17 13:21:35 2018 -0600
+
+    detail page without middleware
+
+commit 16824c1cecba39be0b58ef12544404227fce9629
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Fri Mar 9 02:33:09 2018 -0700
+
+    sprint5
+
+commit bf7703bdfdc944625d848f8bbbfe6532bffdb2e3
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Fri Mar 9 02:31:06 2018 -0700
+
+    jquery slides for products
+
+commit 84afcd8c5beac26a63b3e86a3059245ab6a27992
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Thu Mar 8 20:47:51 2018 -0700
+
+    tile style
+
+commit cc5c40872fb7bfa5b4c8c9fe4835e3ca58a5eb88
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Thu Mar 8 01:45:27 2018 -0700
+
+    ajax completed
+
+commit 00d3090fd061c9c3793fa3ee9e81cd0182c6c416
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Wed Mar 7 22:41:47 2018 -0700
+
+    paginator
+
+commit c4d57ae47d30199813bece1f6cbd505aaded7006
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Wed Mar 7 14:43:31 2018 -0700
+
+    ddd
+
+commit 456156ae8f6df50986f67121aae4287e3fe0d385
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Wed Mar 7 14:15:54 2018 -0700
+
+    pages
+
+commit 5a61f18a8940354a21f1d07b6532fbf591e1b0f3
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Tue Mar 6 23:57:54 2018 -0700
+
+    product tiles without AJAX
+
+commit 0d2f13ae6851f91c5d8bfdcf8d5ba9bb703d521d
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Mon Mar 5 13:58:04 2018 -0700
+
+    catalog index skelton
+
+commit 7f09db89969eaf1e2776d9516510f641d1013d3b
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Sat Mar 3 20:30:11 2018 -0700
+
+    catalog/index left-nav
+
+commit f62a54606d979ca7f7486bb7a58e266ec8493d70
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Sat Mar 3 16:45:49 2018 -0700
+
+    populated data
+
+commit d90e190974ddb2b8cc80b0d06c1c2f25507ed5de
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Sat Mar 3 14:04:48 2018 -0700
+
+    bofore migrate
+
+commit 785955c2a6b5c53988075b91de21edae96be9763
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Sat Mar 3 14:00:55 2018 -0700
+
+    before populate
+
+commit d185e282c8399105b3dfdff2375bbdd0c50bdce3
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Sat Mar 3 11:47:59 2018 -0700
+
+    alias test2
+
+commit eccb87d7d348b6487a32f13588cef40e81e3fb15
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Sat Mar 3 11:43:50 2018 -0700
+
+    alias test
+
+commit 7782fb62d601e7ab32c30cf164a4f20cb6c8d0f8
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Sat Mar 3 11:26:45 2018 -0700
+
+    ""
+
+commit 5e65ccf1014e73c1a1a9993ee10f396e108c28c7
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Sat Mar 3 11:25:06 2018 -0700
+
+    ""
+
+commit 82911eb1c63b28f0cefc7f3244a7b5165af37d77
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Fri Mar 2 14:42:50 2018 -0700
+
+    urlparam fixed
+
+commit d4d2bb70187595c716fd244e74cb4494e4ef4a68
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Fri Mar 2 13:44:34 2018 -0700
+
+    accessbility and UX
+
+commit a36dab21953cecde709ed36b87a56f3f66244b67
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Fri Feb 23 21:44:21 2018 -0700
+
+    small fix on edit
+
+commit 6547f8c767759c5b3255f56f98986e85d95f16f2
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Thu Feb 22 23:55:07 2018 -0700
+
+    done
+
+commit 7be8e99daeca2514487a33f72916f780bf1490a2
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Wed Feb 21 18:09:01 2018 -0700
+
+    list page completed
+
+commit 759d35e4c09798cef439ecf6bc8160921c43d444
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Wed Feb 14 23:45:47 2018 -0700
+
+    before catalog model migration
+
+commit 8cc059c14eb16f5eae08a00e781d4b1a5566e887
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Mon Feb 12 22:05:15 2018 -0700
+
+    catalog model initiated
+
+commit 87b061f0c28b8a1a632f5e84757c008bf86a8465
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Mon Feb 12 15:42:16 2018 -0700
+
+    mess with ajax
+
+commit 4c1b84d470346bb5069ed0bf5047becf34828921
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Sat Feb 10 09:34:26 2018 -0700
+
+    ajax test
+
+commit 71ee5c281319d22a3ce815cdd1b4dc57f305637c
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Fri Feb 9 16:23:25 2018 -0700
+
+    git log attachedf
+
+commit c7ac6a5013de90342973ab695eb9ddc3818106ca
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Fri Feb 9 16:21:56 2018 -0700
+
+    spreadsheet
+
+commit 8ed85df31f01c76d28e1773642f8f98a91441aac
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Fri Feb 9 16:10:58 2018 -0700
+
+    spirnt 1 99% except authenitcate
+
+commit 4ea1e6ec018b4fe200d7cad208cddbcb8af1e97d
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Fri Feb 9 01:13:06 2018 -0700
+
+    bootstrap 4.0 merged
+
+commit 739bb6c76ede2a2ebe0e66ceda65ebf270377239
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Fri Feb 9 01:10:57 2018 -0700
+
+    bootstrap 4.0 installed
+
+commit cde122bab812b7111854bdcf116cc46e85011614
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Thu Feb 8 00:30:49 2018 -0700
+
+    logout form completed
+
+commit fefff0923eb969be7d5f65afd3223dbc66b7f3e5
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Tue Feb 6 23:22:25 2018 -0700
+
+    sign up form 80 %
+
+commit 1b89986b54ead51932565c8d977da02fce04c348
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Tue Feb 6 12:56:39 2018 -0700
+
+    formlib installed
+
+commit 03a4e6d8cf03fe4b9c2035e5a1b763f16342bd29
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Tue Feb 6 12:49:18 2018 -0700
+
+    form lib
+
+commit 9201d885de37d63d7b01f91c268cbd8bd954bf7e
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Thu Feb 1 13:41:38 2018 -0700
+
+    models fixed firstName to first_name
+
+commit 243c392cee01c6d76f233e66e103b169a03dfb37
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Thu Feb 1 13:17:46 2018 -0700
+
+    json fixture modified
+
+commit 13a4f499458eaea174a74ff35e081cb265b8a805
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Wed Jan 31 23:24:18 2018 -0700
+
+    unit test completed
+
+commit 23fcc20e27006100d4c68e9113bf14ffbd8a5db5
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Tue Jan 30 22:37:48 2018 -0700
+
+    test_add_permission_to_user completed
+
+commit 549e7a9d7aa4fa07fee021635ab7425c97aaa352
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Tue Jan 30 22:34:33 2018 -0700
+
+    add group and permission to user test
+
+commit 8b27a7fe41b5a3894f11c51f4e75267133d98a16
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Tue Jan 30 22:22:28 2018 -0700
+
+    add group and permission to user test
+
+commit 236083fda0343edab9fc4cb6cba3144b2cd2831b
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Tue Jan 30 14:17:45 2018 -0700
+
+    error fixed start working on this
+
+commit 52323248c4abfda298a03d32ac88131e236fc9a8
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Tue Jan 30 13:50:26 2018 -0700
+
+    something messed up
+
+commit cd4442436ab54d945c08f92a5fff209e018dff66
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Tue Jan 30 13:42:20 2018 -0700
+
+    in class, initialize unit test
+
+commit 5ee39f1b37d5d918fa53dd155c37f519179be19d
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Tue Jan 30 13:33:04 2018 -0700
+
+    in class, initialize unit test
+
+commit 36d8c70bead0c9359dd5f044d977edfff6a4c30f
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Tue Jan 30 12:41:38 2018 -0700
+
+    get_purchaes method added
+
+commit 002e05c92919481db62213f9d09d1996b592422d
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Mon Jan 29 20:20:52 2018 -0700
+
+    user model - one super user
+
+commit da4fadd0c680ba278052f119872a52b7b8b1202a
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Fri Jan 26 00:25:00 2018 -0700
+
+    django model tutorial
+
+commit dcb01067e4b31e5b88e6110b52bc9e5fcf6593ed
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Thu Jan 25 13:44:09 2018 -0700
+
+    played with question model
+
+commit b2bd90b4b8654fcddc4d68d7a9a42d001f259265
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Thu Jan 25 12:40:31 2018 -0700
+
+    spring 0 done
+
+commit 217bcf811105f023f45e3a6fd0978fdb6556824b
+Author: mizozobu <hamc.m.so.j12@gmail.com>
+Date:   Tue Jan 23 13:44:45 2018 -0700
+
+    initialize

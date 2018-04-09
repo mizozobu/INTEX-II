@@ -1,0 +1,29 @@
+.btn-react-sm {
+  background-color: black;
+  color: #FF9900;
+  font-size: 10px;
+  font-weight: bold;
+  border: 1px solid #FF9900;
+  padding: 3px 6px;
+  border-radius: 0.45rem; }
+  .btn-react-sm:hover {
+    background-color: #FF9900;
+    color: black;
+    border: 1px solid #FF9900; }
+
+table, tr {
+  border: 1px solid white; }
+
+td, th {
+  vertical-align: middle;
+  padding: 0 8px 0 8px;
+  border: 1px solid white; }
+
+th {
+  text-align: center;
+  padding: 2px 8px; }
+
+.btn-holder {
+  padding: 0 12px; }
+
+/*# sourceMappingURL=index.css.map */

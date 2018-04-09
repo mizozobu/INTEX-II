@@ -1,0 +1,14 @@
+<%inherit file="homepage/templates/app_base.htm" />
+
+<%block name="center">
+    <div class="content">
+        <div class="col-sm-6 offset-sm-3">
+            <h3>EDIT</h3>
+            <br />
+            <form action=${ "/manager/edit/{}".format(id) } method="POST">
+                ${ form }
+            </form>
+            <br />
+        </div>
+    </div>
+</%block>

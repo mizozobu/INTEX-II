@@ -1,0 +1,75 @@
+## this is the skeleton of all pages on in this app - it defines the basic html tags
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <head>
+        <title>FOMO</title>
+
+        ## icon
+        <link rel="icon" href="${ STATIC_URL }homepage/media/favicon.ico" type="image/x-icon"/>
+
+        ## custome bootstrap
+        <link rel="stylesheet" type="text/css" href="${ STATIC_URL }homepage/media/bootstrap/css/bootstrap-grid.min.css">
+        <link rel="stylesheet" type="text/css" href="${ STATIC_URL }homepage/media/bootstrap/css/bootstrap-grid.css">
+        <link rel="stylesheet" type="text/css" href="${ STATIC_URL }homepage/media/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="${ STATIC_URL }homepage/media/bootstrap/css/bootstrap.css">
+        <%block name="addonlink"></%block>
+        ## add any site-wide scripts or CSS here; for example, jquery:
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        ## render the static file links with the same name as this template
+        <script src="/django_mako_plus/dmp-common.min.js"></script>
+        ${ django_mako_plus.links(self) }
+    </head>
+    <body>
+        <div id="page">
+            <a class="d-none" href="#content">skip to content</a>
+            <div class="row">
+                <%block name="maintenanceMessage"></%block>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12" id="header">
+                    <%block name="header"></%block>
+                </div>
+            </div>
+
+            ## top
+            <div class="row">
+                <div class="col-sm-12" id="top">
+                    <%block name="top"></%block>
+                </div>
+            </div>
+            ## middle
+            <div class="row">
+                ## left
+                <div class="col-sm-2 d-none d-lg-block" id="left">
+                    <%block name="left"></%block>
+                </div>
+                ## center
+                <div class="col-sm-12 col-lg-8" id="center">
+                    <%block name="center"></%block>
+                </div>
+                ## right
+                <div class="col-sm-2 d-none d-lg-block" id="right">
+                    <%block name="right"></%block>
+                </div>
+            </div>
+            ## bottom
+            <div class="row">
+                <div class="col-sm-12" id="bottom">
+                    <%block name="bottom"></%block>
+                </div>
+            </div>
+        </div>
+        <div id="loader-container">
+            <span id="loader"></span>
+            <p>LOADING ...</p>
+        </div>
+    </body>
+
+    <footer>
+        <%block name="footer"></%block>
+    </footer>
+
+</html>
