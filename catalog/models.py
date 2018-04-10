@@ -40,6 +40,10 @@ class Order(models.Model):
             items = items.exclude(product=Product.objects.get(name="Sales Tax"))
         return items
 
+    def num_items(self):
+        '''Returns the number of items in the cart'''
+        return sum(self.active_items(include_tax_item=False).values_list('quantity', flat=True))
+
     def get_item(self, product, create=False):
         '''Returns the OrderItem object for the given product'''
         item = OrderItem.objects.filter(order=self, product=product).first()
@@ -54,23 +58,13 @@ class Order(models.Model):
         item.recalculate()
         item.save()
         return item
-
-    def num_items(self):
-        '''Returns the number of items in the cart'''
-        return sum(self.active_items(include_tax_item=False).values_list('quantity', flat=True))
-
+        
     def recalculate(self):
-        '''
-        Recalculates the total price of the order,
-        including recalculating the taxable amount.
-
-        Saves this Order and all child OrderLine objects.
-        '''
+        '''Recalculates the total price of the order'''
         total = 0
         for i in self.active_items(False):
                 i.recalculate()
                 total += i.extended
-
         tax = (float(total) * float(.07))
         finTotal = float(total) + float(tax)
         self.total_price = round(finTotal, 2)
@@ -84,15 +78,17 @@ class Order(models.Model):
         '''Runs the payment and finalizes the sale'''
         with transaction.atomic():
             for i in self.active_items(True):
-                i.recalculate()
                 p = i.product
                 if p.__class__.__name__ == "BulkProduct":
                     p.quantity = p.quantity - i.quantity
+                    if p.quantity < 1:
+                        p.status = 'I'
                     p.save()
                 else:
                     if p.name != "Sales Tax":
                         p.status = 'I'
                         p.save()
+                i.recalculate()
             self.recalculate()
             stripe.Charge.create(
                 amount=int(self.total_price * 100),
