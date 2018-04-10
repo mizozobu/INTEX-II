@@ -21,7 +21,7 @@ def process_request(request, order: cmod.Order):
     form.submit_text = None
     if form.is_valid():
         form.commit()
-        return HttpResponseRedirect('/catalog/thankyou')
+        return HttpResponseRedirect('/catalog/thankyou/)
     context = {
         'form': form,
         'order': order

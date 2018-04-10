@@ -4,10 +4,10 @@ from django.conf import settings
 
 
 @view_function
-def process_request(request):
+def process_request(request, order: cmod.Order):
 
     context = {
-
+        'order': order,
     }
 
     return request.dmp.render('thankyou.html', context)
