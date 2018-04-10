@@ -5,9 +5,9 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1523333877.2025344
+_modified_time = 1523388379.3514893
 _enable_loop = True
-_template_filename = 'C:/users/scott laptop/documents/mariah/intex/intex-ii/catalog/templates/app_base.htm'
+_template_filename = 'C:/users/Scott Laptop/documents/Mariah/intex/intex-ii/catalog/templates/app_base.htm'
 _template_uri = 'catalog/templates/app_base.htm'
 _source_encoding = 'utf-8'
 import django_mako_plus
@@ -36,20 +36,20 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        range = context.get('range', UNDEFINED)
-        def header():
-            return render_header(context._locals(__M_locals))
         def left():
             return render_left(context._locals(__M_locals))
-        request = context.get('request', UNDEFINED)
-        def right():
-            return render_right(context._locals(__M_locals))
+        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
         def footer():
             return render_footer(context._locals(__M_locals))
-        category_id = context.get('category_id', UNDEFINED)
-        len = context.get('len', UNDEFINED)
-        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
+        request = context.get('request', UNDEFINED)
         null = context.get('null', UNDEFINED)
+        def header():
+            return render_header(context._locals(__M_locals))
+        def right():
+            return render_right(context._locals(__M_locals))
+        len = context.get('len', UNDEFINED)
+        range = context.get('range', UNDEFINED)
+        category_id = context.get('category_id', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n')
         __M_writer('\r\n')
@@ -82,11 +82,11 @@ def render_body(context,**pageargs):
 def render_header(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
+        null = context.get('null', UNDEFINED)
         def header():
             return render_header(context)
-        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
-        null = context.get('null', UNDEFINED)
         request = context.get('request', UNDEFINED)
+        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n    <nav class="navbar fixed-top navbar-light bg-faded">\r\n        <a class="navbar-brand" href="/homepage/">\r\n            <img src="')
         __M_writer(str( STATIC_URL ))
@@ -100,7 +100,9 @@ def render_header(context,**pageargs):
         __M_writer(str('active' if request.dmp.app == 'homepage' and request.dmp.page == 'terms' else '' ))
         __M_writer('" href="/homepage/terms/">Terms</a></li>\r\n            <li class="nav-item"><a class="nav-link ')
         __M_writer(str('active' if request.dmp.app == 'homepage' and request.dmp.page == 'contact' else '' ))
-        __M_writer('" href="/homepage/contact/">Contact</a></li>\r\n            ')
+        __M_writer('" href="/homepage/contact/">Contact</a></li>\r\n            <li class="nav-item"><a class="nav-link ')
+        __M_writer(str('active' if request.dmp.app == 'catalog' and request.dmp.page == 'index' else '' ))
+        __M_writer('" href="/catalog/index/">Catalog</a></li>\r\n            ')
         cart = m.Order.objects.all().filter(user=amod.User.objects.get(email=request.user)).filter(status="cart").first() if request.user.is_authenticated else null
         
         __M_writer('\r\n')
@@ -147,9 +149,9 @@ def render_left(context,**pageargs):
 def render_right(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        range = context.get('range', UNDEFINED)
         def right():
             return render_right(context)
+        range = context.get('range', UNDEFINED)
         request = context.get('request', UNDEFINED)
         len = context.get('len', UNDEFINED)
         __M_writer = context.writer()
@@ -189,6 +191,6 @@ def render_footer(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:/users/scott laptop/documents/mariah/intex/intex-ii/catalog/templates/app_base.htm", "uri": "catalog/templates/app_base.htm", "source_encoding": "utf-8", "line_map": {"18": 2, "20": 3, "22": 72, "35": 0, "54": 1, "55": 2, "56": 3, "61": 38, "66": 49, "71": 68, "76": 75, "82": 5, "91": 5, "92": 8, "93": 8, "94": 11, "95": 11, "96": 12, "97": 12, "98": 13, "99": 13, "100": 14, "101": 14, "102": 15, "103": 15, "104": 16, "106": 16, "107": 17, "108": 18, "109": 18, "110": 18, "111": 18, "112": 18, "113": 18, "114": 18, "115": 20, "116": 21, "117": 27, "118": 28, "119": 36, "125": 40, "132": 40, "133": 44, "134": 45, "135": 45, "136": 45, "137": 45, "138": 45, "139": 45, "140": 45, "141": 47, "147": 51, "156": 51, "157": 56, "158": 57, "159": 57, "160": 57, "161": 59, "162": 59, "163": 59, "164": 59, "165": 60, "166": 60, "167": 61, "168": 61, "169": 65, "175": 70, "181": 70, "182": 72, "183": 73, "184": 73, "190": 184}}
+{"filename": "C:/users/Scott Laptop/documents/Mariah/intex/intex-ii/catalog/templates/app_base.htm", "uri": "catalog/templates/app_base.htm", "source_encoding": "utf-8", "line_map": {"18": 2, "20": 3, "22": 73, "35": 0, "54": 1, "55": 2, "56": 3, "61": 39, "66": 50, "71": 69, "76": 76, "82": 5, "91": 5, "92": 8, "93": 8, "94": 11, "95": 11, "96": 12, "97": 12, "98": 13, "99": 13, "100": 14, "101": 14, "102": 15, "103": 15, "104": 16, "105": 16, "106": 17, "108": 17, "109": 18, "110": 19, "111": 19, "112": 19, "113": 19, "114": 19, "115": 19, "116": 19, "117": 21, "118": 22, "119": 28, "120": 29, "121": 37, "127": 41, "134": 41, "135": 45, "136": 46, "137": 46, "138": 46, "139": 46, "140": 46, "141": 46, "142": 46, "143": 48, "149": 52, "158": 52, "159": 57, "160": 58, "161": 58, "162": 58, "163": 60, "164": 60, "165": 60, "166": 60, "167": 61, "168": 61, "169": 62, "170": 62, "171": 66, "177": 71, "183": 71, "184": 73, "185": 74, "186": 74, "192": 186}}
 __M_END_METADATA
 """

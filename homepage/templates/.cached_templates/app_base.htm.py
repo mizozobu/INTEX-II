@@ -5,9 +5,9 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1523333978.05504
+_modified_time = 1523388372.9947603
 _enable_loop = True
-_template_filename = 'C:/users/scott laptop/documents/mariah/intex/intex-ii/homepage/templates/app_base.htm'
+_template_filename = 'C:/users/Scott Laptop/documents/Mariah/intex/intex-ii/homepage/templates/app_base.htm'
 _template_uri = 'app_base.htm'
 _source_encoding = 'utf-8'
 import django_mako_plus
@@ -36,13 +36,13 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        request = context.get('request', UNDEFINED)
+        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
         def footer():
             return render_footer(context._locals(__M_locals))
+        request = context.get('request', UNDEFINED)
+        null = context.get('null', UNDEFINED)
         def header():
             return render_header(context._locals(__M_locals))
-        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
-        null = context.get('null', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n')
         __M_writer('\r\n')
@@ -65,11 +65,11 @@ def render_body(context,**pageargs):
 def render_header(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
+        null = context.get('null', UNDEFINED)
         def header():
             return render_header(context)
-        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
-        null = context.get('null', UNDEFINED)
         request = context.get('request', UNDEFINED)
+        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n<nav class="navbar fixed-top navbar-light bg-faded">\r\n    <a class="navbar-brand" href="/homepage/">\r\n        <img src="')
         __M_writer(str( STATIC_URL ))
@@ -83,7 +83,9 @@ def render_header(context,**pageargs):
         __M_writer(str('active' if request.dmp.app == 'homepage' and request.dmp.page == 'terms' else '' ))
         __M_writer('" href="/homepage/terms/">Terms</a></li>\r\n        <li class="nav-item"><a class="nav-link ')
         __M_writer(str('active' if request.dmp.app == 'homepage' and request.dmp.page == 'contact' else '' ))
-        __M_writer('" href="/homepage/contact/">Contact</a></li>\r\n        ')
+        __M_writer('" href="/homepage/contact/">Contact</a></li>\r\n        <li class="nav-item"><a class="nav-link ')
+        __M_writer(str('active' if request.dmp.app == 'catalog' and request.dmp.page == 'index' else '' ))
+        __M_writer('" href="/catalog/index/">Catalog</a></li>\r\n        ')
         cart = cmod.Order.objects.all().filter(user=amod.User.objects.get(email=request.user)).filter(status="cart").first() if request.user.is_authenticated else null
         
         __M_writer('\r\n')
@@ -122,6 +124,6 @@ def render_footer(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:/users/scott laptop/documents/mariah/intex/intex-ii/homepage/templates/app_base.htm", "uri": "app_base.htm", "source_encoding": "utf-8", "line_map": {"18": 2, "20": 3, "22": 42, "35": 0, "47": 1, "48": 2, "49": 3, "54": 38, "59": 45, "65": 5, "74": 5, "75": 8, "76": 8, "77": 11, "78": 11, "79": 12, "80": 12, "81": 13, "82": 13, "83": 14, "84": 14, "85": 15, "86": 15, "87": 16, "89": 16, "90": 17, "91": 18, "92": 18, "93": 18, "94": 18, "95": 18, "96": 18, "97": 18, "98": 20, "99": 21, "100": 27, "101": 28, "102": 36, "108": 40, "114": 40, "115": 42, "116": 43, "117": 43, "123": 117}}
+{"filename": "C:/users/Scott Laptop/documents/Mariah/intex/intex-ii/homepage/templates/app_base.htm", "uri": "app_base.htm", "source_encoding": "utf-8", "line_map": {"18": 2, "20": 3, "22": 43, "35": 0, "47": 1, "48": 2, "49": 3, "54": 39, "59": 46, "65": 5, "74": 5, "75": 8, "76": 8, "77": 11, "78": 11, "79": 12, "80": 12, "81": 13, "82": 13, "83": 14, "84": 14, "85": 15, "86": 15, "87": 16, "88": 16, "89": 17, "91": 17, "92": 18, "93": 19, "94": 19, "95": 19, "96": 19, "97": 19, "98": 19, "99": 19, "100": 21, "101": 22, "102": 28, "103": 29, "104": 37, "110": 41, "116": 41, "117": 43, "118": 44, "119": 44, "125": 119}}
 __M_END_METADATA
 """

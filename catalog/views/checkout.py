@@ -14,17 +14,16 @@ from formlib.form import Formless
 from django import forms
 from django.http import HttpResponseRedirect
 
-
 @view_function
 def process_request(request, order: cmod.Order):
     form = CheckoutForm(request)
     form.submit_text = None
     if form.is_valid():
         form.commit()
-        return HttpResponseRedirect('/catalog/thankyou/)
+        return HttpResponseRedirect('/catalog/thankyou/' + str(order.id))
     context = {
         'form': form,
-        'order': order
+        'order': order,
     }
 
     return request.dmp.render('checkout.html', context)

@@ -2,21 +2,30 @@
 <%! from catalog import models as m %>
 
 <%block name="center">
-    <div class="content">
-        <div class="container">
-            <ul class="product-images">
-                %for url in product.image_urls():
-                    <li class="small-image"><img src="${url}" alt=${product.name}></li>
-                %endfor
-            </ul>
-            <img class="big-image" src="${product.image_url()}" alt=${product.name}>
-            <h1>${product.name}</h1>
-            <p>${product.description}</p>
-            <div class="action">
-                ${ form }
-            </div>
-        </div>
+
+<div class="content">
+    <div class="container">
+      <div class="productTile">
+        <ul class="product-images">
+            %for url in product.image_urls():
+                <li class="small-image"><img src="${url}" alt=${product.name}></li>
+            %endfor
+        </ul>
+          <img class="big-image" src="${product.image_url()}" alt=${product.name}>
+      </div>
+
+      <div>
+        <h1>${product.name}</h1>
+        <p>${product.description}</p>
+        <p>Quantity Remaining: ${ int(product.quantity) }
+      </div>
+
+      <div class="action">
+          ${ form }
+      </div>
     </div>
+</div>
+
 </%block>
 
 

@@ -26,4 +26,28 @@
     .container .action .btn-react-white {
       margin: 2%; }
 
-/*# sourceMappingURL=detail.css.map */
+
+#form p {
+  text-align: left;
+}
+
+#form p > label {
+  font-weight: bold;
+}
+
+.productTile {
+  margin-right: 10px;
+}
+
+.product-images {
+  margin-right: 25px;
+}
+
+.btn-primary {
+  background-color: #FF9900;
+  color: #f2f2f2;
+  border-color: #FF9900;
+  margin-bottom: 15px;
+  text-align: center;
+  display: block;
+}
