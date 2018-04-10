@@ -13,18 +13,21 @@
             <h1>${product.name}</h1>
             <p>${product.description}</p>
             <div class="action">
-                <form action="">
-                    %if type(product) is m.BulkProduct:
-                    <select name="quantity">
-                        %for n in range(5):
-                            <option value="${n+1}">${n+1}</option>
-                        %endfor
-                        <br><br>
-                    </select>
-                    %endif
-                    <input type="submit" class="btn btn-react-white" value="Purchase" />
-                </form>
+                ${ form }
             </div>
         </div>
     </div>
 </%block>
+
+
+<!-- <form action="">
+    %if type(product) is m.BulkProduct:
+    <select name="quantity">
+        %for n in range(5):
+            <option value="${n+1}">${n+1}</option>
+        %endfor
+        <br><br>
+    </select>
+    %endif
+    <input type="submit" class="btn btn-react-white" value="Purchase" />
+</form> -->

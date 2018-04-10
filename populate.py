@@ -89,7 +89,6 @@ for i in range(1, 25):
     p.product_id = ''.join([random.choice('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789012345678901234567890123456789') for j in range(6)])
     p.save()
 
-
 ##################################
 ###   Product Images
 
@@ -118,6 +117,15 @@ for product in cmod.Product.objects.all():
             product.save()
 
 # remove the images from the first product
+p = cmod.IndividualProduct()
+p.name = 'Sales Tax'  # see image adding below
+p.description = 'Sales Tax'
+p.category = random.choice(categories)
+p.status = '1'
+p.price = random.uniform(1, 1000)
+p.product_id = ''.join([random.choice('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789012345678901234567890123456789') for j in range(6)])
+p.save()
+
 product = cmod.Product.objects.all().first()
 for pi in product.images.all():
     pi.delete()

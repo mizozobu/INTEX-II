@@ -15,7 +15,7 @@ from django.conf import settings
 def process_request(request):
     form = SignupForm(request)
     if form.is_valid():
-        form.send_email()
+        # form.send_email()
         form.commit()
         return HttpResponseRedirect('/homepage/')
 

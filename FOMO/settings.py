@@ -62,6 +62,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'catalog.history.LastFiveMiddleware',
     'account.basicauth.BasicAuthMiddleware',
+    # 'account.GetCartMiddleware.GetCartMiddleware',
 ]
 
 ROOT_URLCONF = 'FOMO.urls'
@@ -164,17 +165,26 @@ WSGI_APPLICATION = 'FOMO.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'fomo',
+#         'USER': 'postgres',
+#         'PASSWORD': 'nanakuni0914',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432',
+#     }
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'fomo',
+        'NAME': 'asdf',
         'USER': 'postgres',
-        'PASSWORD': 'nanakuni0914',
+        'PASSWORD': 'Ninaclark1!',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators

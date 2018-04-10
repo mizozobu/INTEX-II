@@ -5,9 +5,9 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1523064306.9914093
+_modified_time = 1523319846.9632878
 _enable_loop = True
-_template_filename = 'C:/Users/hamcm/Desktop/S0/fomo/catalog/templates/checkout.html'
+_template_filename = '/mnt/c/Users/hilar/OneDrive - BYU Office 365/IS413/INTEX-II/catalog/templates/checkout.html'
 _template_uri = 'checkout.html'
 _source_encoding = 'utf-8'
 import django_mako_plus
@@ -33,17 +33,17 @@ def render_body(context,**pageargs):
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         fl = _mako_get_namespace(context, 'fl')
-        form = context.get('form', UNDEFINED)
         def center():
             return render_center(context._locals(__M_locals))
+        order = context.get('order', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer('\r\n')
-        __M_writer('\r\n\r\n')
+        __M_writer('\n')
+        __M_writer('\n\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'center'):
             context['self'].center(**pageargs)
         
 
-        __M_writer('\r\n')
+        __M_writer('\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -53,20 +53,22 @@ def render_center(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         fl = _mako_get_namespace(context, 'fl')
-        form = context.get('form', UNDEFINED)
         def center():
             return render_center(context)
+        order = context.get('order', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer('\r\n    <div class="content">\r\n        ')
-        __M_writer(str( form ))
-        __M_writer('\r\n        ')
+        __M_writer('\n<h1>You are about to pay $')
+        __M_writer(str(order.total_price))
+        __M_writer('</h1>\n  <div id="form">\n    ')
         def ccall(caller):
             def body():
                 settings = context.get('settings', UNDEFINED)
                 __M_writer = context.writer()
-                __M_writer('\r\n            <div class="text-center">\r\n                <script\r\n                    src="https://checkout.stripe.com/checkout.js"\r\n                    class="stripe-button"\r\n                    data-key="')
+                __M_writer('\n      <div class="text-center">\n        <script\n          src="https://checkout.stripe.com/checkout.js"\n          class="stripe-button"\n          data-key="')
                 __M_writer(str(settings.STRIPE_PUBLIC_KEY))
-                __M_writer('"\r\n                    data-amount="999"\r\n                    data-name="FOMO"\r\n                    data-description="Widget"\r\n                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"\r\n                    data-locale="auto"\r\n                    data-label="Pay Now">\r\n                </script>\r\n            </div>\r\n        ')
+                __M_writer('"\n          data-amount="')
+                __M_writer(str(order.total_price * 100))
+                __M_writer('"\n          data-name="FOMO"\n          data-description="Widget"\n          data-image="https://stripe.com/img/documentation/checkout/marketplace.png"\n          data-locale="auto"\n          data-label="Pay Now">\n        </script>\n      </div>\n    ')
                 return ''
             return [body]
         context.caller_stack.nextcaller = runtime.Namespace('caller', context, callables=ccall(__M_caller))
@@ -74,7 +76,7 @@ def render_center(context,**pageargs):
             __M_writer(str(fl.render()))
         finally:
             context.caller_stack.nextcaller = None
-        __M_writer('\r\n    </div>\r\n')
+        __M_writer('\n  </div>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -82,6 +84,6 @@ def render_center(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:/Users/hamcm/Desktop/S0/fomo/catalog/templates/checkout.html", "uri": "checkout.html", "source_encoding": "utf-8", "line_map": {"25": 2, "31": 0, "40": 1, "41": 2, "46": 23, "52": 4, "60": 4, "61": 6, "62": 6, "67": 7, "68": 12, "69": 12, "74": 7, "77": 21, "83": 77}}
+{"line_map": {"67": 7, "68": 12, "69": 12, "70": 13, "71": 13, "40": 1, "41": 2, "76": 7, "46": 23, "79": 21, "52": 4, "85": 79, "25": 2, "60": 4, "61": 5, "62": 5, "31": 0}, "uri": "checkout.html", "source_encoding": "utf-8", "filename": "/mnt/c/Users/hilar/OneDrive - BYU Office 365/IS413/INTEX-II/catalog/templates/checkout.html"}
 __M_END_METADATA
 """
