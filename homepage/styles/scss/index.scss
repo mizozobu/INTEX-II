@@ -18,6 +18,7 @@ $footer-height: 100px; //index
     grid-template-columns: auto auto auto auto;
     width: 100%;
     position: relative;
+    grid-auto-rows: 1fr;
 }
 
 .grid-item {
@@ -224,6 +225,7 @@ $footer-height: 100px; //index
     width: 100%;
     position: relative;
     margin-left: 2%;
+      grid-auto-rows: 1fr;
 }
 
 .jumbotron {

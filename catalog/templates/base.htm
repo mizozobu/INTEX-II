@@ -24,48 +24,63 @@
     <body>
         <div id="page">
             <a class="d-none" href="#content">skip to content</a>
-            <div class="row">
-                <%block name="maintenanceMessage"></%block>
+
+            <div class="container">
+              <div class="row">
+                <div class="row">
+                    <%block name="maintenanceMessage"></%block>
+                </div>
+              </div>
             </div>
 
-            <div class="row">
-                <div class="col-sm-12" id="header">
-                    <%block name="header"></%block>
-                </div>
-            </div>
+            <header>
+                <%block name="header"></%block>
+            </header>
 
-            ## top
-            <div class="row">
-                <div class="col-sm-12" id="top">
-                    <%block name="top"></%block>
-                </div>
-            </div>
-            ## middle
-            <div class="row">
-                ## left
-                <div class="col-sm-2 d-none d-lg-block" id="left">
+            <main class="mainBox">
+
+              <div class="row">
+                  <div class="col-md-12" id="top">
+                      <%block name="top"></%block>
+                  </div>
+              </div>
+
+
+            <div class="row top-buffer">
+                <div class="col-md-2" id="left">
+                  <div class="content">
                     <%block name="left"></%block>
+                  </div>
                 </div>
-                ## center
-                <div class="col-sm-12 col-lg-8" id="center">
+              <div class="col-md-8"  id="center">
+                  <div class="content">
                     <%block name="center"></%block>
+                  </div>
                 </div>
-                ## right
-                <div class="col-sm-2 d-none d-lg-block" id="right">
+
+                <div class="col-md-2" id="right">
+                  <div class="content">
                     <%block name="right"></%block>
+                  </div>
                 </div>
             </div>
+
             ## bottom
-            <div class="row">
-                <div class="col-sm-12" id="bottom">
+            <div class="row top-buffer">
+                <div class="col-md-12" id="bottom">
                     <%block name="bottom"></%block>
                 </div>
             </div>
+
+        </main>
+
         </div>
+
         <div id="loader-container">
             <span id="loader"></span>
             <p>LOADING ...</p>
         </div>
+
     </body>
 
     <footer>
