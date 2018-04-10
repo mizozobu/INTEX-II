@@ -151,7 +151,7 @@
 
 .grid-container-jt {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr auto;
   grid-gap: 30px;
   width: 100%;
   position: relative;

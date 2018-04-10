@@ -1,4 +1,5 @@
 <%inherit file="app_base.htm" />
+<%! from catalog import models as cmod %>
 
 <%block name="addonlink">
 <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
@@ -28,31 +29,35 @@
     <div class="row background-white" id="content">
         <div class="grid-container-jt">
 
-            <a href="/catalog/">
+          <% softId = cmod.Category.objects.get(name='Software').id %>
+
+            <a href="/catalog/index/${ softId }">
               <div class="grid-item">
                 <div class="jumbotron">
-                    <h2 class="display-4">Special Instrument</h2>
+                    <h2 class="display-4">Software</h2>
                     <hr class="my-4">
-                    <p class="lead">Our signature instrument is made by craftsman. Find the perfect instrument for you.</p>
+                    <p class="lead">We have a wide selection of tools for you to use in your musical pursuits.</p>
                 </div>
               </div>
             </a>
 
-            <a href="/catalog/">
+            <% instId = cmod.Category.objects.get(name='Instruments').id %>
+
+            <a href="/catalog/index/${ instId }">
               <div class="grid-item">
                 <div class="jumbotron">
-                    <h2 class="display-4">Rental Instruments</h2>
+                    <h2 class="display-4">Instruments</h2>
                     <hr class="my-4">
-                    <p class="lead">Just looking for an instrument for a short period of time? Don't worry. We don't make you buy one.</p>
+                    <p class="lead">View our selection of instruments that you can rent or buy.</p>
                 </div>
               </div>
             </a>
 
-            <a href="/catalog/"><div class="grid-item">
+            <a href="/catalog/index/"><div class="grid-item">
                 <div class="jumbotron">
-                    <h2 class="display-4">Equipment</h2>
+                    <h2 class="display-4">And More!</h2>
                     <hr class="my-4">
-                    <p class="lead">Parts, tools, sheet music, varnish, and any other pieces that will enhance your music life.</p>
+                    <p class="lead">View our assortment of other tools and products available for you.</p>
                 </div>
             </div>
           </a>
