@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1523328526.988147
+_modified_time = 1523334489.472703
 _enable_loop = True
 _template_filename = 'C:/users/scott laptop/documents/mariah/intex/intex-ii/homepage/templates/index.html'
 _template_uri = 'index.html'
@@ -30,9 +30,9 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
         def addonlink():
             return render_addonlink(context._locals(__M_locals))
+        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
         def top():
             return render_top(context._locals(__M_locals))
         __M_writer = context.writer()
@@ -89,7 +89,7 @@ def render_top(context,**pageargs):
         __M_writer(str( STATIC_URL ))
         __M_writer('catalog/media/instruments/malimba.jpg" alt="malimba" /></div>\r\n                <div class="grid-item layer2 r-3 c-6"><img src="')
         __M_writer(str( STATIC_URL ))
-        __M_writer('catalog/media/instruments/oboe.jpg" alt="oboe" /></div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class="row background-white" id="content">\r\n        <div class="grid-container-jt">\r\n            <a href="/catalog/"><div class="grid-item">\r\n                <div class="jumbotron">\r\n                    <h2 class="display-4">Signature Instrument</h2>\r\n                    <hr class="my-4">\r\n                    <p class="lead">Our signature instrument is made by craftsman. Find  the one and only instrument for you.</p>\r\n                </div>\r\n            </div></a>\r\n            <a href="/catalog/"><div class="grid-item">\r\n                <div class="jumbotron">\r\n                    <h2 class="display-4">Rental Instrument</h2>\r\n                    <hr class="my-4">\r\n                    <p class="lead">Just looking for an instrument for a short period of time? Don\'t worry. We don\'t make you buy one.</p>\r\n                </div>\r\n            </div></a>\r\n            <a href="/catalog/"><div class="grid-item">\r\n                <div class="jumbotron">\r\n                    <h2 class="display-4">Equipment</h2>\r\n                    <hr class="my-4">\r\n                    <p class="lead">Parts, tools, sheet music, varnish, and any other pieces that will enhance your music life.</p>\r\n                </div>\r\n            </div></a>\r\n        </div>\r\n    </div>\r\n</div>\r\n')
+        __M_writer('catalog/media/instruments/oboe.jpg" alt="oboe" /></div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class="row background-white" id="content">\r\n        <div class="grid-container-jt">\r\n            <a href="/catalog/"><div class="grid-item">\r\n                <div class="jumbotron">\r\n                    <h2 class="display-4">Special Instrument</h2>\r\n                    <hr class="my-4">\r\n                    <p class="lead">Our signature instrument is made by craftsman. Find the perfect instrument for you.</p>\r\n                </div>\r\n            </div></a>\r\n            <a href="/catalog/"><div class="grid-item">\r\n                <div class="jumbotron">\r\n                    <h2 class="display-4">Rental Instruments</h2>\r\n                    <hr class="my-4">\r\n                    <p class="lead">Just looking for an instrument for a short period of time? Don\'t worry. We don\'t make you buy one.</p>\r\n                </div>\r\n            </div></a>\r\n            <a href="/catalog/"><div class="grid-item">\r\n                <div class="jumbotron">\r\n                    <h2 class="display-4">Equipment</h2>\r\n                    <hr class="my-4">\r\n                    <p class="lead">Parts, tools, sheet music, varnish, and any other pieces that will enhance your music life.</p>\r\n                </div>\r\n            </div></a>\r\n        </div>\r\n    </div>\r\n</div>\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()

@@ -16,7 +16,9 @@
   font-size: 30px;
   text-align: center;
   width: auto;
-  height: auto; }
+  height: auto;
+  grid-auto-rows: 1fr;
+}
 
 .layer1, .layer2 {
   background-color: black; }
@@ -153,7 +155,9 @@
   grid-gap: 30px;
   width: 100%;
   position: relative;
-  margin-left: 2%; }
+  margin-left: 2%;
+  grid-auto-rows: 1fr;
+}
 
 .jumbotron {
   margin: 0;

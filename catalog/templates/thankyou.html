@@ -1,12 +1,19 @@
 <%inherit file="catalog/templates/app_base.htm" />
 
 <%block name="center">
-    <div class="content">
+    <div class="content text-center">
         <h1>Thank You</h1>
         <p id="message">
           Your order is being processed, and will be shipped to you shortly.
-
         </p>
+
+        <h3>Receipt</h3>
+
+        <p>You have ordered order.num_items() items.</p>
+        <p>The total price for your items is $ order.total_price.</p>
+
+        <br>
+
         <a class="btn btn-default contShop" href="/catalog/">Continue Shopping</a>
     </div>
 </%block>

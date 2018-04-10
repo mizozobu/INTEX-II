@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1523331182.544479
+_modified_time = 1523332685.2152507
 _enable_loop = True
 _template_filename = 'C:/users/scott laptop/documents/mariah/intex/intex-ii/catalog/templates/checkout.html'
 _template_uri = 'checkout.html'
@@ -57,7 +57,7 @@ def render_center(context,**pageargs):
         def center():
             return render_center(context)
         __M_writer = context.writer()
-        __M_writer('\r\n<h1>You are about to pay $')
+        __M_writer('\r\n<div class="content">\r\n<h1>You are about to pay $')
         __M_writer(str(order.total_price))
         __M_writer('.</h1>\r\n<p>Please enter your shipping information below.</p>\r\n  <div id="form">\r\n    ')
         def ccall(caller):
@@ -76,7 +76,7 @@ def render_center(context,**pageargs):
             __M_writer(str(fl.render()))
         finally:
             context.caller_stack.nextcaller = None
-        __M_writer('\r\n  </div>\r\n')
+        __M_writer('\r\n  </div>\r\n</div>\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -84,6 +84,6 @@ def render_center(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:/users/scott laptop/documents/mariah/intex/intex-ii/catalog/templates/checkout.html", "uri": "checkout.html", "source_encoding": "utf-8", "line_map": {"25": 2, "31": 0, "40": 1, "41": 2, "46": 24, "52": 4, "60": 4, "61": 5, "62": 5, "67": 8, "68": 13, "69": 13, "70": 14, "71": 14, "76": 8, "79": 22, "85": 79}}
+{"filename": "C:/users/scott laptop/documents/mariah/intex/intex-ii/catalog/templates/checkout.html", "uri": "checkout.html", "source_encoding": "utf-8", "line_map": {"25": 2, "31": 0, "40": 1, "41": 2, "46": 26, "52": 4, "60": 4, "61": 6, "62": 6, "67": 9, "68": 14, "69": 14, "70": 15, "71": 15, "76": 9, "79": 23, "85": 79}}
 __M_END_METADATA
 """

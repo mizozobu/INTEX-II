@@ -5,7 +5,9 @@ from django.conf import settings
 
 @view_function
 def process_request(request):
+
     context = {
+
     }
 
     return request.dmp.render('thankyou.html', context)

@@ -5,9 +5,9 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1520126508.304838
+_modified_time = 1523332245.5800705
 _enable_loop = True
-_template_filename = 'C:/Users/hamcm/Desktop/S0/fomo/homepage/templates/faq.html'
+_template_filename = 'C:/users/scott laptop/documents/mariah/intex/intex-ii/homepage/templates/faq.html'
 _template_uri = 'faq.html'
 _source_encoding = 'utf-8'
 import django_mako_plus
@@ -50,7 +50,7 @@ def render_center(context,**pageargs):
         def center():
             return render_center(context)
         __M_writer = context.writer()
-        __M_writer('\r\n    <div class="content">\r\n        <h3>Frequently Asked Questions</h3>\r\n        <br />\r\n        <div class="question-container">\r\n            <h4>What does FOMO stand for?</h4>\r\n            <p><span class="indent"></span>Family Oriented Whatever</p>\r\n            <br />\r\n            <h4>Why FOMO?</h4>\r\n            <p><span class="indent"></span>It\'s just better and less expensive.</p>\r\n            <br />\r\n            <h4>Ooh, that\'s a cool website.</h4>\r\n            <p><span class="indent"></span>Thank you.</p>\r\n        </div>\r\n    </div>\r\n')
+        __M_writer('\r\n      <h2>Frequently Asked Questions</h3>\r\n        <br>\r\n\r\n        <h4 class="top-buffer"><strong>How does your rent-to-own program work?</strong></h6>\r\n          <p>With the rent-to-own program, the first eight months of rent go 100% toward the purchase price if the renter chooses to buy at that point. Any rent beyond the first eight months only counts 50% toward the purchase price. All renters are assumed to be rent-to-own until they physically return the instrument. Even if the renter doesn’t indicate a rent-to-own preference, If they pay rent sufficient to cover the instrument cost, the instrument is then considered sold.</p>\r\n\r\n        <hr>\r\n\r\n        <h4 class="top-buffer"><strong>Can I get my instrument repaired here?</strong></h6>\r\n          <p>We do have a repair shop in the building that allows a wide variety of instruments to be repaired or reconditioned. An estimate is calculated before any repairs are started. However, payment isn’t due until the repair is complete. If the repair is beyond the capabilities at our store, we have preferred partners we recommend the instrument owners use.</p>\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -58,6 +58,6 @@ def render_center(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:/Users/hamcm/Desktop/S0/fomo/homepage/templates/faq.html", "uri": "faq.html", "source_encoding": "utf-8", "line_map": {"29": 0, "36": 1, "41": 18, "47": 3, "53": 3, "59": 53}}
+{"filename": "C:/users/scott laptop/documents/mariah/intex/intex-ii/homepage/templates/faq.html", "uri": "faq.html", "source_encoding": "utf-8", "line_map": {"29": 0, "36": 1, "41": 14, "47": 3, "53": 3, "59": 53}}
 __M_END_METADATA
 """

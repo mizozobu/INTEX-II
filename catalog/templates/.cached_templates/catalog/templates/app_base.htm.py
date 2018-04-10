@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1523331002.3245852
+_modified_time = 1523333877.2025344
 _enable_loop = True
 _template_filename = 'C:/users/scott laptop/documents/mariah/intex/intex-ii/catalog/templates/app_base.htm'
 _template_uri = 'catalog/templates/app_base.htm'
@@ -36,20 +36,20 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        def left():
-            return render_left(context._locals(__M_locals))
-        null = context.get('null', UNDEFINED)
-        len = context.get('len', UNDEFINED)
-        def right():
-            return render_right(context._locals(__M_locals))
         range = context.get('range', UNDEFINED)
-        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
-        category_id = context.get('category_id', UNDEFINED)
         def header():
             return render_header(context._locals(__M_locals))
+        def left():
+            return render_left(context._locals(__M_locals))
         request = context.get('request', UNDEFINED)
+        def right():
+            return render_right(context._locals(__M_locals))
         def footer():
             return render_footer(context._locals(__M_locals))
+        category_id = context.get('category_id', UNDEFINED)
+        len = context.get('len', UNDEFINED)
+        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
+        null = context.get('null', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n')
         __M_writer('\r\n')
@@ -82,11 +82,11 @@ def render_body(context,**pageargs):
 def render_header(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        null = context.get('null', UNDEFINED)
-        request = context.get('request', UNDEFINED)
         def header():
             return render_header(context)
         STATIC_URL = context.get('STATIC_URL', UNDEFINED)
+        null = context.get('null', UNDEFINED)
+        request = context.get('request', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n    <nav class="navbar fixed-top navbar-light bg-faded">\r\n        <a class="navbar-brand" href="/homepage/">\r\n            <img src="')
         __M_writer(str( STATIC_URL ))
@@ -106,10 +106,10 @@ def render_header(context,**pageargs):
         __M_writer('\r\n')
         if (cart is not null) and (cart is not None) and (cart.num_items() > 0):
             __M_writer('            <li class="')
-            __M_writer(str( 'active' if request.dmp.page == '/catalog/cart' else ''))
+            __M_writer(str( 'active nav-item' if request.dmp.page == '/catalog/cart' else ''))
             __M_writer('"><a href="/catalog/cart/')
             __M_writer(str(cart.id))
-            __M_writer('">Shopping Cart (')
+            __M_writer('" class="nav-link">Shopping Cart (')
             __M_writer(str(cart.num_items()))
             __M_writer(')</a></li>\r\n')
         if  request.user.is_authenticated:
@@ -125,9 +125,9 @@ def render_header(context,**pageargs):
 def render_left(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
+        category_id = context.get('category_id', UNDEFINED)
         def left():
             return render_left(context)
-        category_id = context.get('category_id', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n    <div class="content left">\r\n        <ul class="category-list">\r\n            <a id="all-product" href="/catalog/index/"><li>All Products</li></a>\r\n')
         for c in m.Category.objects.all():
@@ -147,11 +147,11 @@ def render_left(context,**pageargs):
 def render_right(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        len = context.get('len', UNDEFINED)
+        range = context.get('range', UNDEFINED)
         def right():
             return render_right(context)
-        range = context.get('range', UNDEFINED)
         request = context.get('request', UNDEFINED)
+        len = context.get('len', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n    <div class="content right">\r\n        <div id="right-container">\r\n            <p class="right-heading">View History</p>\r\n            <ol class="history">\r\n')
         for i in range(len(request.last_five_p)):

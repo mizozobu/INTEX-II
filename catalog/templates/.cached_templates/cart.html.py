@@ -5,14 +5,14 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1523314651.488104
+_modified_time = 1523332679.250542
 _enable_loop = True
-_template_filename = '/mnt/c/Users/hilar/OneDrive - BYU Office 365/IS413/INTEX-II/catalog/templates/cart.html'
+_template_filename = 'C:/users/scott laptop/documents/mariah/intex/intex-ii/catalog/templates/cart.html'
 _template_uri = 'cart.html'
 _source_encoding = 'utf-8'
 import django_mako_plus
 import django_mako_plus
-_exports = ['left', 'top', 'center', 'right']
+_exports = ['top', 'center', 'left', 'right']
 
 
 def _mako_get_namespace(context, name):
@@ -30,17 +30,17 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        def top():
-            return render_top(context._locals(__M_locals))
+        tax = context.get('tax', UNDEFINED)
         def center():
             return render_center(context._locals(__M_locals))
-        tax = context.get('tax', UNDEFINED)
-        def right():
-            return render_right(context._locals(__M_locals))
+        def top():
+            return render_top(context._locals(__M_locals))
         def left():
             return render_left(context._locals(__M_locals))
         items = context.get('items', UNDEFINED)
         order = context.get('order', UNDEFINED)
+        def right():
+            return render_right(context._locals(__M_locals))
         __M_writer = context.writer()
         __M_writer('\r\n\r\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'top'):
@@ -68,17 +68,6 @@ def render_body(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
-def render_left(context,**pageargs):
-    __M_caller = context.caller_stack._push_frame()
-    try:
-        def left():
-            return render_left(context)
-        __M_writer = context.writer()
-        return ''
-    finally:
-        context.caller_stack._pop_frame()
-
-
 def render_top(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
@@ -96,11 +85,11 @@ def render_center(context,**pageargs):
     try:
         tax = context.get('tax', UNDEFINED)
         items = context.get('items', UNDEFINED)
+        order = context.get('order', UNDEFINED)
         def center():
             return render_center(context)
-        order = context.get('order', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer('\r\n  <table class="table">\r\n    <thead>\r\n      <tr>\r\n        <th>\r\n          Product\r\n        </th>\r\n        <th>\r\n          Quantity\r\n        </th>\r\n        <th>\r\n          Price\r\n        </th>\r\n        <th>\r\n          Item Total\r\n        </th>\r\n        <th>\r\n        </th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n')
+        __M_writer('\r\n<div class="content">\r\n  <table class="table">\r\n    <thead>\r\n      <tr>\r\n        <th>\r\n          Product\r\n        </th>\r\n        <th>\r\n          Quantity\r\n        </th>\r\n        <th>\r\n          Price\r\n        </th>\r\n        <th>\r\n          Item Total\r\n        </th>\r\n        <th>\r\n        </th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n')
         for item in items:
             __M_writer('        <tr>\r\n          <td>\r\n            ')
             __M_writer(str( item.product.name ))
@@ -121,7 +110,18 @@ def render_center(context,**pageargs):
         __M_writer(str( order.total_price ))
         __M_writer('\r\n        </th>\r\n        <th>\r\n        </th>\r\n      </tr>\r\n    </thead>\r\n  </table>\r\n  <a class="btn btn-default" href="/catalog/checkout/')
         __M_writer(str(order.id))
-        __M_writer('">Checkout Now</a>\r\n')
+        __M_writer('">Checkout Now</a>\r\n</div>\r\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
+def render_left(context,**pageargs):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        def left():
+            return render_left(context)
+        __M_writer = context.writer()
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -140,6 +140,6 @@ def render_right(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "/mnt/c/Users/hilar/OneDrive - BYU Office 365/IS413/INTEX-II/catalog/templates/cart.html", "uri": "cart.html", "line_map": {"65": 80, "130": 80, "71": 79, "119": 56, "141": 130, "109": 32, "124": 77, "82": 3, "88": 3, "29": 0, "94": 5, "114": 41, "103": 5, "104": 26, "105": 27, "106": 29, "107": 29, "108": 32, "45": 1, "110": 35, "111": 35, "112": 38, "113": 38, "50": 3, "115": 41, "116": 41, "117": 41, "118": 45, "55": 78, "120": 56, "121": 70, "122": 70, "123": 77, "60": 79}, "source_encoding": "utf-8"}
+{"filename": "C:/users/scott laptop/documents/mariah/intex/intex-ii/catalog/templates/cart.html", "uri": "cart.html", "source_encoding": "utf-8", "line_map": {"29": 0, "45": 1, "50": 3, "55": 80, "60": 81, "65": 82, "71": 3, "77": 3, "83": 5, "92": 5, "93": 27, "94": 28, "95": 30, "96": 30, "97": 33, "98": 33, "99": 36, "100": 36, "101": 39, "102": 39, "103": 42, "104": 42, "105": 42, "106": 42, "107": 46, "108": 57, "109": 57, "110": 71, "111": 71, "112": 78, "113": 78, "119": 81, "130": 82, "141": 130}}
 __M_END_METADATA
 """
