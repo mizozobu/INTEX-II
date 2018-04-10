@@ -3,14 +3,15 @@ html {
   padding: 0;
   height: 100%; }
 
+.top-buffer {
+  margin-top:20px;
+ }
+
 body {
   min-height: 100%;
   position: relative;
   background-color: #f2f2f2; }
 
-  .top-buffer {
-    margin-top:20px;
-   }
 
 .content {
   padding-top: 70px;

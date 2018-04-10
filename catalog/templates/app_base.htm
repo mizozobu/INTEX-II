@@ -13,7 +13,7 @@
             <li class="nav-item"><a class="nav-link ${'active' if request.dmp.app == 'homepage' and request.dmp.page == 'faq' else '' }" href="/homepage/faq/">FAQ</a></li>
             <li class="nav-item"><a class="nav-link ${'active' if request.dmp.app == 'homepage' and request.dmp.page == 'terms' else '' }" href="/homepage/terms/">Terms</a></li>
             <li class="nav-item"><a class="nav-link ${'active' if request.dmp.app == 'homepage' and request.dmp.page == 'contact' else '' }" href="/homepage/contact/">Contact</a></li>
-            <li class="nav-item"><a class="nav-link ${'active' if request.dmp.app == 'catalog' and request.dmp.page == 'index' else '' }" href="/catalog/index/">Catalog</a></li>
+            <li class="nav-item"><a class="nav-link ${'active' if request.dmp.app == 'catalog' and request.dmp.page == 'index' else '' }" href="/catalog/index/">Shop</a></li>
             <% cart = m.Order.objects.all().filter(user=amod.User.objects.get(email=request.user)).filter(status="cart").first() if request.user.is_authenticated else null%>
             %if (cart is not null) and (cart is not None) and (cart.num_items() > 0):
             <li class="${ 'active nav-item' if request.dmp.page == '/catalog/cart' else ''}"><a href="/catalog/cart/${cart.id}" class="nav-link">Shopping Cart (${cart.num_items()})</a></li>

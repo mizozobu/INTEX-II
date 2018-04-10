@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1523388379.3514893
+_modified_time = 1523395667.243526
 _enable_loop = True
 _template_filename = 'C:/users/Scott Laptop/documents/Mariah/intex/intex-ii/catalog/templates/app_base.htm'
 _template_uri = 'catalog/templates/app_base.htm'
@@ -36,20 +36,20 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
+        category_id = context.get('category_id', UNDEFINED)
+        def header():
+            return render_header(context._locals(__M_locals))
         def left():
             return render_left(context._locals(__M_locals))
+        null = context.get('null', UNDEFINED)
+        def right():
+            return render_right(context._locals(__M_locals))
         STATIC_URL = context.get('STATIC_URL', UNDEFINED)
+        len = context.get('len', UNDEFINED)
+        range = context.get('range', UNDEFINED)
         def footer():
             return render_footer(context._locals(__M_locals))
         request = context.get('request', UNDEFINED)
-        null = context.get('null', UNDEFINED)
-        def header():
-            return render_header(context._locals(__M_locals))
-        def right():
-            return render_right(context._locals(__M_locals))
-        len = context.get('len', UNDEFINED)
-        range = context.get('range', UNDEFINED)
-        category_id = context.get('category_id', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n')
         __M_writer('\r\n')
@@ -82,11 +82,11 @@ def render_body(context,**pageargs):
 def render_header(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
+        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
         null = context.get('null', UNDEFINED)
         def header():
             return render_header(context)
         request = context.get('request', UNDEFINED)
-        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n    <nav class="navbar fixed-top navbar-light bg-faded">\r\n        <a class="navbar-brand" href="/homepage/">\r\n            <img src="')
         __M_writer(str( STATIC_URL ))
@@ -102,7 +102,7 @@ def render_header(context,**pageargs):
         __M_writer(str('active' if request.dmp.app == 'homepage' and request.dmp.page == 'contact' else '' ))
         __M_writer('" href="/homepage/contact/">Contact</a></li>\r\n            <li class="nav-item"><a class="nav-link ')
         __M_writer(str('active' if request.dmp.app == 'catalog' and request.dmp.page == 'index' else '' ))
-        __M_writer('" href="/catalog/index/">Catalog</a></li>\r\n            ')
+        __M_writer('" href="/catalog/index/">Shop</a></li>\r\n            ')
         cart = m.Order.objects.all().filter(user=amod.User.objects.get(email=request.user)).filter(status="cart").first() if request.user.is_authenticated else null
         
         __M_writer('\r\n')
@@ -151,9 +151,9 @@ def render_right(context,**pageargs):
     try:
         def right():
             return render_right(context)
+        len = context.get('len', UNDEFINED)
         range = context.get('range', UNDEFINED)
         request = context.get('request', UNDEFINED)
-        len = context.get('len', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n    <div class="content right">\r\n        <div id="right-container">\r\n            <p class="right-heading">View History</p>\r\n            <ol class="history">\r\n')
         for i in range(len(request.last_five_p)):

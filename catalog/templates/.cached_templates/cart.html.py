@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1523383127.4875216
+_modified_time = 1523394827.1335738
 _enable_loop = True
 _template_filename = 'C:/users/Scott Laptop/documents/Mariah/intex/intex-ii/catalog/templates/cart.html'
 _template_uri = 'cart.html'
@@ -30,15 +30,15 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
+        def left():
+            return render_left(context._locals(__M_locals))
+        order = context.get('order', UNDEFINED)
+        tax = context.get('tax', UNDEFINED)
         def right():
             return render_right(context._locals(__M_locals))
         items = context.get('items', UNDEFINED)
-        tax = context.get('tax', UNDEFINED)
-        order = context.get('order', UNDEFINED)
         def center():
             return render_center(context._locals(__M_locals))
-        def left():
-            return render_left(context._locals(__M_locals))
         __M_writer = context.writer()
         __M_writer('\r\n\r\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'center'):
@@ -65,14 +65,14 @@ def render_center(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         order = context.get('order', UNDEFINED)
+        tax = context.get('tax', UNDEFINED)
+        items = context.get('items', UNDEFINED)
         def center():
             return render_center(context)
-        items = context.get('items', UNDEFINED)
-        tax = context.get('tax', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n<div class="content top-buffer bottom-buffer">\r\n  <h1>Shopping Cart <a class="btn btn-primary" href="/catalog/checkout/')
         __M_writer(str(order.id))
-        __M_writer('">Checkout Now</a></h1>\r\n\r\n    <table class="table">\r\n      <thead>\r\n        <tr>\r\n          <th class="spaceLeft">Image</th>\r\n          <th>\r\n            Product\r\n          </th>\r\n          <th>\r\n            Quantity\r\n          </th>\r\n          <th>\r\n            Price\r\n          </th>\r\n          <th>\r\n            Item Total\r\n          </th>\r\n          <th class="spaceRight">\r\n          </th>\r\n        </tr>\r\n      </thead>\r\n      <tbody>\r\n')
+        __M_writer('">Checkout Now</a></h1>\r\n\r\n    <table class="table">\r\n      <thead>\r\n        <tr>\r\n          <th>Image</th>\r\n          <th>\r\n            Product\r\n          </th>\r\n          <th>\r\n            Quantity\r\n          </th>\r\n          <th>\r\n            Price\r\n          </th>\r\n          <th>\r\n            Item Total\r\n          </th>\r\n          <th>\r\n          </th>\r\n        </tr>\r\n      </thead>\r\n      <tbody>\r\n')
         for item in items:
             __M_writer('          <tr>\r\n            <td class="productTile spaceLeft">\r\n                <img src="')
             __M_writer(str( item.product.image_url() ))
