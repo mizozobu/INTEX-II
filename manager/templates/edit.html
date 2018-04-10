@@ -1,9 +1,9 @@
-<%inherit file="homepage/templates/app_base.htm" />
+<%inherit file="manager/templates/app_base.htm" />
 
 <%block name="center">
-    <div class="content">
-        <div class="col-sm-6 offset-sm-3">
-            <h3>EDIT</h3>
+    <div class="content top-buffer">
+        <div class="col-sm-6 col-centered">
+            <h1>Edit</h3>
             <br />
             <form action=${ "/manager/edit/{}".format(id) } method="POST">
                 ${ form }

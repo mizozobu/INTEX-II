@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1523388372.9947603
+_modified_time = 1523403043.7910523
 _enable_loop = True
 _template_filename = 'C:/users/Scott Laptop/documents/Mariah/intex/intex-ii/homepage/templates/app_base.htm'
 _template_uri = 'app_base.htm'
@@ -36,10 +36,10 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
+        request = context.get('request', UNDEFINED)
         STATIC_URL = context.get('STATIC_URL', UNDEFINED)
         def footer():
             return render_footer(context._locals(__M_locals))
-        request = context.get('request', UNDEFINED)
         null = context.get('null', UNDEFINED)
         def header():
             return render_header(context._locals(__M_locals))
@@ -65,11 +65,11 @@ def render_body(context,**pageargs):
 def render_header(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
+        request = context.get('request', UNDEFINED)
+        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
         null = context.get('null', UNDEFINED)
         def header():
             return render_header(context)
-        request = context.get('request', UNDEFINED)
-        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n<nav class="navbar fixed-top navbar-light bg-faded">\r\n    <a class="navbar-brand" href="/homepage/">\r\n        <img src="')
         __M_writer(str( STATIC_URL ))
@@ -98,7 +98,13 @@ def render_header(context,**pageargs):
             __M_writer(str(cart.num_items()))
             __M_writer(')</a></li>\r\n')
         if  request.user.is_authenticated:
-            __M_writer('        <li class="nav-item dropdown">\r\n            <button class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account</button>\r\n            <div class="dropdown-menu">\r\n                <a class="dropdown-item" href="/account/logout/">Log Out</a>\r\n            </div>\r\n        </li>\r\n')
+            __M_writer('        <li class="nav-item dropdown">\r\n            <button class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account</button>\r\n            <div class="dropdown-menu">\r\n              ')
+            currentUser = amod.User.objects.get(id=request.user.id) 
+            
+            __M_writer('\r\n')
+            if currentUser.is_staff == True:
+                __M_writer('                <a class="dropdown-item" href="/manager/index/">Edit Products</a>\r\n')
+            __M_writer('                <a class="dropdown-item" href="/account/logout/">Log Out</a>\r\n            </div>\r\n        </li>\r\n')
         else:
             __M_writer('        <li class="nav-item dropdown">\r\n            <button class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Log In</button>\r\n            <div class="dropdown-menu">\r\n                <a class="dropdown-item" href="/account/signup/">Sign Up</a>\r\n                <a class="dropdown-item" href="/account/login/">Log In</a>\r\n            </div>\r\n        </li>\r\n')
         __M_writer('    </ul>\r\n</nav>\r\n')
@@ -124,6 +130,6 @@ def render_footer(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:/users/Scott Laptop/documents/Mariah/intex/intex-ii/homepage/templates/app_base.htm", "uri": "app_base.htm", "source_encoding": "utf-8", "line_map": {"18": 2, "20": 3, "22": 43, "35": 0, "47": 1, "48": 2, "49": 3, "54": 39, "59": 46, "65": 5, "74": 5, "75": 8, "76": 8, "77": 11, "78": 11, "79": 12, "80": 12, "81": 13, "82": 13, "83": 14, "84": 14, "85": 15, "86": 15, "87": 16, "88": 16, "89": 17, "91": 17, "92": 18, "93": 19, "94": 19, "95": 19, "96": 19, "97": 19, "98": 19, "99": 19, "100": 21, "101": 22, "102": 28, "103": 29, "104": 37, "110": 41, "116": 41, "117": 43, "118": 44, "119": 44, "125": 119}}
+{"filename": "C:/users/Scott Laptop/documents/Mariah/intex/intex-ii/homepage/templates/app_base.htm", "uri": "app_base.htm", "source_encoding": "utf-8", "line_map": {"18": 2, "20": 3, "22": 47, "35": 0, "47": 1, "48": 2, "49": 3, "54": 43, "59": 50, "65": 5, "74": 5, "75": 8, "76": 8, "77": 11, "78": 11, "79": 12, "80": 12, "81": 13, "82": 13, "83": 14, "84": 14, "85": 15, "86": 15, "87": 16, "88": 16, "89": 17, "91": 17, "92": 18, "93": 19, "94": 19, "95": 19, "96": 19, "97": 19, "98": 19, "99": 19, "100": 21, "101": 22, "102": 25, "104": 25, "105": 26, "106": 27, "107": 29, "108": 32, "109": 33, "110": 41, "116": 45, "122": 45, "123": 47, "124": 48, "125": 48, "131": 125}}
 __M_END_METADATA
 """

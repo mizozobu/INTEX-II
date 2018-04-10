@@ -1,36 +1,37 @@
-<%inherit file="homepage/templates/app_base.htm" />
+<%inherit file="manager/templates/app_base.htm" />
 
 <%block name="center">
-    <div class="content">
-        <a href=${ "/manager/create/"}><p class="btn btn-react">Create</p></a>
-        <table>
+    <div class="content top-buffer">
+        <h1>All Products <a href=${ "/manager/create/"} class="btn btn-primary">Create New</a></h1>
+        <table class="table">
             <tr>
-                <th></th>
                 <th>Category</th>
                 <th>Type</th>
                 <th>Name</th>
                 <th>Price</th>
                 <th>Quantity</th>
-                <th>Description</th>
+                <th></th>
+                <th></th>
             </tr>
 
             %for p in products:
                 %if p.status == '1':
                 <tr>
-                    <td class="btn-holder">
-                        <a href=${ "/manager/edit/{}".format(p.id) }>
-                            <p class="btn btn-react-sm">Edit</p>
-                        </a>
-                        <a href=${ "/manager/delete/{}".format(p.id) }>
-                            <p class="btn btn-react-sm">Delete</p>
-                        </a>
-                    </td>
                     <td>${ p.category.name }</td>
                     <td>${ p.__class__.__name__ }</td>
                     <td>${ p.name }</td>
                     <td>${ p.price }</td>
                     <td>${ p.quantity }</td>
-                    <td>${ p.description }</td>
+                    <td class="btn-holder">
+                        <a href=${ "/manager/edit/{}".format(p.id) } class="btn btn-link">
+                          Edit
+                        </a>
+                    </td>
+                    <td>
+                      <a href=${ "/manager/delete/{}".format(p.id) } class="btn btn-link">
+                        Delete
+                      </a>
+                    </td>
                 </tr>
                 %endif
             %endfor
@@ -38,3 +39,7 @@
         </table>
     </div>
 </%block>
+
+<%block name="left"></%block>
+
+<%block name="right"></%block>
