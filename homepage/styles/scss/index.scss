@@ -9,6 +9,10 @@ $footer-height: 100px; //index
     padding: 0;
 }
 
+html, body {
+  height: 100%;
+}
+
 #eye-catcher {
     padding: 3% 0;
 }
@@ -19,14 +23,6 @@ $footer-height: 100px; //index
     width: 100%;
     position: relative;
     grid-auto-rows: 1fr;
-}
-
-.grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    font-size: 30px;
-    text-align: center;
-    width: auto;
-    height: auto;
 }
 
 .layer1, .layer2{
@@ -220,20 +216,23 @@ $footer-height: 100px; //index
 
 .grid-container-jt {
     display: grid;
-    grid-template-columns: auto auto auto auto;
     grid-gap: 30px;
-    width: 100%;
-    position: relative;
+    grid-auto-rows: 1fr;
     margin-left: 2%;
-      grid-auto-rows: 1fr;
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 30px;
+    text-align: center;
 }
 
 .jumbotron {
-    margin: 0;
     border: 3px solid $reactsky;
     background-color: rgba(239, 239, 239, 0.9);
     color: black;
     height: 100%;
+    margin-bottom: 100%;
 }
 
 .display-4{
