@@ -43,7 +43,7 @@ class CheckoutForm(Formless):
         o = o.filter(user=self.request.user).filter(status="cart").first()
         for i in o.active_items(False):
             if i.quantity > i.product.quantity:
-                raise forms.ValidationError("We only have " + str(i.product.quantity) + " of " + i.product.name + " left!")
+                raise forms.ValidationError("We only have " + str(int(i.product.quantity)) + " of " + i.product.name + " left!")
             elif i.product.status == "I":
                 raise forms.ValidationError("The " + i.product.name + " product is no longer available.")
         try:

@@ -5,14 +5,14 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1523332685.2152507
+_modified_time = 1523403627.7206647
 _enable_loop = True
-_template_filename = 'C:/users/scott laptop/documents/mariah/intex/intex-ii/catalog/templates/checkout.html'
+_template_filename = 'C:/users/Scott Laptop/documents/Mariah/intex/intex-ii/catalog/templates/checkout.html'
 _template_uri = 'checkout.html'
 _source_encoding = 'utf-8'
 import django_mako_plus
 import django_mako_plus
-_exports = ['center']
+_exports = ['center', 'left', 'right']
 
 
 def _mako_get_namespace(context, name):
@@ -32,15 +32,29 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        order = context.get('order', UNDEFINED)
-        fl = _mako_get_namespace(context, 'fl')
+        def left():
+            return render_left(context._locals(__M_locals))
+        def right():
+            return render_right(context._locals(__M_locals))
         def center():
             return render_center(context._locals(__M_locals))
+        order = context.get('order', UNDEFINED)
+        fl = _mako_get_namespace(context, 'fl')
         __M_writer = context.writer()
         __M_writer('\r\n')
         __M_writer('\r\n\r\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'center'):
             context['self'].center(**pageargs)
+        
+
+        __M_writer('\r\n\r\n')
+        if 'parent' not in context._data or not hasattr(context._data['parent'], 'left'):
+            context['self'].left(**pageargs)
+        
+
+        __M_writer('\r\n\r\n')
+        if 'parent' not in context._data or not hasattr(context._data['parent'], 'right'):
+            context['self'].right(**pageargs)
         
 
         __M_writer('\r\n')
@@ -82,8 +96,30 @@ def render_center(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
+def render_left(context,**pageargs):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        def left():
+            return render_left(context)
+        __M_writer = context.writer()
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
+def render_right(context,**pageargs):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        def right():
+            return render_right(context)
+        __M_writer = context.writer()
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
 """
 __M_BEGIN_METADATA
-{"filename": "C:/users/scott laptop/documents/mariah/intex/intex-ii/catalog/templates/checkout.html", "uri": "checkout.html", "source_encoding": "utf-8", "line_map": {"25": 2, "31": 0, "40": 1, "41": 2, "46": 26, "52": 4, "60": 4, "61": 6, "62": 6, "67": 9, "68": 14, "69": 14, "70": 15, "71": 15, "76": 9, "79": 23, "85": 79}}
+{"filename": "C:/users/Scott Laptop/documents/Mariah/intex/intex-ii/catalog/templates/checkout.html", "uri": "checkout.html", "source_encoding": "utf-8", "line_map": {"25": 2, "31": 0, "44": 1, "45": 2, "50": 26, "55": 28, "60": 30, "66": 4, "74": 4, "75": 6, "76": 6, "81": 9, "82": 14, "83": 14, "84": 15, "85": 15, "90": 9, "93": 23, "99": 28, "110": 30, "121": 110}}
 __M_END_METADATA
 """

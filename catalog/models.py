@@ -88,6 +88,8 @@ class Order(models.Model):
                 p = i.product
                 if p.__class__.__name__ == "BulkProduct":
                     p.quantity = p.quantity - i.quantity
+                    if p.quantity < 1:
+                        p.status = 'I'
                     p.save()
                 else:
                     if p.name != "Sales Tax":

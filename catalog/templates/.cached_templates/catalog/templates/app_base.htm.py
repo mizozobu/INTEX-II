@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1523395667.243526
+_modified_time = 1523403433.5711174
 _enable_loop = True
 _template_filename = 'C:/users/Scott Laptop/documents/Mariah/intex/intex-ii/catalog/templates/app_base.htm'
 _template_uri = 'catalog/templates/app_base.htm'
@@ -36,20 +36,20 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
+        range = context.get('range', UNDEFINED)
+        len = context.get('len', UNDEFINED)
         category_id = context.get('category_id', UNDEFINED)
-        def header():
-            return render_header(context._locals(__M_locals))
-        def left():
-            return render_left(context._locals(__M_locals))
-        null = context.get('null', UNDEFINED)
         def right():
             return render_right(context._locals(__M_locals))
+        request = context.get('request', UNDEFINED)
+        null = context.get('null', UNDEFINED)
+        def left():
+            return render_left(context._locals(__M_locals))
+        def header():
+            return render_header(context._locals(__M_locals))
         STATIC_URL = context.get('STATIC_URL', UNDEFINED)
-        len = context.get('len', UNDEFINED)
-        range = context.get('range', UNDEFINED)
         def footer():
             return render_footer(context._locals(__M_locals))
-        request = context.get('request', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n')
         __M_writer('\r\n')
@@ -84,9 +84,9 @@ def render_header(context,**pageargs):
     try:
         STATIC_URL = context.get('STATIC_URL', UNDEFINED)
         null = context.get('null', UNDEFINED)
+        request = context.get('request', UNDEFINED)
         def header():
             return render_header(context)
-        request = context.get('request', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n    <nav class="navbar fixed-top navbar-light bg-faded">\r\n        <a class="navbar-brand" href="/homepage/">\r\n            <img src="')
         __M_writer(str( STATIC_URL ))
@@ -115,7 +115,13 @@ def render_header(context,**pageargs):
             __M_writer(str(cart.num_items()))
             __M_writer(')</a></li>\r\n')
         if  request.user.is_authenticated:
-            __M_writer('            <li class="nav-item dropdown">\r\n                <button class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account</button>\r\n                <div class="dropdown-menu">\r\n                    <a class="dropdown-item" href="/account/logout/">Log Out</a>\r\n                </div>\r\n            </li>\r\n')
+            __M_writer('            <li class="nav-item dropdown">\r\n                <button class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account</button>\r\n                <div class="dropdown-menu">\r\n                  ')
+            currentUser = amod.User.objects.get(id=request.user.id) 
+            
+            __M_writer('\r\n')
+            if currentUser.is_staff == True:
+                __M_writer('                    <a class="dropdown-item" href="/manager/index/">Edit Products</a>\r\n')
+            __M_writer('                    <a class="dropdown-item" href="/account/logout/">Log Out</a>\r\n\r\n                </div>\r\n            </li>\r\n')
         else:
             __M_writer('            <li class="nav-item dropdown">\r\n                <button class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Log In</button>\r\n                <div class="dropdown-menu">\r\n                    <a class="dropdown-item" href="/account/signup/">Sign Up</a>\r\n                    <a class="dropdown-item" href="/account/login/">Log In</a>\r\n                </div>\r\n            </li>\r\n')
         __M_writer('        </ul>\r\n    </nav>\r\n')
@@ -127,9 +133,9 @@ def render_header(context,**pageargs):
 def render_left(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        category_id = context.get('category_id', UNDEFINED)
         def left():
             return render_left(context)
+        category_id = context.get('category_id', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n    <div class="content left">\r\n        <ul class="category-list">\r\n            <a id="all-product" href="/catalog/index/"><li>All Products</li></a>\r\n')
         for c in m.Category.objects.all():
@@ -149,10 +155,10 @@ def render_left(context,**pageargs):
 def render_right(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
+        range = context.get('range', UNDEFINED)
+        len = context.get('len', UNDEFINED)
         def right():
             return render_right(context)
-        len = context.get('len', UNDEFINED)
-        range = context.get('range', UNDEFINED)
         request = context.get('request', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n    <div class="content right">\r\n        <div id="right-container">\r\n            <p class="right-heading">View History</p>\r\n            <ol class="history">\r\n')
@@ -191,6 +197,6 @@ def render_footer(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:/users/Scott Laptop/documents/Mariah/intex/intex-ii/catalog/templates/app_base.htm", "uri": "catalog/templates/app_base.htm", "source_encoding": "utf-8", "line_map": {"18": 2, "20": 3, "22": 73, "35": 0, "54": 1, "55": 2, "56": 3, "61": 39, "66": 50, "71": 69, "76": 76, "82": 5, "91": 5, "92": 8, "93": 8, "94": 11, "95": 11, "96": 12, "97": 12, "98": 13, "99": 13, "100": 14, "101": 14, "102": 15, "103": 15, "104": 16, "105": 16, "106": 17, "108": 17, "109": 18, "110": 19, "111": 19, "112": 19, "113": 19, "114": 19, "115": 19, "116": 19, "117": 21, "118": 22, "119": 28, "120": 29, "121": 37, "127": 41, "134": 41, "135": 45, "136": 46, "137": 46, "138": 46, "139": 46, "140": 46, "141": 46, "142": 46, "143": 48, "149": 52, "158": 52, "159": 57, "160": 58, "161": 58, "162": 58, "163": 60, "164": 60, "165": 60, "166": 60, "167": 61, "168": 61, "169": 62, "170": 62, "171": 66, "177": 71, "183": 71, "184": 73, "185": 74, "186": 74, "192": 186}}
+{"filename": "C:/users/Scott Laptop/documents/Mariah/intex/intex-ii/catalog/templates/app_base.htm", "uri": "catalog/templates/app_base.htm", "source_encoding": "utf-8", "line_map": {"18": 2, "20": 3, "22": 78, "35": 0, "54": 1, "55": 2, "56": 3, "61": 44, "66": 55, "71": 74, "76": 81, "82": 5, "91": 5, "92": 8, "93": 8, "94": 11, "95": 11, "96": 12, "97": 12, "98": 13, "99": 13, "100": 14, "101": 14, "102": 15, "103": 15, "104": 16, "105": 16, "106": 17, "108": 17, "109": 18, "110": 19, "111": 19, "112": 19, "113": 19, "114": 19, "115": 19, "116": 19, "117": 21, "118": 22, "119": 25, "121": 25, "122": 26, "123": 27, "124": 29, "125": 33, "126": 34, "127": 42, "133": 46, "140": 46, "141": 50, "142": 51, "143": 51, "144": 51, "145": 51, "146": 51, "147": 51, "148": 51, "149": 53, "155": 57, "164": 57, "165": 62, "166": 63, "167": 63, "168": 63, "169": 65, "170": 65, "171": 65, "172": 65, "173": 66, "174": 66, "175": 67, "176": 67, "177": 71, "183": 76, "189": 76, "190": 78, "191": 79, "192": 79, "198": 192}}
 __M_END_METADATA
 """

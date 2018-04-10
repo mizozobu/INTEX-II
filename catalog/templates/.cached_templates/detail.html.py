@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1523397322.488316
+_modified_time = 1523403563.8820326
 _enable_loop = True
 _template_filename = 'C:/users/Scott Laptop/documents/Mariah/intex/intex-ii/catalog/templates/detail.html'
 _template_uri = 'detail.html'
@@ -32,13 +32,13 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        int = context.get('int', UNDEFINED)
-        product = context.get('product', UNDEFINED)
         range = context.get('range', UNDEFINED)
         def center():
             return render_center(context._locals(__M_locals))
         type = context.get('type', UNDEFINED)
         form = context.get('form', UNDEFINED)
+        int = context.get('int', UNDEFINED)
+        product = context.get('product', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n')
         __M_writer('\r\n\r\n')
@@ -65,11 +65,11 @@ def render_body(context,**pageargs):
 def render_center(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
+        form = context.get('form', UNDEFINED)
         product = context.get('product', UNDEFINED)
+        int = context.get('int', UNDEFINED)
         def center():
             return render_center(context)
-        int = context.get('int', UNDEFINED)
-        form = context.get('form', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n\r\n<div class="content">\r\n    <div class="container flexobjs">\r\n\r\n        <ul class="product-images">\r\n')
         for url in product.image_urls():
@@ -90,7 +90,7 @@ def render_center(context,**pageargs):
         __M_writer(str(product.description))
         __M_writer('</p>\r\n        <p class="bold">Quantity Remaining: ')
         __M_writer(str( int(product.quantity) ))
-        __M_writer('\r\n      </div>\r\n\r\n    </div>\r\n\r\n\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n<div class="flexContainer">\r\n\r\n    <ul id="sideImgs">\r\n        <li><img src="img" alt="Product Image" class=\'imageTile\' /></li>\r\n\r\n    </ul>\r\n\r\n    <div id="mainImg">\r\n      <img src="selectedProduct.image_url()" alt=\'Product image\' id="largeImg" />\r\n    </div>\r\n\r\n    <div id="buyCont">\r\n        <h1>selectedProduct.name</h1>\r\n        <p>selectedProduct.description</p>\r\n        <input type="text" name="Quantity" class="\'\' if selectedProduct.TITLE == Bulk else \'hideitem\' }" />\r\n        <input type="submit" class="btn btn-primary" value="Buy" id="buyBtn" />\r\n    </div>\r\n\r\n  </div>\r\n\r\n\r\n\r\n\r\n')
+        __M_writer('\r\n      </div>\r\n\r\n    </div>\r\n\r\n\r\n</div>\r\n\r\n\r\n\r\n\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -98,6 +98,6 @@ def render_center(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:/users/Scott Laptop/documents/Mariah/intex/intex-ii/catalog/templates/detail.html", "uri": "detail.html", "source_encoding": "utf-8", "line_map": {"18": 2, "31": 0, "43": 1, "44": 2, "49": 61, "50": 65, "51": 66, "52": 67, "53": 68, "54": 68, "55": 68, "56": 68, "57": 68, "58": 70, "59": 73, "65": 4, "74": 4, "75": 10, "76": 11, "77": 11, "78": 11, "79": 11, "80": 11, "81": 13, "82": 16, "83": 16, "84": 16, "85": 16, "86": 19, "87": 19, "88": 24, "89": 24, "90": 25, "91": 25, "92": 26, "93": 26, "99": 93}}
+{"filename": "C:/users/Scott Laptop/documents/Mariah/intex/intex-ii/catalog/templates/detail.html", "uri": "detail.html", "source_encoding": "utf-8", "line_map": {"18": 2, "31": 0, "43": 1, "44": 2, "49": 37, "50": 41, "51": 42, "52": 43, "53": 44, "54": 44, "55": 44, "56": 44, "57": 44, "58": 46, "59": 49, "65": 4, "74": 4, "75": 10, "76": 11, "77": 11, "78": 11, "79": 11, "80": 11, "81": 13, "82": 16, "83": 16, "84": 16, "85": 16, "86": 19, "87": 19, "88": 24, "89": 24, "90": 25, "91": 25, "92": 26, "93": 26, "99": 93}}
 __M_END_METADATA
 """
