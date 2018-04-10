@@ -1,0 +1,18 @@
+### Django ###
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+### venv ###
+.env
+### Database ###
+db.sqlite3
+### Database ###
+settings.py
+venv/
+*.pyo
+__pycache__/
+.cached_templates/
+db.sqlite3
+.sass-cache/
