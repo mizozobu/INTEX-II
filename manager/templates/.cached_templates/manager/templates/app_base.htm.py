@@ -5,9 +5,9 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1523403112.5472615
+_modified_time = 1523466396.735158
 _enable_loop = True
-_template_filename = 'C:/users/Scott Laptop/documents/Mariah/intex/intex-ii/manager/templates/app_base.htm'
+_template_filename = 'C:/Users/Scott Laptop/Documents/Mariah/intex/intex-ii/manager/templates/app_base.htm'
 _template_uri = 'manager/templates/app_base.htm'
 _source_encoding = 'utf-8'
 import django_mako_plus
@@ -34,9 +34,9 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        request = context.get('request', UNDEFINED)
-        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
         null = context.get('null', UNDEFINED)
+        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
+        request = context.get('request', UNDEFINED)
         def header():
             return render_header(context._locals(__M_locals))
         __M_writer = context.writer()
@@ -56,9 +56,9 @@ def render_body(context,**pageargs):
 def render_header(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        request = context.get('request', UNDEFINED)
-        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
         null = context.get('null', UNDEFINED)
+        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
+        request = context.get('request', UNDEFINED)
         def header():
             return render_header(context)
         __M_writer = context.writer()
@@ -92,10 +92,10 @@ def render_header(context,**pageargs):
             __M_writer('            <li class="nav-item dropdown">\r\n                <button class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account</button>\r\n                <div class="dropdown-menu">\r\n                  ')
             currentUser = amod.User.objects.get(id=request.user.id) 
             
-            __M_writer('\r\n')
+            __M_writer('\r\n                  \r\n')
             if currentUser.is_staff == True:
                 __M_writer('                    <a class="dropdown-item" href="/manager/index/">Edit Products</a>\r\n')
-            __M_writer('                    <a class="dropdown-item" href="/manager/index/">Edit Products</a>\r\n\r\n                    <a class="dropdown-item" href="/account/logout/">Log Out</a>\r\n                </div>\r\n            </li>\r\n')
+            __M_writer('\r\n                    <a class="dropdown-item" href="/account/logout/">Log Out</a>\r\n                </div>\r\n            </li>\r\n')
         else:
             __M_writer('            <li class="nav-item dropdown">\r\n                <button class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Log In</button>\r\n                <div class="dropdown-menu">\r\n                    <a class="dropdown-item" href="/account/signup/">Sign Up</a>\r\n                    <a class="dropdown-item" href="/account/login/">Log In</a>\r\n                </div>\r\n            </li>\r\n')
         __M_writer('        </ul>\r\n    </nav>\r\n')
@@ -106,6 +106,6 @@ def render_header(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:/users/Scott Laptop/documents/Mariah/intex/intex-ii/manager/templates/app_base.htm", "uri": "manager/templates/app_base.htm", "source_encoding": "utf-8", "line_map": {"18": 2, "20": 3, "33": 0, "43": 1, "44": 2, "45": 3, "50": 45, "56": 5, "65": 5, "66": 8, "67": 8, "68": 11, "69": 11, "70": 12, "71": 12, "72": 13, "73": 13, "74": 14, "75": 14, "76": 15, "77": 15, "78": 16, "79": 16, "80": 17, "82": 17, "83": 18, "84": 19, "85": 19, "86": 19, "87": 19, "88": 19, "89": 19, "90": 19, "91": 21, "92": 22, "93": 25, "95": 25, "96": 26, "97": 27, "98": 29, "99": 34, "100": 35, "101": 43, "107": 101}}
+{"filename": "C:/Users/Scott Laptop/Documents/Mariah/intex/intex-ii/manager/templates/app_base.htm", "uri": "manager/templates/app_base.htm", "source_encoding": "utf-8", "line_map": {"18": 2, "20": 3, "33": 0, "43": 1, "44": 2, "45": 3, "50": 45, "56": 5, "65": 5, "66": 8, "67": 8, "68": 11, "69": 11, "70": 12, "71": 12, "72": 13, "73": 13, "74": 14, "75": 14, "76": 15, "77": 15, "78": 16, "79": 16, "80": 17, "82": 17, "83": 18, "84": 19, "85": 19, "86": 19, "87": 19, "88": 19, "89": 19, "90": 19, "91": 21, "92": 22, "93": 25, "95": 25, "96": 27, "97": 28, "98": 30, "99": 34, "100": 35, "101": 43, "107": 101}}
 __M_END_METADATA
 """
