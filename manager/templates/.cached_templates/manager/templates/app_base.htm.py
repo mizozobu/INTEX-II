@@ -5,9 +5,9 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1523403112.5472615
+_modified_time = 1523465965.798095
 _enable_loop = True
-_template_filename = 'C:/users/Scott Laptop/documents/Mariah/intex/intex-ii/manager/templates/app_base.htm'
+_template_filename = 'C:/INTEX-II/manager/templates/app_base.htm'
 _template_uri = 'manager/templates/app_base.htm'
 _source_encoding = 'utf-8'
 import django_mako_plus
@@ -34,11 +34,11 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        request = context.get('request', UNDEFINED)
-        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
-        null = context.get('null', UNDEFINED)
         def header():
             return render_header(context._locals(__M_locals))
+        null = context.get('null', UNDEFINED)
+        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
+        request = context.get('request', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n')
         __M_writer('\r\n')
@@ -56,11 +56,11 @@ def render_body(context,**pageargs):
 def render_header(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        request = context.get('request', UNDEFINED)
-        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
-        null = context.get('null', UNDEFINED)
         def header():
             return render_header(context)
+        null = context.get('null', UNDEFINED)
+        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
+        request = context.get('request', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n    <nav class="navbar fixed-top navbar-light bg-faded">\r\n        <a class="navbar-brand" href="/homepage/">\r\n            <img src="')
         __M_writer(str( STATIC_URL ))
@@ -93,7 +93,7 @@ def render_header(context,**pageargs):
             currentUser = amod.User.objects.get(id=request.user.id) 
             
             __M_writer('\r\n')
-            if currentUser.is_staff == True:
+            if currentUser.is_superuser:
                 __M_writer('                    <a class="dropdown-item" href="/manager/index/">Edit Products</a>\r\n')
             __M_writer('                    <a class="dropdown-item" href="/manager/index/">Edit Products</a>\r\n\r\n                    <a class="dropdown-item" href="/account/logout/">Log Out</a>\r\n                </div>\r\n            </li>\r\n')
         else:
@@ -106,6 +106,6 @@ def render_header(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:/users/Scott Laptop/documents/Mariah/intex/intex-ii/manager/templates/app_base.htm", "uri": "manager/templates/app_base.htm", "source_encoding": "utf-8", "line_map": {"18": 2, "20": 3, "33": 0, "43": 1, "44": 2, "45": 3, "50": 45, "56": 5, "65": 5, "66": 8, "67": 8, "68": 11, "69": 11, "70": 12, "71": 12, "72": 13, "73": 13, "74": 14, "75": 14, "76": 15, "77": 15, "78": 16, "79": 16, "80": 17, "82": 17, "83": 18, "84": 19, "85": 19, "86": 19, "87": 19, "88": 19, "89": 19, "90": 19, "91": 21, "92": 22, "93": 25, "95": 25, "96": 26, "97": 27, "98": 29, "99": 34, "100": 35, "101": 43, "107": 101}}
+{"filename": "C:/INTEX-II/manager/templates/app_base.htm", "uri": "manager/templates/app_base.htm", "source_encoding": "utf-8", "line_map": {"18": 2, "20": 3, "33": 0, "43": 1, "44": 2, "45": 3, "50": 45, "56": 5, "65": 5, "66": 8, "67": 8, "68": 11, "69": 11, "70": 12, "71": 12, "72": 13, "73": 13, "74": 14, "75": 14, "76": 15, "77": 15, "78": 16, "79": 16, "80": 17, "82": 17, "83": 18, "84": 19, "85": 19, "86": 19, "87": 19, "88": 19, "89": 19, "90": 19, "91": 21, "92": 22, "93": 25, "95": 25, "96": 26, "97": 27, "98": 29, "99": 34, "100": 35, "101": 43, "107": 101}}
 __M_END_METADATA
 """
