@@ -194,9 +194,9 @@ WSGI_APPLICATION = 'FOMO.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'asdf',
+        'NAME': 'intex2',
         'USER': 'postgres',
-        'PASSWORD': 'password1',
+        'PASSWORD': 'jayman',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
