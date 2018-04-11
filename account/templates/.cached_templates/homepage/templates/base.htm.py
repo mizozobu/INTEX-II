@@ -5,9 +5,9 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1523330479.8167424
+_modified_time = 1523417534.4473941
 _enable_loop = True
-_template_filename = 'C:/users/scott laptop/documents/mariah/intex/intex-ii/homepage/templates/base.htm'
+_template_filename = 'C:/Users/hamcm/Desktop/intex-ii/intex-ii/homepage/templates/base.htm'
 _template_uri = 'homepage/templates/base.htm'
 _source_encoding = 'utf-8'
 import django_mako_plus
@@ -19,26 +19,26 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
+        def header():
+            return render_header(context._locals(__M_locals))
         def addonlink():
             return render_addonlink(context._locals(__M_locals))
+        def right():
+            return render_right(context._locals(__M_locals))
+        self = context.get('self', UNDEFINED)
+        def maintenanceMessage():
+            return render_maintenanceMessage(context._locals(__M_locals))
+        def footer():
+            return render_footer(context._locals(__M_locals))
+        def center():
+            return render_center(context._locals(__M_locals))
         def left():
             return render_left(context._locals(__M_locals))
         def top():
             return render_top(context._locals(__M_locals))
         def bottom():
             return render_bottom(context._locals(__M_locals))
-        def right():
-            return render_right(context._locals(__M_locals))
         STATIC_URL = context.get('STATIC_URL', UNDEFINED)
-        def maintenanceMessage():
-            return render_maintenanceMessage(context._locals(__M_locals))
-        def header():
-            return render_header(context._locals(__M_locals))
-        def center():
-            return render_center(context._locals(__M_locals))
-        self = context.get('self', UNDEFINED)
-        def footer():
-            return render_footer(context._locals(__M_locals))
         __M_writer = context.writer()
         __M_writer('<!DOCTYPE html>\r\n<html>\r\n    <meta charset="UTF-8">\r\n    <head>\r\n        <title>FOMO</title>\r\n\r\n')
         __M_writer('        <link rel="icon" href="')
@@ -58,7 +58,7 @@ def render_body(context,**pageargs):
         
 
         __M_writer('\r\n')
-        __M_writer('        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>\r\n\r\n')
+        __M_writer('        <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>\r\n\r\n')
         __M_writer('        <script src="/django_mako_plus/dmp-common.min.js"></script>\r\n        ')
         __M_writer(str( django_mako_plus.links(self) ))
         __M_writer('\r\n    </head>\r\n    <body>\r\n        <div id="page">\r\n\r\n            <a class="d-none" href="#content">skip to content</a>\r\n\r\n            <div class="container">\r\n              <div class="row">\r\n                <div class="row">\r\n                    ')
@@ -86,7 +86,7 @@ def render_body(context,**pageargs):
             context['self'].center(**pageargs)
         
 
-        __M_writer('\r\n                  </div>\r\n                </div>\r\n                \r\n                <div class="col-md-2" id="right">\r\n                  <div class="content">\r\n                    ')
+        __M_writer('\r\n                  </div>\r\n                </div>\r\n\r\n                <div class="col-md-2" id="right">\r\n                  <div class="content">\r\n                    ')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'right'):
             context['self'].right(**pageargs)
         
@@ -209,6 +209,6 @@ def render_footer(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:/users/scott laptop/documents/mariah/intex/intex-ii/homepage/templates/base.htm", "uri": "homepage/templates/base.htm", "source_encoding": "utf-8", "line_map": {"18": 0, "43": 2, "44": 9, "45": 9, "46": 9, "47": 12, "48": 12, "49": 12, "50": 13, "51": 13, "52": 14, "53": 14, "54": 15, "55": 15, "60": 16, "61": 18, "62": 21, "63": 22, "64": 22, "69": 32, "74": 38, "79": 45, "84": 53, "89": 58, "94": 64, "95": 70, "100": 72, "105": 88, "111": 16, "122": 32, "133": 38, "144": 45, "155": 53, "166": 58, "177": 64, "188": 72, "199": 88, "210": 199}}
+{"filename": "C:/Users/hamcm/Desktop/intex-ii/intex-ii/homepage/templates/base.htm", "uri": "homepage/templates/base.htm", "source_encoding": "utf-8", "line_map": {"18": 0, "43": 2, "44": 9, "45": 9, "46": 9, "47": 12, "48": 12, "49": 12, "50": 13, "51": 13, "52": 14, "53": 14, "54": 15, "55": 15, "60": 16, "61": 18, "62": 21, "63": 22, "64": 22, "69": 32, "74": 38, "79": 45, "84": 53, "89": 58, "94": 64, "95": 70, "100": 72, "105": 88, "111": 16, "122": 32, "133": 38, "144": 45, "155": 53, "166": 58, "177": 64, "188": 72, "199": 88, "210": 199}}
 __M_END_METADATA
 """
