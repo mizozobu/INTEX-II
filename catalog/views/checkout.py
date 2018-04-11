@@ -14,17 +14,16 @@ from formlib.form import Formless
 from django import forms
 from django.http import HttpResponseRedirect
 
-
 @view_function
 def process_request(request, order: cmod.Order):
     form = CheckoutForm(request)
     form.submit_text = None
     if form.is_valid():
         form.commit()
-        return HttpResponseRedirect('/catalog/thankyou')
+        return HttpResponseRedirect('/catalog/thankyou/' + str(order.id))
     context = {
         'form': form,
-        'order': order
+        'order': order,
     }
 
     return request.dmp.render('checkout.html', context)
@@ -44,7 +43,7 @@ class CheckoutForm(Formless):
         o = o.filter(user=self.request.user).filter(status="cart").first()
         for i in o.active_items(False):
             if i.quantity > i.product.quantity:
-                raise forms.ValidationError("We only have " + str(i.product.quantity) + " of " + i.product.name + " left!")
+                raise forms.ValidationError("We only have " + str(int(i.product.quantity)) + " of " + i.product.name + " left!")
             elif i.product.status == "I":
                 raise forms.ValidationError("The " + i.product.name + " product is no longer available.")
         try:

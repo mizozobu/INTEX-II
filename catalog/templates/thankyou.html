@@ -1,12 +1,86 @@
 <%inherit file="catalog/templates/app_base.htm" />
 
 <%block name="center">
-    <div class="content">
+    <div class="content text-center">
         <h1>Thank You</h1>
         <p id="message">
           Your order is being processed, and will be shipped to you shortly.
-
         </p>
-        <a class="btn btn-default contShop" href="/catalog/">Continue Shopping</a>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>
+                Product
+              </th>
+              <th>
+                Quantity
+              </th>
+              <th>
+                Price
+              </th>
+              <th>
+                Item Total
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            %for item in items:
+              <tr>
+                <td class="productTile">
+                    <img src="${ item.product.image_url() }" alt="Image of ${ item.product.name }" width="100px" />
+                </td>
+                <td>
+                  ${ item.product.name }
+                </td>
+                <td>
+                  ${ item.quantity }
+                </td>
+                <td>
+                  $${ item.price} each
+                </td>
+                <td>
+                  $${ item.extended }
+                </td>
+              </tr>
+            %endfor
+          </tbody>
+          <thead>
+            <tr>
+              <th>
+                Sales Tax:
+              </th>
+              <th>
+              </th>
+              <th>
+              </th>
+              <th>
+              </th>
+              <th>
+                $${ tax.price }
+              </th>
+            </tr>
+            <tr>
+              <th>
+                Total:
+              </th>
+              <th>
+              </th>
+              <th>
+              </th>
+              <th>
+              </th>
+              <th>
+                $${ order.total_price }
+              </th>
+            </tr>
+          </thead>
+        </table>
+
+        <a class="btn btn-primary contShop" href="/catalog/">Continue Shopping</a>
     </div>
 </%block>
+
+<%block name="left"></%block>
+<%block name="right"></%block>

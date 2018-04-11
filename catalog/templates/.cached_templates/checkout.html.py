@@ -5,14 +5,14 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1523319846.9632878
+_modified_time = 1523403627.7206647
 _enable_loop = True
-_template_filename = '/mnt/c/Users/hilar/OneDrive - BYU Office 365/IS413/INTEX-II/catalog/templates/checkout.html'
+_template_filename = 'C:/users/Scott Laptop/documents/Mariah/intex/intex-ii/catalog/templates/checkout.html'
 _template_uri = 'checkout.html'
 _source_encoding = 'utf-8'
 import django_mako_plus
 import django_mako_plus
-_exports = ['center']
+_exports = ['center', 'left', 'right']
 
 
 def _mako_get_namespace(context, name):
@@ -32,18 +32,32 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        fl = _mako_get_namespace(context, 'fl')
+        def left():
+            return render_left(context._locals(__M_locals))
+        def right():
+            return render_right(context._locals(__M_locals))
         def center():
             return render_center(context._locals(__M_locals))
         order = context.get('order', UNDEFINED)
+        fl = _mako_get_namespace(context, 'fl')
         __M_writer = context.writer()
-        __M_writer('\n')
-        __M_writer('\n\n')
+        __M_writer('\r\n')
+        __M_writer('\r\n\r\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'center'):
             context['self'].center(**pageargs)
         
 
-        __M_writer('\n')
+        __M_writer('\r\n\r\n')
+        if 'parent' not in context._data or not hasattr(context._data['parent'], 'left'):
+            context['self'].left(**pageargs)
+        
+
+        __M_writer('\r\n\r\n')
+        if 'parent' not in context._data or not hasattr(context._data['parent'], 'right'):
+            context['self'].right(**pageargs)
+        
+
+        __M_writer('\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -52,23 +66,23 @@ def render_body(context,**pageargs):
 def render_center(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
+        order = context.get('order', UNDEFINED)
         fl = _mako_get_namespace(context, 'fl')
         def center():
             return render_center(context)
-        order = context.get('order', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer('\n<h1>You are about to pay $')
+        __M_writer('\r\n<div class="content">\r\n<h1>You are about to pay $')
         __M_writer(str(order.total_price))
-        __M_writer('</h1>\n  <div id="form">\n    ')
+        __M_writer('.</h1>\r\n<p>Please enter your shipping information below.</p>\r\n  <div id="form">\r\n    ')
         def ccall(caller):
             def body():
                 settings = context.get('settings', UNDEFINED)
                 __M_writer = context.writer()
-                __M_writer('\n      <div class="text-center">\n        <script\n          src="https://checkout.stripe.com/checkout.js"\n          class="stripe-button"\n          data-key="')
+                __M_writer('\r\n      <div class="text-center">\r\n        <script\r\n          src="https://checkout.stripe.com/checkout.js"\r\n          class="stripe-button"\r\n          data-key="')
                 __M_writer(str(settings.STRIPE_PUBLIC_KEY))
-                __M_writer('"\n          data-amount="')
+                __M_writer('"\r\n          data-amount="')
                 __M_writer(str(order.total_price * 100))
-                __M_writer('"\n          data-name="FOMO"\n          data-description="Widget"\n          data-image="https://stripe.com/img/documentation/checkout/marketplace.png"\n          data-locale="auto"\n          data-label="Pay Now">\n        </script>\n      </div>\n    ')
+                __M_writer('"\r\n          data-name="FOMO"\r\n          data-description="Widget"\r\n          data-image="https://stripe.com/img/documentation/checkout/marketplace.png"\r\n          data-locale="auto"\r\n          data-label="Pay Now">\r\n        </script>\r\n      </div>\r\n    ')
                 return ''
             return [body]
         context.caller_stack.nextcaller = runtime.Namespace('caller', context, callables=ccall(__M_caller))
@@ -76,7 +90,29 @@ def render_center(context,**pageargs):
             __M_writer(str(fl.render()))
         finally:
             context.caller_stack.nextcaller = None
-        __M_writer('\n  </div>\n')
+        __M_writer('\r\n  </div>\r\n</div>\r\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
+def render_left(context,**pageargs):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        def left():
+            return render_left(context)
+        __M_writer = context.writer()
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
+def render_right(context,**pageargs):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        def right():
+            return render_right(context)
+        __M_writer = context.writer()
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -84,6 +120,6 @@ def render_center(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"line_map": {"67": 7, "68": 12, "69": 12, "70": 13, "71": 13, "40": 1, "41": 2, "76": 7, "46": 23, "79": 21, "52": 4, "85": 79, "25": 2, "60": 4, "61": 5, "62": 5, "31": 0}, "uri": "checkout.html", "source_encoding": "utf-8", "filename": "/mnt/c/Users/hilar/OneDrive - BYU Office 365/IS413/INTEX-II/catalog/templates/checkout.html"}
+{"filename": "C:/users/Scott Laptop/documents/Mariah/intex/intex-ii/catalog/templates/checkout.html", "uri": "checkout.html", "source_encoding": "utf-8", "line_map": {"25": 2, "31": 0, "44": 1, "45": 2, "50": 26, "55": 28, "60": 30, "66": 4, "74": 4, "75": 6, "76": 6, "81": 9, "82": 14, "83": 14, "84": 15, "85": 15, "90": 9, "93": 23, "99": 28, "110": 30, "121": 110}}
 __M_END_METADATA
 """

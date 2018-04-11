@@ -9,6 +9,7 @@ class User(AbstractCUser):
     city = models.TextField(blank=True, null=True)
     state = models.TextField(blank=True, null=True)
     zip = models.TextField(blank=True, null=True)
+    username = models.TextField(blank=True, null=True)
 
     def get_full_name(self):
         return "{} {}".format(self.first_name, self.last_name)

@@ -1,0 +1,105 @@
+.navbar.fixed-top.navbar-light.bg-faded {
+  height: 70px;
+  background-color: black;
+  color: white;
+  opacity: 10%; }
+
+a {
+  color: #FF9900; }
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: #FF9900;
+  color: black;
+  font-weight: bold; }
+
+.nav-pills .nav-link {
+  background-color: black;
+  color: #FF9900;
+  border: 1px solid black; }
+  .nav-pills .nav-link:hover {
+    border: 1px solid #FF9900; }
+
+#left {
+  padding: 0; }
+
+.left {
+  position: fixed;
+  height: 100%;
+  width: 16%;
+  background-color: black;
+  color: #f2f2f2; }
+
+.category-list {
+  list-style: none;
+  padding: 2% 0 0 2%;
+  text-align: center; }
+  .category-list a {
+    color: #f2f2f2;
+    display: block;
+    background-color: #FF9900;
+    padding: 1%;
+    margin: 3% 0 0 9%;
+    max-width: 80%;
+    border-radius: 25px;
+    border: 2px solid #FF9900; }
+    .category-list a.active, .category-list a:hover {
+      background-color: #f2f2f2;
+      color: #FF9900;
+      border: 2px solid #FF9900;
+      font-weight: bold;
+      text-decoration: none; }
+
+#right-container {
+  padding: 30px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  #right-container .right-heading {
+    text-align: center; }
+  #right-container ol.history {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto; }
+    #right-container ol.history .viewed-item {
+      border-radius: 25px;
+      width: 80px;
+      margin: 0 0 15%;
+      opacity: 0.5;
+      position: relative; }
+      #right-container ol.history .viewed-item:hover {
+        opacity: 1.0;
+        box-shadow: 2px 2px #FF9900; }
+      #right-container ol.history .viewed-item img {
+        border-radius: 25px;
+        width: 100%; }
+      #right-container ol.history .viewed-item p {
+        background-color: white;
+        color: black;
+        font-size: 10px;
+        padding: 0 5%;
+        margin: 0;
+        border-radius: 25px;
+        position: absolute; }
+        #right-container ol.history .viewed-item p.name {
+          top: -4px;
+          left: -4px; }
+        #right-container ol.history .viewed-item p.price {
+          bottom: -4px;
+          right: -4px; }
+
+.footer-text {
+  font-size: 13px;
+  position: absolute;
+  bottom: 2%;
+  right: 2%; }
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+/*# sourceMappingURL=app_base.css.map */

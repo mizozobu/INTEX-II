@@ -4,6 +4,9 @@ from datetime import datetime, timezone
 
 @view_function
 def process_request(request):
+
     context = {
+
     }
+    
     return request.dmp.render('index.html', context)

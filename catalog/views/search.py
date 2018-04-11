@@ -26,4 +26,4 @@ def process_request(request):
     products = products[(page-1)*6:page*6]
 
     products = list(products.values('category__name', 'name', 'price'))
-    return JsonResponse(products, safe=False)
+    return JsonResponse({ "products": products })

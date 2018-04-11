@@ -15,7 +15,7 @@
         <link rel="stylesheet" type="text/css" href="${ STATIC_URL }homepage/media/bootstrap/css/bootstrap.css">
         <%block name="addonlink"></%block>
         ## add any site-wide scripts or CSS here; for example, jquery:
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
         ## render the static file links with the same name as this template
         <script src="/django_mako_plus/dmp-common.min.js"></script>
@@ -24,48 +24,57 @@
     <body>
         <div id="page">
             <a class="d-none" href="#content">skip to content</a>
-            <div class="row">
-                <%block name="maintenanceMessage"></%block>
+
+            <div class="container">
+              <div class="row">
+                <div class="row">
+                    <%block name="maintenanceMessage"></%block>
+                </div>
+              </div>
             </div>
 
-            <div class="row">
-                <div class="col-sm-12" id="header">
-                    <%block name="header"></%block>
-                </div>
-            </div>
+            <header>
+                <%block name="header"></%block>
+            </header>
 
-            ## top
-            <div class="row">
-                <div class="col-sm-12" id="top">
-                    <%block name="top"></%block>
-                </div>
-            </div>
-            ## middle
-            <div class="row">
-                ## left
-                <div class="col-sm-2 d-none d-lg-block" id="left">
+            <main class="mainBox">
+
+              <div class="row">
+                  <div class="col-md-12" id="top">
+                      <%block name="top"></%block>
+                  </div>
+              </div>
+
+
+            <div class="row top-buffer">
+                <div class="col-md-2" id="left">
                     <%block name="left"></%block>
                 </div>
-                ## center
-                <div class="col-sm-12 col-lg-8" id="center">
+              <div class="col-md-8"  id="center">
                     <%block name="center"></%block>
                 </div>
-                ## right
-                <div class="col-sm-2 d-none d-lg-block" id="right">
+
+                <div class="col-md-2" id="right">
                     <%block name="right"></%block>
                 </div>
             </div>
+
             ## bottom
-            <div class="row">
-                <div class="col-sm-12" id="bottom">
+            <div class="row top-buffer">
+                <div class="col-md-12" id="bottom">
                     <%block name="bottom"></%block>
                 </div>
             </div>
+
+        </main>
+
         </div>
+
         <div id="loader-container">
             <span id="loader"></span>
             <p>LOADING ...</p>
         </div>
+
     </body>
 
     <footer>

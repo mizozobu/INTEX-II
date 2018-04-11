@@ -26,4 +26,56 @@ th {
 .btn-holder {
   padding: 0 12px; }
 
+  .table td {
+    vertical-align: middle;
+  }
+
+table {
+    box-shadow:  5px 5px rgba(221, 219, 215, 0.5);
+    border: solid;
+    border-color: #dddbd7;
+    background-color: #dddbd7;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+  }
+
+  .table td, .table tr {
+    background-color: #ffffff;
+  }
+
+  h1 {
+    position: relative;
+  }
+
+  .btn-primary {
+    background-color: #FF9900;
+    color: #f2f2f2;
+    border-color: #FF9900;
+    margin-bottom: 15px;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    top: 10px;
+  }
+
+  .btn-primary:hover {
+    background-color: #000;
+    border-color: #000;
+  }
+
+  .btn-link {
+    color: #FF9900;
+  }
+
+  .btn-link:hover {
+    color: #000;
+  }
+
+  .bottom-buffer {
+    margin-bottom: 25px;
+  }
+
 /*# sourceMappingURL=index.css.map */

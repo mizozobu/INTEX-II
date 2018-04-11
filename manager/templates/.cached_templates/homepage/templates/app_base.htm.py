@@ -5,15 +5,19 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1520457192.9923556
+_modified_time = 1523395237.333806
 _enable_loop = True
-_template_filename = 'C:/Users/hamcm/Desktop/S0/fomo/homepage/templates/app_base.htm'
+_template_filename = 'C:/users/Scott Laptop/documents/Mariah/intex/intex-ii/homepage/templates/app_base.htm'
 _template_uri = 'homepage/templates/app_base.htm'
 _source_encoding = 'utf-8'
 import django_mako_plus
 import django_mako_plus
 _exports = ['header', 'footer']
 
+
+from catalog import models as cmod 
+
+from account import models as amod 
 
 from datetime import datetime 
 
@@ -32,13 +36,16 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        request = context.get('request', UNDEFINED)
         def header():
             return render_header(context._locals(__M_locals))
+        null = context.get('null', UNDEFINED)
+        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
         def footer():
             return render_footer(context._locals(__M_locals))
-        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
+        request = context.get('request', UNDEFINED)
         __M_writer = context.writer()
+        __M_writer('\r\n')
+        __M_writer('\r\n')
         __M_writer('\r\n\r\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'header'):
             context['self'].header(**pageargs)
@@ -58,10 +65,11 @@ def render_body(context,**pageargs):
 def render_header(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        request = context.get('request', UNDEFINED)
+        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
+        null = context.get('null', UNDEFINED)
         def header():
             return render_header(context)
-        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
+        request = context.get('request', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n<nav class="navbar fixed-top navbar-light bg-faded">\r\n    <a class="navbar-brand" href="/homepage/">\r\n        <img src="')
         __M_writer(str( STATIC_URL ))
@@ -75,10 +83,23 @@ def render_header(context,**pageargs):
         __M_writer(str('active' if request.dmp.app == 'homepage' and request.dmp.page == 'terms' else '' ))
         __M_writer('" href="/homepage/terms/">Terms</a></li>\r\n        <li class="nav-item"><a class="nav-link ')
         __M_writer(str('active' if request.dmp.app == 'homepage' and request.dmp.page == 'contact' else '' ))
-        __M_writer('" href="/homepage/contact/">Contact</a></li>\r\n')
+        __M_writer('" href="/homepage/contact/">Contact</a></li>\r\n        <li class="nav-item"><a class="nav-link ')
+        __M_writer(str('active' if request.dmp.app == 'catalog' and request.dmp.page == 'index' else '' ))
+        __M_writer('" href="/catalog/index/">Catalog</a></li>\r\n        ')
+        cart = cmod.Order.objects.all().filter(user=amod.User.objects.get(email=request.user)).filter(status="cart").first() if request.user.is_authenticated else null
+        
+        __M_writer('\r\n')
+        if (cart is not null) and (cart is not None) and (cart.num_items() > 0):
+            __M_writer('        <li class="nav-item ')
+            __M_writer(str( 'active' if request.dmp.page == '/catalog/cart' else ''))
+            __M_writer('"><a href="/catalog/cart/')
+            __M_writer(str(cart.id))
+            __M_writer('" class="nav-link">Shopping Cart (')
+            __M_writer(str(cart.num_items()))
+            __M_writer(')</a></li>\r\n')
         if  request.user.is_authenticated:
             __M_writer('        <li class="nav-item dropdown">\r\n            <button class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account</button>\r\n            <div class="dropdown-menu">\r\n                <a class="dropdown-item" href="/account/logout/">Log Out</a>\r\n            </div>\r\n        </li>\r\n')
-        if  not request.user.is_authenticated:
+        else:
             __M_writer('        <li class="nav-item dropdown">\r\n            <button class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Log In</button>\r\n            <div class="dropdown-menu">\r\n                <a class="dropdown-item" href="/account/signup/">Sign Up</a>\r\n                <a class="dropdown-item" href="/account/login/">Log In</a>\r\n            </div>\r\n        </li>\r\n')
         __M_writer('    </ul>\r\n</nav>\r\n')
         return ''
@@ -103,6 +124,6 @@ def render_footer(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:/Users/hamcm/Desktop/S0/fomo/homepage/templates/app_base.htm", "uri": "homepage/templates/app_base.htm", "source_encoding": "utf-8", "line_map": {"18": 37, "31": 0, "42": 1, "47": 33, "52": 40, "58": 3, "66": 3, "67": 6, "68": 6, "69": 9, "70": 9, "71": 10, "72": 10, "73": 11, "74": 11, "75": 12, "76": 12, "77": 13, "78": 13, "79": 14, "80": 15, "81": 22, "82": 23, "83": 31, "89": 35, "95": 35, "96": 37, "97": 38, "98": 38, "104": 98}}
+{"filename": "C:/users/Scott Laptop/documents/Mariah/intex/intex-ii/homepage/templates/app_base.htm", "uri": "homepage/templates/app_base.htm", "source_encoding": "utf-8", "line_map": {"18": 2, "20": 3, "22": 43, "35": 0, "47": 1, "48": 2, "49": 3, "54": 39, "59": 46, "65": 5, "74": 5, "75": 8, "76": 8, "77": 11, "78": 11, "79": 12, "80": 12, "81": 13, "82": 13, "83": 14, "84": 14, "85": 15, "86": 15, "87": 16, "88": 16, "89": 17, "91": 17, "92": 18, "93": 19, "94": 19, "95": 19, "96": 19, "97": 19, "98": 19, "99": 19, "100": 21, "101": 22, "102": 28, "103": 29, "104": 37, "110": 41, "116": 41, "117": 43, "118": 44, "119": 44, "125": 119}}
 __M_END_METADATA
 """

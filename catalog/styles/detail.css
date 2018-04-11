@@ -1,7 +1,6 @@
 .container {
   padding: 30px 0 0 0; }
   .container ul.product-images {
-    float: left;
     list-style: none;
     padding: 0; }
     .container ul.product-images li {
@@ -14,7 +13,6 @@
   .container img.big-image {
     border-radius: 25px;
     box-shadow: 5px 5px #FF9900;
-    float: left;
     width: 350px;
     margin: 0 3% 3%; }
   .container .action {
@@ -26,4 +24,53 @@
     .container .action .btn-react-white {
       margin: 2%; }
 
-/*# sourceMappingURL=detail.css.map */
+.flexobjs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.productTile {
+  margin-right: 35px;
+}
+
+.product-images {
+  margin-right: 5px;
+}
+
+#id_quantity {
+  width: 55px;
+  display: inline;
+  margin-left: 5px;
+}
+
+.action {
+  margin-left: 10px;
+  padding-left: 10px;
+}
+
+#form p {
+  text-align: left;
+}
+
+#form p > label {
+  font-weight: bold;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #FF9900;
+  color: #f2f2f2;
+  border-color: #FF9900;
+  margin-bottom: 15px;
+  text-align: center;
+  display: block;
+}
+
+.btn-primary:hover {
+  background-color: #000;
+  border-color: #000;
+}
