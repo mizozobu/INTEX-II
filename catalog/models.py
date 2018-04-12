@@ -156,6 +156,9 @@ class Category(models.Model):
     create_date = models.DateField(auto_now_add=True)
     last_modified = models.DateField(auto_now=True)
 
+    def __str__(self):
+        '''returns Category name'''
+        return self.name
 
 class Product(PolymorphicModel):
     '''polymorphic super class'''
