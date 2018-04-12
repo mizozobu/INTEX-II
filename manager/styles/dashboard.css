@@ -3,6 +3,9 @@
   display:flex;
   align-content: space-around;
 }
+
+.top-buffer { margin-top:20px; }
+
 #flex1{
   display:flex;
   width:100%;
@@ -15,6 +18,7 @@
   width:50%;
   border: 5px solid #dddbd7;
   box-sizing: border-box;
+  padding: 10px;
 }
 
 #columnchart_material{
@@ -22,16 +26,21 @@
   width:50%;
   border: 5px solid #dddbd7;
   box-sizing: border-box;
+  padding: 10px;
 }
 
 #curve_chart{
   width:50%;
   border: 5px solid #dddbd7;
   box-sizing: border-box;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 #columnchart2_material{
   width:50%;
   border: 5px solid #dddbd7;
   box-sizing: border-box;
+  padding: 10px;
+  margin-bottom: 10px;
 }
