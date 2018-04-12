@@ -5,15 +5,12 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-<<<<<<< HEAD
 _modified_time = 1523465954.9386766
 _enable_loop = True
 _template_filename = 'C:/Users/Scott Laptop/Documents/Mariah/intex/intex-ii/catalog/templates/base.htm'
-=======
 _modified_time = 1523465688.4082532
 _enable_loop = True
 _template_filename = 'C:/INTEX-II/catalog/templates/base.htm'
->>>>>>> 0872055d7c530d4c3ab66f5b7d91b1aec28f8f96
 _template_uri = '/catalog/templates/base.htm'
 _source_encoding = 'utf-8'
 import django_mako_plus

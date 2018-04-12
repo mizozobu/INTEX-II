@@ -14,6 +14,40 @@
 table, tr {
   border: 1px solid white; }
 
+
+#reorderBox ul {
+  list-style-type: none;
+  margin-left: 5px;
+  padding-left: 0;
+}
+
+#reorderBox ul > li {
+  margin-left: 0;
+  padding-left: 0;
+  border: solid;
+  border-width: thin;
+  border-radius: 5px;
+  border-color: #dddbd7;
+  display: block;
+  margin-top: 8px;
+  padding: 5px;
+  background-color: #fff;
+  box-shadow:  3px 3px rgba(221, 219, 215, 0.5);
+}
+
+#reorderBox hr {
+  border-color: red;
+  border-width: thin;
+}
+
+#reorderBox {
+  border: solid #dddbd7;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 78px;
+  background-color: #fff;
+}
+
 td, th {
   vertical-align: middle;
   padding: 0 8px 0 8px;

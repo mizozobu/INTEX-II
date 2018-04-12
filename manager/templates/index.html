@@ -41,13 +41,16 @@
 </%block>
 
 <%block name="left">
-  <div class="content">
-    <h3>Items to Re-Order</h3>
-    <ul>
-        %for item in lowProducts:
-        <li>item.name</li>
-        %endfor
-    </ul>
+  <div class="content top-buffer">
+    <div id="reorderBox">
+      <h4>Low Inventory:</h4>
+      <hr>
+      <ul>
+          %for item in lowProducts:
+            <li>${ item.name } - ${ int(item.quantity) } left</li>
+          %endfor
+      </ul>
+    </div>
   </div>
 
 </%block>
