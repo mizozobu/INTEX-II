@@ -27,7 +27,7 @@ SECRET_KEY = '6o@sxgtj)#)8&^5l_b=k6x8*djjs!60e*q3_a87+-a0+zz(vu='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ 'www.familymusic.me', 'localhost','127.0.0.1']
+ALLOWED_HOSTS = ['www.familymusic.me', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -165,16 +165,16 @@ WSGI_APPLICATION = 'FOMO.wsgi.application'
 #     }
 # }
 
-#DATABASES = {
- #   'default': {
-  #      'ENGINE': 'django.db.backends.postgresql',
-   #     'NAME': 'fomo',
-    #    'USER': 'postgres',
-     #   'PASSWORD': 'nanakuni0914',
-      #  'HOST': '127.0.0.1',
-       # 'PORT': '5432',
-    #}
-#}
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'fomo',
+#        'USER': 'postgres',
+#        'PASSWORD': 'nanakuni0914',
+#        'HOST': '127.0.0.1',
+#        'PORT': '5432',
+#     }
+# }
 
 # actual database
 
