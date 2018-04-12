@@ -39,8 +39,7 @@
         data.addRows(${catRev});
 
         // Set chart options
-        var options = {'title':'Revenue by Category',
-                        'titleTextStyle':{fontSize:26},
+        var options = {
                        'width':600,
                        'height':600,
                       pieHole: 0.4,
@@ -77,8 +76,6 @@
         ]);
 
         var options = {
-          'title': 'Previous 12 Month Revenue',
-          'titleTextStyle':{fontSize:26},
           curveType: 'function',
           'width':600,
           'height':600,
@@ -108,10 +105,6 @@
 
 
         var options = {
-          chart: {
-            title: 'Company Performance',
-          },
-
           'width':600,
           'height':600,
 
@@ -146,10 +139,6 @@
         ]);
 
         var options = {
-          chart: {
-            title: 'Company Performance',
-
-          },
           'width':600,
           'height':600,
           legend:{
@@ -172,7 +161,7 @@
       <div id="flex1">
         <div class="flexContainer">
           <div id="chartDivCont">
-            <h3>Company Revenue</h3>
+            <h3>Revenue by Category</h3>
             <div id="chart_div" style="width: 1000px; height: 625px;"></div>
           </div>
           <div id="columnchart_materialCont">
