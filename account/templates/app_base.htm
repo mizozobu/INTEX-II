@@ -21,6 +21,11 @@
         <li class="nav-item dropdown">
             <button class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account</button>
             <div class="dropdown-menu">
+              <% currentUser = amod.User.objects.get(id=request.user.id) %>
+              %if currentUser.is_superuser:
+                <a class="dropdown-item" href="/manager/index/">Edit Products</a>
+                <a class="dropdown-item" href="/manager/dashboard/">View Dashboard</a>
+              %endif
                 <a class="dropdown-item" href="/account/logout?next=${request.path}">Log Out</a>
             </div>
         </li>
