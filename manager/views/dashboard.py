@@ -47,8 +47,9 @@ def process_request(request):
     for b in allCategories:
         if b.name not in a:
             a[b.name]=0
-        else:
-            categoryRevenue.append([b.name, a.get(b.name)])
+        decVal=a.get(b.name)
+        print("decVal:",decVal)
+        categoryRevenue.append([b.name,float(decVal)])
     print(categoryRevenue)
     context = {
         'catRev':categoryRevenue,
