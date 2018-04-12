@@ -197,18 +197,31 @@ DATABASES = {
 #    }
 # }
 
-# real database
+# mariah databases
 
 # DATABASES = {
-#      'default': {
-#          'ENGINE': 'django.db.backends.postgresql',
-#          'NAME': 'FOMO2',
-#          'USER': 'postgres',
-#          'PASSWORD': 'Ganderson1',
-#          'HOST': '127.0.0.1',
-#          'PORT': '8001',
-#      }
-#  }
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'asdf',
+#        'USER': 'postgres',
+#        'PASSWORD': 'password1',
+#        'HOST': '127.0.0.1',
+#        'PORT': '5432',
+#    }
+# }
+
+# real database
+
+DATABASES = {
+     'default': {
+         'ENGINE': 'django.db.backends.postgresql',
+         'NAME': 'FOMO2',
+         'USER': 'postgres',
+         'PASSWORD': 'Ganderson1',
+         'HOST': '127.0.0.1',
+         'PORT': '8001',
+     }
+ }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
