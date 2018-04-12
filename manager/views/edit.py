@@ -3,7 +3,7 @@ from django import forms
 from django.http import HttpResponseRedirect
 from formlib.form import Formless
 from catalog import models as m
-from django.forms.widgets import SelectDateWidget
+from django.core.files.storage import FileSystemStorage
 
 
 @view_function
@@ -25,6 +25,7 @@ def process_request(request, p: m.Product=None):
                 'status': 'Active' if p.status == '1' else 'Inactive',
                 'description': p.description,
                 'category': p.category.name,
+                'imageFile': m.ProductImage.objects.all().first().filename,
                 # unique fields
                 'unit': p.unit if type(p) is m.BulkProduct else None,
                 'order_trigger': p.order_trigger if type(p) is m.BulkProduct else None,
@@ -37,6 +38,10 @@ def process_request(request, p: m.Product=None):
 
         if form.is_valid():
             p = m.Product.objects.get(id=int(request.dmp.urlparams[0]))
+
+            # unbind images
+            m.ProductImage.objects.filter(product_id=p.id).delete()
+
             p.name = form.cleaned_data.get('name')
             p.price = form.cleaned_data.get('price')
             p.status = form.cleaned_data.get('status')
@@ -54,6 +59,14 @@ def process_request(request, p: m.Product=None):
                 p.retire_date = form.cleaned_data.get('retire_date')
 
             p.save()
+
+            myfiles = request.FILES.getlist('imageFile')
+            fs = FileSystemStorage(location="catalog/media/products/")
+            for myfile in myfiles:
+                filename = fs.save(myfile.name, myfile)
+                fs.url(filename)
+                form.bind_images(myfile, p.id)
+
             return HttpResponseRedirect('/manager/')
 
         context = {
@@ -84,6 +97,7 @@ class ProductForm(Formless):
         self.fields['status'] = forms.ChoiceField(label="Status", choices=statuses)
         self.fields['description'] = forms.CharField(label="Description")
         self.fields['category'] = forms.ModelChoiceField(label="Category", queryset=m.Category.objects.all(), empty_label=None)
+        self.fields['imageFile'] = forms.FileField(label="Images", required=False, widget=forms.ClearableFileInput(attrs={'multiple': True}))
 
         # bulk
         self.fields['unit'] = forms.CharField(label="Unit", required=False, widget=forms.TextInput(attrs={'class': 'bulk'}))
@@ -112,3 +126,10 @@ class ProductForm(Formless):
             if self.cleaned_data.get('retire_date') == '':
                 raise forms.ValidationError('Retire Date is required.')
         return self.cleaned_data
+
+    def bind_images(self, myfile, id):
+        # bind product images with product
+        pi = m.ProductImage()
+        pi.filename = myfile.name
+        pi.product = m.Product.objects.get(id=id)
+        pi.save()

@@ -111,7 +111,6 @@ class ProductForm(Formless):
         p.status = self.cleaned_data.get('status')
         p.description = self.cleaned_data.get('description')
         p.category = self.cleaned_data.get('category')
-        p.imageFile = self.cleaned_data.get('imageFile')
         p.save()
         return p.id
 
