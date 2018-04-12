@@ -21,7 +21,7 @@
         <li class="nav-item dropdown">
             <button class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account</button>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="/account/logout/">Log Out</a>
+                <a class="dropdown-item" href="/account/logout?next=${request.path}">Log Out</a>
             </div>
         </li>
         %endif
@@ -30,7 +30,7 @@
             <button class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Log In</button>
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="/account/signup/">Sign Up</a>
-                <a class="dropdown-item" href="/account/login/">Log In</a>
+                <a class="dropdown-item" href="/account/login?next=${request.path}">Log In</a>
             </div>
         </li>
         %endif

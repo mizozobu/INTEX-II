@@ -11,9 +11,11 @@ from account import models as amod
 @view_function
 def process_request(request):
     form = LoginForm(request)
+    if request.method == 'GET':
+        request.session['redirect_to'] = request.GET.get('next', '')
     if form.is_valid():
         form.commit()
-        return HttpResponseRedirect('/homepage/')
+        return HttpResponseRedirect(request.session['redirect_to'])
 
     context = {
         'form': form,
