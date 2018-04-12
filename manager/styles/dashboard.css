@@ -1,0 +1,37 @@
+.flexContainer{
+
+  display:flex;
+  align-content: space-around;
+}
+#flex1{
+  display:flex;
+  width:100%;
+  align-content: space-around;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#chart_div{
+  width:50%;
+  border: 5px solid #dddbd7;
+  box-sizing: border-box;
+}
+
+#columnchart_material{
+
+  width:50%;
+  border: 5px solid #dddbd7;
+  box-sizing: border-box;
+}
+
+#curve_chart{
+  width:50%;
+  border: 5px solid #dddbd7;
+  box-sizing: border-box;
+}
+
+#columnchart2_material{
+  width:50%;
+  border: 5px solid #dddbd7;
+  box-sizing: border-box;
+}
