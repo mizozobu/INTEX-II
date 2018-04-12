@@ -27,7 +27,7 @@ SECRET_KEY = '6o@sxgtj)#)8&^5l_b=k6x8*djjs!60e*q3_a87+-a0+zz(vu='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ 'www.familymusic.me', ]
 
 
 # Application definition
@@ -61,7 +61,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'catalog.history.LastFiveMiddleware',
-    'account.basicauth.BasicAuthMiddleware',
+    #'account.basicauth.BasicAuthMiddleware',
     # 'account.GetCartMiddleware.GetCartMiddleware',
 ]
 
@@ -165,16 +165,16 @@ WSGI_APPLICATION = 'FOMO.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'fomo',
-#         'USER': 'postgres',
-#         'PASSWORD': 'nanakuni0914',
-#         'HOST': '127.0.0.1',
-#         'PORT': '5432',
-#     }
-# }
+#DATABASES = {
+ #   'default': {
+  #      'ENGINE': 'django.db.backends.postgresql',
+   #     'NAME': 'fomo',
+    #    'USER': 'postgres',
+     #   'PASSWORD': 'nanakuni0914',
+      #  'HOST': '127.0.0.1',
+       # 'PORT': '5432',
+    #}
+#}
 
 # actual database
 
@@ -191,7 +191,19 @@ WSGI_APPLICATION = 'FOMO.wsgi.application'
 
 # mariah database
 
+#DATABASES = {
+ #   'default': {
+ #       'ENGINE': 'django.db.backends.postgresql',
+ #       'NAME': 'asdf',
+#        'USER': 'postgres',
+ #       'PASSWORD': 'password1',
+ #       'HOST': '127.0.0.1',
+ #       'PORT': '5432',
+ #   }
+#}
+
 DATABASES = {
+<<<<<<< HEAD
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'intex2',
@@ -201,6 +213,17 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+=======
+      'default': {
+          'ENGINE': 'django.db.backends.postgresql',
+          'NAME': 'FOMO2',
+          'USER': 'postgres',
+          'PASSWORD': 'Ganderson1',
+          'HOST': '127.0.0.1',
+          'PORT': '8001',
+      }
+  }
+>>>>>>> 3e4dc7c2ef36e18583bb529246d6fbb62d0c378e
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
