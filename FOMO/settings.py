@@ -198,7 +198,7 @@ WSGI_APPLICATION = 'FOMO.wsgi.application'
 # }
 
 # mariah databases
-#
+
 # DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.postgresql',
