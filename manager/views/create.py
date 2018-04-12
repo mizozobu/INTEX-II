@@ -1,17 +1,26 @@
 from django_mako_plus import view_function
 from django import forms
+from django.conf import settings
 from django.http import HttpResponseRedirect
 from formlib.form import Formless
+import random
 from catalog import models as m
-from django.forms.widgets import SelectDateWidget
+from django.core.files.storage import FileSystemStorage
 
 
 @view_function
-def process_request(request, p: m.Product=None):
+def process_request(request):
     if request.user.is_superuser:
         form = ProductForm(request)
         if form.is_valid():
-            form.commit()
+            myfiles = request.FILES.getlist('imageFile')
+            fs = FileSystemStorage(location="catalog/media/products/")
+            id = form.commit()
+            for myfile in myfiles:
+                filename = fs.save(myfile.name, myfile)
+                fs.url(filename)
+                form.bind_images(myfile, id)
+
             return HttpResponseRedirect('/manager/')
 
         context = {
@@ -20,6 +29,12 @@ def process_request(request, p: m.Product=None):
         return request.dmp.render('create.html', context)
     else:
         return HttpResponseRedirect('/index/')
+
+
+def handle_uploaded_file(f):
+    with open('{}calalog/media/products/name.txt'.format(settings.STATIC_URL), 'wb+') as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
 
 
 class ProductForm(Formless):
@@ -50,6 +65,8 @@ class ProductForm(Formless):
         # rental
         self.fields['rental_period'] = forms.IntegerField(label="Rental Period", required=False, widget=forms.TextInput(attrs={'class': 'rental'}))
         self.fields['retire_date'] = forms.DateField(label="Retire Date", required=False, widget=forms.TextInput(attrs={'class': 'rental'}))
+        self.fields['imageFile'] = forms.FileField(label="Images", required=False, widget=forms.ClearableFileInput(attrs={'multiple': True}))
+        # self.fields['imageFile'] = forms.FileField(label="File", required=False)
 
     def clean_type(self):
         type = self.cleaned_data.get('type')
@@ -83,8 +100,10 @@ class ProductForm(Formless):
             p.order_quantity = self.cleaned_data.get('order_quantity')
         if self.cleaned_data.get('type') == '2':
             p = m.IndividualProduct()
+            p.product_id = ''.join([random.choice('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789012345678901234567890123456789') for j in range(6)])
         if self.cleaned_data.get('type') == '3':
             p = m.RentalProduct()
+            p.product_id = ''.join([random.choice('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789012345678901234567890123456789') for j in range(6)])
             p.rental_period = self.cleaned_data.get('rental_period')
             p.retire_date = self.cleaned_data.get('retire_date')
         p.name = self.cleaned_data.get('name')
@@ -92,5 +111,13 @@ class ProductForm(Formless):
         p.status = self.cleaned_data.get('status')
         p.description = self.cleaned_data.get('description')
         p.category = self.cleaned_data.get('category')
-
+        p.imageFile = self.cleaned_data.get('imageFile')
         p.save()
+        return p.id
+
+    def bind_images(self, myfile, id):
+        # bind product images with product
+        pi = m.ProductImage()
+        pi.filename = myfile.name
+        pi.product = m.Product.objects.get(id=id)
+        pi.save()
