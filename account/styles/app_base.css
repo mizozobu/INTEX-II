@@ -4,6 +4,19 @@
   color: white;
   opacity: 10%; }
 
+.btn-primary {
+  background-color: #FF9900;
+  color: #f2f2f2;
+  border-color: #FF9900;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.btn-primary:hover {
+  background-color: #000;
+  border-color: #000;
+}
+
 a {
   color: #FF9900; }
 

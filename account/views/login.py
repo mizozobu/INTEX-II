@@ -3,22 +3,23 @@ from django import forms
 from django.http import HttpResponseRedirect
 from formlib.form import Formless
 from django.contrib.auth import authenticate, login
-from account.ldap import test_connection as tc
-from account.ldap import createAdAccount as ca
+from account import ldap
+# from account import createAdAccount as ca
 from account import models as amod
 
 
 @view_function
 def process_request(request):
     form = LoginForm(request)
+    if request.method == 'GET':
+        request.session['redirect_to'] = request.GET.get('next', '')
     if form.is_valid():
         form.commit()
-        return HttpResponseRedirect('/homepage/')
+        return HttpResponseRedirect(request.session['redirect_to'])
 
     context = {
         'form': form,
     }
-
     return request.dmp.render('login.html', context)
 
 
@@ -31,7 +32,10 @@ class LoginForm(Formless):
             widget=forms.PasswordInput())
 
     def clean(self):
-        activeDirectory = tc(self.cleaned_data.get('username'), password=self.cleaned_data.get('password'))
+        try:
+            activeDirectory = ldap.test_connection(self.cleaned_data.get('username'), password=self.cleaned_data.get('password'))
+        except Exception as e:
+            activeDirectory = False
         if activeDirectory:
             u = amod.User.objects.all().filter(username=self.cleaned_data.get('username').title()).first()
             if u is not None:
@@ -39,13 +43,12 @@ class LoginForm(Formless):
             else:
                 self.user = None
         else:
-            self.user = None
             self.user = authenticate(email=self.cleaned_data.get('username'), password=self.cleaned_data.get('password'))
         if ((self.user is None) and (activeDirectory is False)):
             raise forms.ValidationError('Invalid email or password.')
         return self.cleaned_data
 
     def commit(self):
-        if (self.user is None) and (tc(self.cleaned_data.get('username'), password=self.cleaned_data.get('password'))):
-            self.user = ca(self.cleaned_data.get('username'), password=self.cleaned_data.get('password'))
+        if (self.user is None) and (ldap.test_connection(self.cleaned_data.get('username'), password=self.cleaned_data.get('password'))):
+            self.user = ldap.createAdAccount(self.cleaned_data.get('username'), password=self.cleaned_data.get('password'))
         login(self.request, self.user)

@@ -9,7 +9,6 @@ local_settings.py
 ### Database ###
 db.sqlite3
 ### Database ###
-settings.py
 venv/
 *.pyo
 __pycache__/

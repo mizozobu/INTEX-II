@@ -5,5 +5,6 @@ from django.contrib.auth import logout
 
 @view_function
 def process_request(request):
+    redirect_to = request.GET.get('next', '')
     logout(request)
-    return HttpResponseRedirect('/homepage/')
+    return HttpResponseRedirect(redirect_to)
