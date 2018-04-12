@@ -165,6 +165,7 @@ WSGI_APPLICATION = 'FOMO.wsgi.application'
 #     }
 # }
 
+<<<<<<< HEAD
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
@@ -175,6 +176,18 @@ WSGI_APPLICATION = 'FOMO.wsgi.application'
 #         'PORT': '5432',
 #     }
 # }
+=======
+#DATABASES = {
+ #   'default': {
+  #      'ENGINE': 'django.db.backends.postgresql',
+   #     'NAME': 'fomo',
+    #    'USER': 'postgres',
+     #   'PASSWORD': 'nanakuni0914',
+      #  'HOST': '127.0.0.1',
+       # 'PORT': '5432',
+    #}
+#}
+>>>>>>> 3e4dc7c2ef36e18583bb529246d6fbb62d0c378e
 
 # actual database
 
@@ -202,16 +215,16 @@ DATABASES = {
    }
 }
 
-# DATABASES = {
-#      'default': {
-#          'ENGINE': 'django.db.backends.postgresql',
-#          'NAME': 'FOMO2',
-#          'USER': 'postgres',
-#          'PASSWORD': 'Ganderson1',
-#          'HOST': '127.0.0.1',
-#          'PORT': '8001',
-#      }
-#  }
+DATABASES = {
+      'default': {
+          'ENGINE': 'django.db.backends.postgresql',
+          'NAME': 'FOMO2',
+          'USER': 'postgres',
+          'PASSWORD': 'Ganderson1',
+          'HOST': '127.0.0.1',
+          'PORT': '8001',
+      }
+  }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
