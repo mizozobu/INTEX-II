@@ -192,8 +192,7 @@ WSGI_APPLICATION = 'FOMO.wsgi.application'
 # mariah database
 
 DATABASES = {
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'intex2',
@@ -203,27 +202,26 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-=======
-      'default': {
-          'ENGINE': 'django.db.backends.postgresql',
-          'NAME': 'FOMO2',
-          'USER': 'postgres',
-          'PASSWORD': 'Ganderson1',
-          'HOST': '127.0.0.1',
-          'PORT': '8001',
-      }
-  }
->>>>>>> 3e4dc7c2ef36e18583bb529246d6fbb62d0c378e
-=======
-   'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'asdf',
-       'USER': 'postgres',
-       'PASSWORD': 'password1',
-       'HOST': '127.0.0.1',
-       'PORT': '5432',
-   }
-}
+#DATABASES = {
+#      'default': {
+#          'ENGINE': 'django.db.backends.postgresql',
+#          'NAME': 'FOMO2',
+#          'USER': 'postgres',
+#          'PASSWORD': 'Ganderson1',
+#          'HOST': '127.0.0.1',
+#          'PORT': '8001',
+#      }
+#  }
+#DATABASES = {
+#   'default': {
+#       'ENGINE': 'django.db.backends.postgresql',
+#       'NAME': 'asdf',
+#       'USER': 'postgres',
+#       'PASSWORD': 'password1',
+#       'HOST': '127.0.0.1',
+#       'PORT': '5432',
+#   }
+#}
 
 # DATABASES = {
 #       'default': {
@@ -235,7 +233,7 @@ DATABASES = {
 #           'PORT': '8001',
 #       }
 #   }
->>>>>>> 668a4fbd8825e50982b559a794b5bd7e93eea240
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
