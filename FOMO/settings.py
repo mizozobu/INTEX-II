@@ -196,6 +196,19 @@ WSGI_APPLICATION = 'FOMO.wsgi.application'
 #    }
 # }
 
+# mariah databases
+
+DATABASES = {
+   'default': {
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': 'asdf',
+       'USER': 'postgres',
+       'PASSWORD': 'password1',
+       'HOST': '127.0.0.1',
+       'PORT': '5432',
+   }
+}
+
 # real database
 
 # DATABASES = {

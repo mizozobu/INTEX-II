@@ -15,7 +15,7 @@
         <li class="nav-item"><a class="nav-link ${'active' if request.dmp.page == 'contact' else '' }" href="/contact/">Contact</a></li>
         <% cart = cmod.Order.objects.all().filter(user=amod.User.objects.get(email=request.user)).filter(status="cart").first() if request.user.is_authenticated else null%>
         %if (cart is not null) and (cart is not None) and (cart.num_items() > 0):
-        <li class="${ 'active' if request.dmp.page == '/catalog/cart' else ''}"><a href="/catalog/cart/${cart.id}">Shopping Cart (${cart.num_items()})</a></li>
+        <li class="${ 'active nav-item' if request.dmp.page == '/catalog/cart' else ''}"><a href="/catalog/cart/${cart.id}" class="nav-link">Shopping Cart (${cart.num_items()})</a></li>
         %endif
         %if  request.user.is_authenticated:
         <li class="nav-item dropdown">
