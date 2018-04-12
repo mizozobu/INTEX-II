@@ -5,7 +5,7 @@ import math
 
 @view_function
 def process_request(request, category: m.Category=None, page: int=1):
-    products = m.Product.objects.all()
+    products = m.Product.objects.all().filter(status=1)
     category_name = "All Products"
     category_id = 0
     if category is not None:
