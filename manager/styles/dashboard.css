@@ -15,37 +15,41 @@
 }
 
 #chartDivCont{
-  width:50%;
+  min-width:50%;
   border: 5px solid #dddbd7;
   box-sizing: border-box;
   padding: 10px;
   background-color: #fff;
+  text-align: center;
 }
 
 #columnchart_materialCont {
-  width:50%;
+  min-width:50%;
   border: 5px solid #dddbd7;
   box-sizing: border-box;
   padding: 10px;
   background-color: #fff;
+  text-align: center;
 }
 
 #curve_chartCont{
-  width:50%;
+  min-width:50%;
   border: 5px solid #dddbd7;
   box-sizing: border-box;
   padding: 10px;
   margin-bottom: 10px;
   background-color: #fff;
+  text-align: center;
 }
 
 #columnchart2_materialCont{
-  width:50%;
+  min-width:50%;
   border: 5px solid #dddbd7;
   box-sizing: border-box;
   padding: 10px;
   margin-bottom: 10px;
   background-color: #fff;
+  text-align: center;
 }
 
 h3 {

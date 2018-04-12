@@ -40,8 +40,8 @@
 
         // Set chart options
         var options = {
-                       'width':600,
-                       'height':600,
+                       'width':500,
+                       'height':500,
                       pieHole: 0.4,
                       chartArea:{
                         'width':400,
@@ -77,8 +77,8 @@
 
         var options = {
           curveType: 'function',
-          'width':600,
-          'height':600,
+          'width':500,
+          'height':500,
           legend:{
             'position':'none',
           }
@@ -105,8 +105,8 @@
 
 
         var options = {
-          'width':600,
-          'height':600,
+          'width':500,
+          'height':500,
 
           legend:{
             'position':'none',
@@ -132,15 +132,15 @@
       function drawBar2Chart() {
         var data = google.visualization.arrayToDataTable([
           ['Year', 'Sales', 'Expenses', 'Profit'],
-          ['2014', 1000, 400, 200],
-          ['2015', 1170, 460, 250],
-          ['2016', 660, 1120, 300],
-          ['2017', 1030, 540, 350]
+          ['2014', 500, 700, 100],
+          ['2015', 600, 460, 250],
+          ['2016', 1000, 260, 450],
+          ['2017', 100, 570, 800]
         ]);
 
         var options = {
-          'width':600,
-          'height':600,
+          'width':500,
+          'height':500,
           legend:{
             'position':'none',
           }
@@ -162,23 +162,23 @@
         <div class="flexContainer">
           <div id="chartDivCont">
             <h3>Revenue by Category</h3>
-            <div id="chart_div" style="width: 1000px; height: 625px;"></div>
+            <div id="chart_div" style="width: 500px; height: 500px;"></div>
           </div>
           <div id="columnchart_materialCont">
             <h3>Company Stats</h3>
-            <div id="columnchart_material" style="width: 1000px; height: 625px;"></div>
+            <div id="columnchart_material" style="width: 500px; height: 500px;"></div>
           </div>
         </div>
         <div class="flexContainer">
 
           <div id="columnchart2_materialCont">
             <h3>Company Stats</h3>
-            <div id="columnchart2_material" style="width: 1000px; height: 625px;"></div>
+            <div id="columnchart2_material" style="width: 500px; height: 500px;"></div>
           </div>
 
           <div id="curve_chartCont">
             <h3>Previous 12 Month Revenue</h3>
-            <div id="curve_chart" style="width: 1000px; height: 625px"></div>
+            <div id="curve_chart" style="width: 500px; height: 500px;"></div>
           </div>
         </div>
       </div>
