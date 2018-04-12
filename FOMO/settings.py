@@ -61,7 +61,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'catalog.history.LastFiveMiddleware',
-    #'account.basicauth.BasicAuthMiddleware',
+    # 'account.basicauth.BasicAuthMiddleware',
     # 'account.GetCartMiddleware.GetCartMiddleware',
 ]
 
@@ -159,16 +159,16 @@ WSGI_APPLICATION = 'FOMO.wsgi.application'
 
 # sou database
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'fomo',
-        'USER': 'postgres',
-        'PASSWORD': 'nanakuni0914',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'fomo',
+#         'USER': 'postgres',
+#         'PASSWORD': 'nanakuni0914',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432',
+#     }
+# }
 
 # jay database
 
@@ -212,16 +212,16 @@ DATABASES = {
 
 # real database
 
-DATABASES = {
-     'default': {
-         'ENGINE': 'django.db.backends.postgresql',
-         'NAME': 'FOMO2',
-         'USER': 'postgres',
-         'PASSWORD': 'Ganderson1',
-         'HOST': '127.0.0.1',
-         'PORT': '8001',
-     }
- }
+# DATABASES = {
+#      'default': {
+#          'ENGINE': 'django.db.backends.postgresql',
+#          'NAME': 'FOMO2',
+#          'USER': 'postgres',
+#          'PASSWORD': 'Ganderson1',
+#          'HOST': '127.0.0.1',
+#          'PORT': '8001',
+#      }
+#  }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
