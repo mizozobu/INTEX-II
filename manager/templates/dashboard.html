@@ -3,11 +3,10 @@
 
 
 
-<%block name="top">
-<html>
-  <head>
+<%block name="center">
 
-    google.charts.setOnLoadCallback()
+
+
     <!--Load the AJAX API-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -41,9 +40,27 @@
 
         // Set chart options
         var options = {'title':'Revenue by Category',
-                       'width':400,
-                       'height':400,
-                      pieHole: 0.4};
+                        'titleTextStyle':{fontSize:26},
+                       'width':600,
+                       'height':600,
+                      pieHole: 0.4,
+                      chartArea:{
+                        'width':400,
+                        'height':400,
+
+                      },
+                      legend:{
+                        'position':'none',
+
+                      },
+
+                      pieSliceTextStyle:{
+                        'color': 'black',
+                        'fontSize':20,
+                      }
+
+
+                      };
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
@@ -52,25 +69,32 @@
       //line graph
       function drawLineChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses'],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540]
+          ['Year', 'Sales' ],
+          ['2004',  1000],
+          ['2005',  1170],
+          ['2006',  660],
+          ['2007',  1030]
         ]);
 
         var options = {
-          title: 'Company Performance',
+          'title': 'Previous 12 Month Revenue',
+          'titleTextStyle':{fontSize:26},
           curveType: 'function',
-          legend: { position: 'bottom' },
-          'width':400,
-          'height':400,
+          'width':600,
+          'height':600,
+          legend:{
+            'position':'none',
+          }
+
         };
 
         var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
 
         chart.draw(data, options);
       }
+
+      //bar graph 1
+
       function drawBarChart() {
         var data = google.visualization.arrayToDataTable([
           ['Year', 'Sales', 'Expenses', 'Profit'],
@@ -80,13 +104,28 @@
           ['2017', 1030, 540, 350]
         ]);
 
+
+
+
         var options = {
           chart: {
             title: 'Company Performance',
-            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
           },
-          'width':400,
-          'height':400,
+
+          'width':600,
+          'height':600,
+
+          legend:{
+            'position':'none',
+          },
+
+          chartArea:{
+            width:10,
+            height:10,
+
+          }
+
+
         };
 
         var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
@@ -95,7 +134,7 @@
       }
 
 
-      //bar graph
+      //bar graph 2
 
       function drawBar2Chart() {
         var data = google.visualization.arrayToDataTable([
@@ -109,11 +148,13 @@
         var options = {
           chart: {
             title: 'Company Performance',
-            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
-          },
-          'width':400,
-          'height':400,
 
+          },
+          'width':600,
+          'height':600,
+          legend:{
+            'position':'none',
+          }
         };
 
         var chart = new google.charts.Bar(document.getElementById('columnchart2_material'));
@@ -122,28 +163,25 @@
       }
 
     </script>
-  </head>
 
-  <body>
-    <div class="content">
+    <div class="content top-buffer">
 
 
     <!--Div that will hold the pie chart-->
-    <table class="columns">
-          <tr>
-            <td><div id="chart_div"></div></div></td>
-            <td><div id="curve_chart" style="width: 900px; height: 500px"></div></td>
-          </tr>
-          <tr>
-            <td><div id="columnchart_material" style="width: 800px; height: 500px;"></div></td>
-            <td><div id="columnchart2_material" style="width: 800px; height: 500px;"></div></td>
-          </tr>
-</table>
+
+      <div id="flex1">
+        <div class="flexContainer">
+          <div id="chart_div" style="width: 1000px; height: 625px;"></div>
+          <div id="columnchart_material" style="width: 1000px; height: 625px;"></div>
+        </div>
+        <div class="flexContainer">
+          <div id="columnchart2_material" style="width: 1000px; height: 625px;"></div>
+          <div id="curve_chart" style="width: 1000px; height: 625px"></div>
+        </div>
+      </div>
 
 
-       <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
-       <div id="columnchart2_material" style="width: 800px; height: 500px;"></div>
      </div>
-  </body>
-</html>
+
+
 </%block>
