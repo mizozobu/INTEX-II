@@ -21,7 +21,7 @@
                     <td>${ p.__class__.__name__ }</td>
                     <td>${ p.name }</td>
                     <td>${ p.price }</td>
-                    <td>${ p.quantity }</td>
+                    <td>${ int(p.quantity) }</td>
                     <td class="btn-holder">
                         <a href=${ "/manager/edit/{}".format(p.id) } class="btn btn-link">
                           Edit

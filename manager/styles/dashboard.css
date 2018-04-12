@@ -14,33 +14,44 @@
   justify-content: space-between;
 }
 
-#chart_div{
-  width:50%;
+#chartDivCont{
+  min-width:50%;
   border: 5px solid #dddbd7;
   box-sizing: border-box;
   padding: 10px;
+  background-color: #fff;
+  text-align: center;
 }
 
-#columnchart_material{
-
-  width:50%;
+#columnchart_materialCont {
+  min-width:50%;
   border: 5px solid #dddbd7;
   box-sizing: border-box;
   padding: 10px;
+  background-color: #fff;
+  text-align: center;
 }
 
-#curve_chart{
-  width:50%;
+#curve_chartCont{
+  min-width:50%;
   border: 5px solid #dddbd7;
   box-sizing: border-box;
   padding: 10px;
   margin-bottom: 10px;
+  background-color: #fff;
+  text-align: center;
 }
 
-#columnchart2_material{
-  width:50%;
+#columnchart2_materialCont{
+  min-width:50%;
   border: 5px solid #dddbd7;
   box-sizing: border-box;
   padding: 10px;
   margin-bottom: 10px;
+  background-color: #fff;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
 }
