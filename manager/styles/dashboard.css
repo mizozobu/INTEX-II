@@ -14,33 +14,40 @@
   justify-content: space-between;
 }
 
-#chart_div{
+#chartDivCont{
   width:50%;
   border: 5px solid #dddbd7;
   box-sizing: border-box;
   padding: 10px;
+  background-color: #fff;
 }
 
-#columnchart_material{
-
+#columnchart_materialCont {
   width:50%;
   border: 5px solid #dddbd7;
   box-sizing: border-box;
   padding: 10px;
+  background-color: #fff;
 }
 
-#curve_chart{
+#curve_chartCont{
   width:50%;
   border: 5px solid #dddbd7;
   box-sizing: border-box;
   padding: 10px;
   margin-bottom: 10px;
+  background-color: #fff;
 }
 
-#columnchart2_material{
+#columnchart2_materialCont{
   width:50%;
   border: 5px solid #dddbd7;
   box-sizing: border-box;
   padding: 10px;
   margin-bottom: 10px;
+  background-color: #fff;
+}
+
+h3 {
+  text-align: center;
 }
