@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 import os
 import shutil
 import stripe
-import ldap
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,7 +27,7 @@ SECRET_KEY = '6o@sxgtj)#)8&^5l_b=k6x8*djjs!60e*q3_a87+-a0+zz(vu='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.familymusic.me', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -158,61 +157,57 @@ WSGI_APPLICATION = 'FOMO.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-# default sqlite3
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
+# sou database
 
 # DATABASES = {
+#   'default': {
+#      'ENGINE': 'django.db.backends.postgresql',
+#     'NAME': 'fomo',
+#    'USER': 'postgres',
+#   'PASSWORD': 'nanakuni0914',
+#  'HOST': '127.0.0.1',
+# 'PORT': '5432',
+# }
+
+# jay database
+
+# DATABASES = {
+#
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'fomo',
+#         'NAME': 'intex2',
 #         'USER': 'postgres',
-#         'PASSWORD': 'nanakuni0914',
+#         'PASSWORD': 'jayman',
 #         'HOST': '127.0.0.1',
 #         'PORT': '5432',
 #     }
 # }
 
-# actual database
+# hilary database
 
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'asdf',
-#         'USER': 'postgres',
-#         'PASSWORD': 'Ninaclark1!',
-#         'HOST': '127.0.0.1',
-#         'PORT': '5432',
-#     }
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'asdf',
+#        'USER': 'postgres',
+#        'PASSWORD': 'Ninaclark1!',
+#        'HOST': '127.0.0.1',
+#        'PORT': '5432',
+#    }
 # }
 
-# mariah database
+# real database
 
 DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'asdf',
-       'USER': 'postgres',
-       'PASSWORD': 'Ninaclark1!',
-       'HOST': '127.0.0.1',
-       'PORT': '5432',
-   }
-}
-
-# DATABASES = {
-#      'default': {
-#          'ENGINE': 'django.db.backends.postgresql',
-#          'NAME': 'FOMO2',
-#          'USER': 'postgres',
-#          'PASSWORD': 'Ganderson1',
-#          'HOST': '127.0.0.1',
-#          'PORT': '8001',
-#      }
-#  }
+     'default': {
+         'ENGINE': 'django.db.backends.postgresql',
+         'NAME': 'FOMO2',
+         'USER': 'postgres',
+         'PASSWORD': 'Ganderson1',
+         'HOST': '127.0.0.1',
+         'PORT': '8001',
+     }
+ }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
