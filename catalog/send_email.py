@@ -22,19 +22,19 @@ def send_email(to_email, order_id):
     msg = MIMEMultipart()
 
     # body as html
-    top = """<html> <body style="text-align: center; background-color: rgb(255, 153, 0); padding: 30px;"> <h1 style="text-align: center;">Family Oriented Music Organization</h1><div style="margin-left: 15%; margin-right: 15%; margin-bottom: 25px; padding: 30px; background-color: #fff; border: solid;"><h2 style="text-align: center">Thank You {} {}!</h2> <p style="text-align: center"> Your order is being processed, and will be shipped to you shortly. Here is your receipt. </p> <div style="text-align: center; margin: 0 auto;"> <table style="margin-left: auto; margin-right: auto; border: solid; border-color: #dddbd7; background-color: #dddbd7; text-align: center;"> <thead> <tr style="background-color: #fff;"> <th style="padding: 5px"> Product </th> <th style="padding: 5px"> Quantity </th> <th style="padding: 5px"> Price </th> <th style="padding: 5px"> Item Total </th> </tr> </thead> <tbody>""".format(user.first_name, user.last_name)
+    top = """<html> <body style="text-align: center; background-color: rgb(236, 232, 226); padding: 30px;"><div style="margin-left: 15%; margin-right: 15%; margin-bottom: 25px; padding: 30px; background-color: #fff; border: none; box-shadow: 20px 20px rgb(192, 199, 197); border-radius: 25px"><h1 style="margin:auto;text-align: center;padding: 15px; background-color: rgba(236, 232, 226, 1);width:70%;border-radius:20px">Family Oriented Music Organization</h1><h2 style="text-align: center">Thank You {} {}!</h2> <p style="text-align: center"> Your order is being processed, and will be shipped to you shortly. Here is your receipt. </p> <div style="text-align: center; margin: 0 auto;"> <table style="border-radius: 10px;margin-left: auto; width: 70%;margin-right: auto; border: solid; border-color: #dddbd7; background-color: #dddbd7; text-align: center;"> <thead> <tr style="background-color: #fff;"> <th style="padding: 5px"> Product </th> <th style="padding: 5px"> Quantity </th> <th style="padding: 5px"> Price </th> <th style="padding: 5px"> Item Total </th> </tr> </thead> <tbody>""".format(user.first_name, user.last_name)
     body = ""
     for item in order.active_items(include_tax_item=False):
         product = m.Product.objects.get(id=item.product.id)
         body += """<tr>
-            <td style="vertical-align: middle; background-color: #fff; padding: 10px;"> {} </td>
-            <td style="vertical-align: middle; background-color: #fff; padding: 10px;"> {} </td>
-            <td style="vertical-align: middle; background-color: #fff; padding: 10px;"> ${} </td>
-            <td style="vertical-align: middle; background-color: #fff; padding: 10px;">${}</td>
+            <td style="vertical-align: middle; background-color: #fff; padding: 20px;"> {} </td>
+            <td style="vertical-align: middle; background-color: #fff; padding: 20px;"> {} </td>
+            <td style="vertical-align: middle; background-color: #fff; padding: 20px;"> ${} </td>
+            <td style="vertical-align: middle; background-color: #fff; padding: 20px;">${}</td>
             </tr>""".format(product.name, item.quantity, item.price, (item.price*item.quantity))
     taxProd = m.Product.objects.get(name="Sales Tax")
     taxItem = order.get_item(taxProd)
-    bottom = """</tbody> <tfoot> <tr style="background-color: #fff;"> <th> Sales Tax: </th> <th> </th> <th> </th> <th> ${} </th> </tr> <tr style="background-color: #fff;"> <th> Total: </th> <th> </th> <th> </th> <th> ${} </th> </tr> </tfoot> </table> </div> <p style="text-align: center"> Please let us know if you have any questions or concerns. </p> <p style="text-align: center"> Family Oriented Music Organization <br /> (801) 950-4232 <br /> fomo@familymusic.me </p></div> </body></html>""".format(taxItem.price, order.total_price)
+    bottom = """</tbody> <tfoot> <tr style="background-color: #fff;"> <th> Sales Tax: </th> <th> </th> <th> </th> <th> ${} </th> </tr> <tr style="background-color: #fff;"> <th style="background-color: rgba(236, 232, 226, 1);"> Total: </th> <th style="background-color: rgba(236, 232, 226, 1);" > </th> <th style="background-color: rgba(236, 232, 226, 1);"> </th> <th style="background-color: rgba(236, 232, 226, 1);"> ${} </th> </tr> </tfoot> </table> </div> <p style="text-align: center"> Please let us know if you have any questions or concerns. </p> <p style="text-align: center"> Family Oriented Music Organization <br /> (801) 950-4232 <br /> fomo@familymusic.me </p></div> </body></html>""".format(taxItem.price, order.total_price)
 
     html = top + body + bottom
 
