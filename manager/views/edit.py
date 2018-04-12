@@ -8,59 +8,62 @@ from django.forms.widgets import SelectDateWidget
 
 @view_function
 def process_request(request, p: m.Product=None):
-    if request.method == 'GET':
-        if type(p) is m.BulkProduct:
-            t = "1"
-        elif type(p) is m.IndividualProduct:
-            t = "2"
-        elif type(p) is m.RentalProduct:
-            t = "3"
+    if request.user.is_superuser:
+        if request.method == 'GET':
+            if type(p) is m.BulkProduct:
+                t = "1"
+            elif type(p) is m.IndividualProduct:
+                t = "2"
+            elif type(p) is m.RentalProduct:
+                t = "3"
 
-        form = ProductForm(request, initial={
-            'id': p.id,
-            'type': t,
-            'name': p.name,
-            'price': p.price,
-            'status': 'Active' if p.status == '1' else 'Inactive',
-            'description': p.description,
-            'category': p.category.name,
-            # unique fields
-            'unit': p.unit if type(p) is m.BulkProduct else None,
-            'order_trigger': p.order_trigger if type(p) is m.BulkProduct else None,
-            'order_quantity': p.order_quantity if type(p) is m.BulkProduct else None,
-            'rental_period': p.rental_period if type(p) is m.RentalProduct else None,
-            'retire_date': p.retire_date if type(p) is m.RentalProduct else None,
-            })
-    elif request.method == 'POST':
-        form = ProductForm(request)
+            form = ProductForm(request, initial={
+                'id': p.id,
+                'type': t,
+                'name': p.name,
+                'price': p.price,
+                'status': 'Active' if p.status == '1' else 'Inactive',
+                'description': p.description,
+                'category': p.category.name,
+                # unique fields
+                'unit': p.unit if type(p) is m.BulkProduct else None,
+                'order_trigger': p.order_trigger if type(p) is m.BulkProduct else None,
+                'order_quantity': p.order_quantity if type(p) is m.BulkProduct else None,
+                'rental_period': p.rental_period if type(p) is m.RentalProduct else None,
+                'retire_date': p.retire_date if type(p) is m.RentalProduct else None,
+                })
+        elif request.method == 'POST':
+            form = ProductForm(request)
 
-    if form.is_valid():
-        p = m.Product.objects.get(id=int(request.dmp.urlparams[0]))
-        p.name = form.cleaned_data.get('name')
-        p.price = form.cleaned_data.get('price')
-        p.status = form.cleaned_data.get('status')
-        p.description = form.cleaned_data.get('description')
-        p.category = form.cleaned_data.get('category')
+        if form.is_valid():
+            p = m.Product.objects.get(id=int(request.dmp.urlparams[0]))
+            p.name = form.cleaned_data.get('name')
+            p.price = form.cleaned_data.get('price')
+            p.status = form.cleaned_data.get('status')
+            p.description = form.cleaned_data.get('description')
+            p.category = form.cleaned_data.get('category')
 
-        if form.cleaned_data.get('type') == '1':
-            p.unit = form.cleaned_data.get('unit')
-            p.order_trigger = form.cleaned_data.get('order_trigger')
-            p.order_quantity = form.cleaned_data.get('order_quantity')
-        if form.cleaned_data.get('type') == '2':
-            pass
-        if form.cleaned_data.get('type') == '3':
-            p.rental_period = form.cleaned_data.get('rental_period')
-            p.retire_date = form.cleaned_data.get('retire_date')
+            if form.cleaned_data.get('type') == '1':
+                p.unit = form.cleaned_data.get('unit')
+                p.order_trigger = form.cleaned_data.get('order_trigger')
+                p.order_quantity = form.cleaned_data.get('order_quantity')
+            if form.cleaned_data.get('type') == '2':
+                pass
+            if form.cleaned_data.get('type') == '3':
+                p.rental_period = form.cleaned_data.get('rental_period')
+                p.retire_date = form.cleaned_data.get('retire_date')
 
-        p.save()
-        return HttpResponseRedirect('/manager/')
+            p.save()
+            return HttpResponseRedirect('/manager/')
 
-    context = {
-        'form': form,
-        'id': p.id
-    }
+        context = {
+            'form': form,
+            'id': p.id
+        }
 
-    return request.dmp.render('edit.html', context)
+        return request.dmp.render('edit.html', context)
+    else:
+        return HttpResponseRedirect('/index/')
 
 
 class ProductForm(Formless):

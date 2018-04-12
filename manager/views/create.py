@@ -8,15 +8,18 @@ from django.forms.widgets import SelectDateWidget
 
 @view_function
 def process_request(request, p: m.Product=None):
-    form = ProductForm(request)
-    if form.is_valid():
-        form.commit()
-        return HttpResponseRedirect('/manager/')
+    if request.user.is_superuser:
+        form = ProductForm(request)
+        if form.is_valid():
+            form.commit()
+            return HttpResponseRedirect('/manager/')
 
-    context = {
-        'form': form,
-    }
-    return request.dmp.render('create.html', context)
+        context = {
+            'form': form,
+        }
+        return request.dmp.render('create.html', context)
+    else:
+        return HttpResponseRedirect('/index/')
 
 
 class ProductForm(Formless):

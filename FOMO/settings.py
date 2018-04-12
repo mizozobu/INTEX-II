@@ -186,16 +186,16 @@ WSGI_APPLICATION = 'FOMO.wsgi.application'
 
 # hilary database
 
-# DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'asdf',
-#        'USER': 'postgres',
-#        'PASSWORD': 'Ninaclark1!',
-#        'HOST': '127.0.0.1',
-#        'PORT': '5432',
-#    }
-# }
+DATABASES = {
+   'default': {
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': 'asdf',
+       'USER': 'postgres',
+       'PASSWORD': 'Ninaclark1!',
+       'HOST': '127.0.0.1',
+       'PORT': '5432',
+   }
+}
 
 # mariah databases
 

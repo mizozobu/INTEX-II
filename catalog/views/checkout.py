@@ -1,32 +1,26 @@
-# from django_mako_plus import view_function
-# from catalog import models as m
-#
-#
-# @view_function
-# def process_request(request, product: m.Product=None):
-#     context = {
-#         'product': product,
-#     }
-#     return request.dmp.render('checkout.html', context)
 from django_mako_plus import view_function
 from catalog import models as cmod
 from formlib.form import Formless
 from django import forms
 from django.http import HttpResponseRedirect
 
+
 @view_function
 def process_request(request, order: cmod.Order):
-    form = CheckoutForm(request)
-    form.submit_text = None
-    if form.is_valid():
-        form.commit()
-        return HttpResponseRedirect('/catalog/thankyou/' + str(order.id))
-    context = {
-        'form': form,
-        'order': order,
-    }
+    if order is not None:
+        form = CheckoutForm(request)
+        form.submit_text = None
+        if form.is_valid():
+            form.commit()
+            return HttpResponseRedirect('/catalog/thankyou/' + str(order.id))
+        context = {
+            'form': form,
+            'order': order,
+        }
 
-    return request.dmp.render('checkout.html', context)
+        return request.dmp.render('checkout.html', context)
+    else:
+        return HttpResponseRedirect('/index/')
 
 
 class CheckoutForm(Formless):
