@@ -5,9 +5,9 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1523401961.3292596
+_modified_time = 1523498393.9582982
 _enable_loop = True
-_template_filename = 'C:/users/Scott Laptop/documents/Mariah/intex/intex-ii/manager/templates/index.html'
+_template_filename = 'C:/Users/Scott Laptop/Documents/Mariah/Intex/intex-ii/manager/templates/index.html'
 _template_uri = 'index.html'
 _source_encoding = 'utf-8'
 import django_mako_plus
@@ -30,13 +30,14 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        def center():
-            return render_center(context._locals(__M_locals))
-        products = context.get('products', UNDEFINED)
         def left():
             return render_left(context._locals(__M_locals))
         def right():
             return render_right(context._locals(__M_locals))
+        lowProducts = context.get('lowProducts', UNDEFINED)
+        products = context.get('products', UNDEFINED)
+        def center():
+            return render_center(context._locals(__M_locals))
         __M_writer = context.writer()
         __M_writer('\r\n\r\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'center'):
@@ -95,9 +96,14 @@ def render_center(context,**pageargs):
 def render_left(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
+        lowProducts = context.get('lowProducts', UNDEFINED)
         def left():
             return render_left(context)
         __M_writer = context.writer()
+        __M_writer('\r\n  <div class="content">\r\n    <h3>Items to Re-Order</h3>\r\n    <ul>\r\n')
+        for item in lowProducts:
+            __M_writer('        <li>item.name</li>\r\n')
+        __M_writer('    </ul>\r\n  </div>\r\n\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -116,6 +122,6 @@ def render_right(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:/users/Scott Laptop/documents/Mariah/intex/intex-ii/manager/templates/index.html", "uri": "index.html", "source_encoding": "utf-8", "line_map": {"29": 0, "41": 1, "46": 41, "51": 43, "56": 45, "62": 3, "69": 3, "70": 5, "71": 5, "72": 17, "73": 18, "74": 19, "75": 20, "76": 20, "77": 21, "78": 21, "79": 22, "80": 22, "81": 23, "82": 23, "83": 24, "84": 24, "85": 26, "86": 26, "87": 31, "88": 31, "89": 38, "95": 43, "106": 45, "117": 106}}
+{"filename": "C:/Users/Scott Laptop/Documents/Mariah/Intex/intex-ii/manager/templates/index.html", "uri": "index.html", "source_encoding": "utf-8", "line_map": {"29": 0, "42": 1, "47": 41, "52": 53, "57": 55, "63": 3, "70": 3, "71": 5, "72": 5, "73": 17, "74": 18, "75": 19, "76": 20, "77": 20, "78": 21, "79": 21, "80": 22, "81": 22, "82": 23, "83": 23, "84": 24, "85": 24, "86": 26, "87": 26, "88": 31, "89": 31, "90": 38, "96": 43, "103": 43, "104": 47, "105": 48, "106": 50, "112": 55, "123": 112}}
 __M_END_METADATA
 """

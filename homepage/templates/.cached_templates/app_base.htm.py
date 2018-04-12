@@ -5,9 +5,9 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1523465352.3706818
+_modified_time = 1523497435.5573273
 _enable_loop = True
-_template_filename = 'C:/INTEX-II/homepage/templates/app_base.htm'
+_template_filename = 'C:/Users/Scott Laptop/Documents/Mariah/Intex/intex-ii/homepage/templates/app_base.htm'
 _template_uri = 'app_base.htm'
 _source_encoding = 'utf-8'
 import django_mako_plus
@@ -36,11 +36,11 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        null = context.get('null', UNDEFINED)
         STATIC_URL = context.get('STATIC_URL', UNDEFINED)
         request = context.get('request', UNDEFINED)
         def header():
             return render_header(context._locals(__M_locals))
+        null = context.get('null', UNDEFINED)
         def footer():
             return render_footer(context._locals(__M_locals))
         __M_writer = context.writer()
@@ -65,11 +65,11 @@ def render_body(context,**pageargs):
 def render_header(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
+        null = context.get('null', UNDEFINED)
         def header():
             return render_header(context)
-        null = context.get('null', UNDEFINED)
-        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
         request = context.get('request', UNDEFINED)
+        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n<nav class="navbar fixed-top navbar-light bg-faded">\r\n    <a class="navbar-brand" href="/homepage/">\r\n        <img src="')
         __M_writer(str( STATIC_URL ))
@@ -130,6 +130,6 @@ def render_footer(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:/INTEX-II/homepage/templates/app_base.htm", "uri": "app_base.htm", "source_encoding": "utf-8", "line_map": {"18": 2, "20": 3, "22": 47, "35": 0, "47": 1, "48": 2, "49": 3, "54": 43, "59": 50, "65": 5, "74": 5, "75": 8, "76": 8, "77": 11, "78": 11, "79": 12, "80": 12, "81": 13, "82": 13, "83": 14, "84": 14, "85": 15, "86": 15, "87": 16, "88": 16, "89": 17, "91": 17, "92": 18, "93": 19, "94": 19, "95": 19, "96": 19, "97": 19, "98": 19, "99": 19, "100": 21, "101": 22, "102": 25, "104": 25, "105": 26, "106": 27, "107": 29, "108": 32, "109": 33, "110": 41, "116": 45, "122": 45, "123": 47, "124": 48, "125": 48, "131": 125}}
+{"filename": "C:/Users/Scott Laptop/Documents/Mariah/Intex/intex-ii/homepage/templates/app_base.htm", "uri": "app_base.htm", "source_encoding": "utf-8", "line_map": {"18": 2, "20": 3, "22": 47, "35": 0, "47": 1, "48": 2, "49": 3, "54": 43, "59": 50, "65": 5, "74": 5, "75": 8, "76": 8, "77": 11, "78": 11, "79": 12, "80": 12, "81": 13, "82": 13, "83": 14, "84": 14, "85": 15, "86": 15, "87": 16, "88": 16, "89": 17, "91": 17, "92": 18, "93": 19, "94": 19, "95": 19, "96": 19, "97": 19, "98": 19, "99": 19, "100": 21, "101": 22, "102": 25, "104": 25, "105": 26, "106": 27, "107": 29, "108": 32, "109": 33, "110": 41, "116": 45, "122": 45, "123": 47, "124": 48, "125": 48, "131": 125}}
 __M_END_METADATA
 """
