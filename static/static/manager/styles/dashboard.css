@@ -1,0 +1,57 @@
+.flexContainer{
+
+  display:flex;
+  align-content: space-around;
+}
+
+.top-buffer { margin-top:20px; }
+
+#flex1{
+  display:flex;
+  width:100%;
+  align-content: space-around;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#chartDivCont{
+  min-width:50%;
+  border: 5px solid #dddbd7;
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: #fff;
+  text-align: center;
+}
+
+#columnchart_materialCont {
+  min-width:50%;
+  border: 5px solid #dddbd7;
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: #fff;
+  text-align: center;
+}
+
+#curve_chartCont{
+  min-width:50%;
+  border: 5px solid #dddbd7;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  text-align: center;
+}
+
+#columnchart2_materialCont{
+  min-width:50%;
+  border: 5px solid #dddbd7;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}

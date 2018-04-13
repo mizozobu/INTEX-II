@@ -1,0 +1,58 @@
+<%inherit file="manager/templates/app_base.htm" />
+
+<%block name="center">
+    <div class="content top-buffer">
+        <h1>All Products <a href=${ "/manager/create/"} class="btn btn-primary">Create New</a></h1>
+        <table class="table">
+            <tr>
+                <th>Category</th>
+                <th>Type</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th></th>
+                <th></th>
+            </tr>
+
+            %for p in products:
+                %if p.status == '1':
+                <tr>
+                    <td>${ p.category.name }</td>
+                    <td>${ p.__class__.__name__ }</td>
+                    <td>${ p.name }</td>
+                    <td>${ p.price }</td>
+                    <td>${ int(p.quantity) }</td>
+                    <td class="btn-holder">
+                        <a href=${ "/manager/edit/{}".format(p.id) } class="btn btn-link">
+                          Edit
+                        </a>
+                    </td>
+                    <td>
+                      <a href=${ "/manager/delete/{}".format(p.id) } class="btn btn-link">
+                        Delete
+                      </a>
+                    </td>
+                </tr>
+                %endif
+            %endfor
+
+        </table>
+    </div>
+</%block>
+
+<%block name="left">
+  <div class="content top-buffer">
+    <div id="reorderBox">
+      <h4>Low Inventory:</h4>
+      <hr>
+      <ul>
+          %for item in lowProducts:
+            <li>${ item.name } - ${ int(item.quantity) } left</li>
+          %endfor
+      </ul>
+    </div>
+  </div>
+
+</%block>
+
+<%block name="right"></%block>

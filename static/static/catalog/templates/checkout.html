@@ -1,0 +1,30 @@
+<%inherit file="catalog/templates/app_base.htm" />
+<%namespace name="fl" module="formlib.tags"/>
+
+<%block name="center">
+<div class="content">
+<h1>You are about to pay $${order.total_price}.</h1>
+<p>Please enter your shipping information below.</p>
+  <div id="form">
+    <%fl:render>
+      <div class="text-center">
+        <script
+          src="https://checkout.stripe.com/checkout.js"
+          class="stripe-button"
+          data-key="${settings.STRIPE_PUBLIC_KEY}"
+          data-amount="${order.total_price * 100}"
+          data-name="FOMO"
+          data-description="Widget"
+          data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+          data-locale="auto"
+          data-label="Pay Now">
+        </script>
+      </div>
+    </%fl:render>
+  </div>
+</div>
+</%block>
+
+<%block name="left"></%block>
+
+<%block name="right"></%block>

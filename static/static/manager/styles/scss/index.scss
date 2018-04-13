@@ -1,0 +1,38 @@
+// cd desktop/s0/fomo/catalog/styles
+// sass --watch scss/index.scss:index.css
+
+$reactsky: #FF9900;
+
+.btn-react-sm{
+    background-color: black;
+    color: $reactsky;
+    font-size: 10px;
+    font-weight: bold;
+    border: 1px solid $reactsky;
+    padding: 3px 6px;
+    border-radius: 0.45rem;
+    &:hover{
+        background-color: $reactsky;
+        color: black;
+        border: 1px solid $reactsky;
+    }
+}
+
+table, tr{
+    border: 1px solid white;
+}
+
+td, th{
+    vertical-align: middle;
+    padding: 0 8px 0 8px;
+    border:1px solid white;
+}
+
+th {
+    text-align: center;
+    padding: 2px 8px;
+}
+
+.btn-holder{
+    padding: 0 12px;
+}

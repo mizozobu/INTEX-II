@@ -1,0 +1,47 @@
+.table td {
+  vertical-align: middle;
+}
+
+table {
+  border: solid;
+  border-color: #dddbd7;
+  background-color: #dddbd7;
+  margin-top: 30px;
+  margin-bottom: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.table td, .table tr, .table {
+  background-color: #ffffff;
+}
+
+.spaceLeft {
+  padding-left: 25px;
+}
+
+.spaceRight {
+  padding-right: 25px;
+}
+
+h1 {
+  position: relative;
+}
+
+.btn-primary {
+  background-color: #FF9900;
+  color: #f2f2f2;
+  border-color: #FF9900;
+  margin-bottom: 15px;
+  text-align: center;
+  display: block;
+}
+
+.btn-primary:hover {
+  background-color: #000;
+  border-color: #000;
+}
+
+.bottom-buffer {
+  margin-bottom: 25px;
+}

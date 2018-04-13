@@ -1,0 +1,46 @@
+// cd desktop/s0/fomo/catalog/styles
+// sass --watch scss/detail.scss:detail.css
+
+$reactsky: #FF9900;
+$mygray: #f2f2f2;
+
+.container {
+    padding: 30px 0 0 0;
+
+    ul.product-images {
+        float: left;
+        list-style: none;
+        padding: 0;
+
+        li {
+            border-radius: 25px;
+            box-shadow: 5px 5px $reactsky;
+            margin: 0 0 13%;
+
+            img {
+                border-radius: 25px;
+                width: 80px;
+            }
+        }
+    }
+
+    img.big-image {
+        border-radius: 25px;
+        box-shadow: 5px 5px $reactsky;
+        float: left;
+        width: 350px;
+        margin: 0 3% 3%;
+    }
+
+    .action {
+        text-align: right;
+        vertical-align: middle;
+        select{
+            width: 50px;
+            margin: 2%;
+        }
+        .btn-react-white{
+            margin: 2%;
+        }
+    }
+}

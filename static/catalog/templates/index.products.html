@@ -1,0 +1,23 @@
+<%inherit file="catalog/templates/base_ajax.htm" />
+
+<%block name="content">
+    <div id="products">
+        <ul class="catalog">
+            %for p in products:
+                %if p.status == '1':
+                    <a href="/catalog/detail/${p.id}"><li class="product">
+                        <div class="price">&dollar;${p.price}</div>
+                        <div class="name"><p>${p.name}</p></div>
+                        <img src="${p.image_url()}" alt=${p.name}>
+                        <div class="cover-container">
+                            <div class="cover">
+                                <div class="cover-name"><p>${p.name}</p></div>
+                                <div class="cover-price">&dollar;${p.price}</div>
+                            </div>
+                        </div>
+                    </li></a>
+                %endif
+            %endfor
+        </ul>
+    </div>
+</%block>
