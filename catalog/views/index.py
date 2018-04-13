@@ -37,6 +37,7 @@ def process_request(request, category: m.Category=None, page: int=1):
 @view_function
 def products(request, category: m.Category=None, page: int=1):
     products = m.Product.objects.all()
+    products = products.filter(status="1")
     category_name = "All Products"
     category_id = 0
     if category is not None:
