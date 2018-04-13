@@ -9,4 +9,7 @@ def process_request(request, orderItem: cmod.OrderItem, order: cmod.Order):
     orderItem.save()
     order.recalculate()
 
-    return HttpResponseRedirect('/catalog/cart/' + str(order.id))
+    if order.num_items() < 1:
+        return HttpResponseRedirect('/catalog/')
+    else:
+        return HttpResponseRedirect('/catalog/cart/' + str(order.id))

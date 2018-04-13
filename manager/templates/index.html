@@ -4,38 +4,44 @@
     <div class="content top-buffer">
         <h1>All Products <a href=${ "/manager/create/"} class="btn btn-primary">Create New</a></h1>
         <table class="table">
-            <tr>
-                <th>Category</th>
-                <th>Type</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th></th>
-                <th></th>
-            </tr>
-
-            %for p in products:
-                %if p.status == '1':
-                <tr>
-                    <td>${ p.category.name }</td>
-                    <td>${ p.__class__.__name__ }</td>
-                    <td>${ p.name }</td>
-                    <td>${ p.price }</td>
-                    <td>${ int(p.quantity) }</td>
-                    <td class="btn-holder">
-                        <a href=${ "/manager/edit/{}".format(p.id) } class="btn btn-link">
-                          Edit
+            <thead>
+              <tr>
+                  <th> </th>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Category</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th></th>
+                  <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              %for p in products:
+                  %if p.status == '1':
+                  <tr>
+                      <td class="productTile spaceLeft">
+                          <img src="${ p.image_url() }" alt="Image of ${ p.name }" width="30px" />
+                      </td>
+                      <td>${  p.name }</td>
+                      <td>${ p.__class__.__name__ }</td>
+                      <td>${ p.category.name }</td>
+                      <td>$${ p.price }</td>
+                      <td>${ int(p.quantity) }</td>
+                      <td class="btn-holder">
+                          <a href=${ "/manager/edit/{}".format(p.id) } class="btn btn-link">
+                            Edit
+                          </a>
+                      </td>
+                      <td>
+                        <a href=${ "/manager/delete/{}".format(p.id) } class="btn btn-link">
+                          Delete
                         </a>
-                    </td>
-                    <td>
-                      <a href=${ "/manager/delete/{}".format(p.id) } class="btn btn-link">
-                        Delete
-                      </a>
-                    </td>
-                </tr>
-                %endif
-            %endfor
-
+                      </td>
+                  </tr>
+                  %endif
+              %endfor
+            </tbody>
         </table>
     </div>
 </%block>

@@ -19,7 +19,7 @@
         %endif
         %if  request.user.is_authenticated:
         <li class="nav-item dropdown">
-            <button class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account</button>
+            <button class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${ request.user.email }</button>
             <div class="dropdown-menu">
               <% currentUser = amod.User.objects.get(id=request.user.id) %>
               %if currentUser.is_superuser:

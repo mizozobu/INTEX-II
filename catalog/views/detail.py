@@ -3,21 +3,25 @@ from catalog import models as m
 from django import forms
 from formlib.form import Formless
 from account import models as a
+from django.http import HttpResponseRedirect
 
 
 @view_function
 def process_request(request, product: m.Product=None):
-    form = BuyNowForm(request)
-    form.submit_text = "Buy Now"
-    if form.is_valid():
-        form.commit(product)
+    if product.status == "Active":
+        form = BuyNowForm(request)
+        form.submit_text = "Add to Cart"
+        if form.is_valid():
+            form.commit(product)
 
-    context = {
-        'product': product,
-        'form': form,
-        jscontext('p'): product.__class__.__name__,
-    }
-    return request.dmp.render('detail.html', context)
+        context = {
+            'product': product,
+            'form': form,
+            jscontext('p'): product.__class__.__name__,
+        }
+        return request.dmp.render('detail.html', context)
+    else:
+        return HttpResponseRedirect('/catalog/')
 
 
 class BuyNowForm(Formless):
