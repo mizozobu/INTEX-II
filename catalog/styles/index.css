@@ -118,4 +118,16 @@
   color: black;
   height: 100%; }
 
+.imgCont {
+  width: 290px;
+}
+
+
+.prodImg {
+  max-width: 290px;
+  max-height: 290px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 /*# sourceMappingURL=index.css.map */

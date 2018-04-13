@@ -19,19 +19,21 @@
         <div id="products">
             <ul class="catalog">
                 %for p in products:
-                    %if p.status == '1':
-                        <a href="/catalog/detail/${p.id}"><li class="product">
-                            <div class="price">&dollar;${p.price}</div>
-                            <div class="name"><p>${p.name}</p></div>
-                            <img src="${p.image_url()}" alt=${p.name}>
+                    <a href="/catalog/detail/${p.id}">
+                      <li class="product">
+                        <div class="price">&dollar;${p.price}</div>
+                        <div class="name"><p>${p.name}</p></div>
+                        <div class="imgCont">
+                          <img src="${p.image_url()}" alt=${p.name} class="prodImg">
+                        </div>
                             <div class="cover-container">
                                 <div class="cover">
                                     <div class="cover-name"><p>${p.name}</p></div>
                                     <div class="cover-price">&dollar;${p.price}</div>
                                 </div>
                             </div>
-                        </li></a>
-                    %endif
+                      </li>
+                    </a>
                 %endfor
             </ul>
         </div>

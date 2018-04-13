@@ -59,7 +59,7 @@ class Order(models.Model):
         item.recalculate()
         item.save()
         return item
-        
+
     def recalculate(self):
         '''Recalculates the total price of the order'''
         total = 0
