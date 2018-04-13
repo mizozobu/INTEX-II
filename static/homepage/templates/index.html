@@ -1,0 +1,68 @@
+<%inherit file="app_base.htm" />
+<%! from catalog import models as cmod %>
+
+<%block name="addonlink">
+<link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+</%block>
+
+<%block name="top">
+<div class="content">
+    <div class="row" id="eye-catcher">
+        <div class="col-md-6 text-center">
+            <h1 id="head-text"><strong><span id="row-1">Family Oriented</span><br /><span id="row-2">Music Organization</span></strong></h1>
+            <a href="#content"><p class="btn btn-md" id="btn-explore">SHOP &raquo;</p></a>
+        </div>
+        <div class="col-md-6">
+            <div class="grid-container-img">
+                <div class="grid-item layer1 r-1 c-4"><img src="${ STATIC_URL }catalog/media/instruments/violin.jpg" alt="violin" /></div>
+                <div class="grid-item layer1 r-1 c-5"><img src="${ STATIC_URL }catalog/media/instruments/drum.jpg" alt="drum" /></div>
+                <div class="grid-item layer2 r-1 c-6"><img src="${ STATIC_URL }catalog/media/instruments/trumpet.jpg" alt="trumpet" /></div>
+                <div class="grid-item layer2 r-2 c-4"><img src="${ STATIC_URL }catalog/media/instruments/piano.jpg" alt="piano" /></div>
+                <div class="grid-item layer1 r-2 c-5"><img src="${ STATIC_URL }catalog/media/instruments/fluto.jpg" alt="fluto" /></div>
+                <div class="grid-item layer1 r-2 c-6"><img src="${ STATIC_URL }catalog/media/instruments/gitar.jpg" alt="gitar" /></div>
+                <div class="grid-item layer1 r-3 c-4"><img src="${ STATIC_URL }catalog/media/instruments/synthesizer.jpg" alt="synthesizer" /></div>
+                <div class="grid-item layer2 r-3 c-5"><img src="${ STATIC_URL }catalog/media/instruments/malimba.jpg" alt="malimba" /></div>
+                <div class="grid-item layer2 r-3 c-6"><img src="${ STATIC_URL }catalog/media/instruments/oboe.jpg" alt="oboe" /></div>
+            </div>
+        </div>
+    </div>
+    <div class="row background-white" id="content">
+        <div class="grid-container-jt">
+
+          <% softId = cmod.Category.objects.get(name='Software').id %>
+
+            <a href="/catalog/index/${ softId }">
+              <div class="grid-item">
+                <div class="jumbotron">
+                    <h2 class="display-4">Software</h2>
+                    <hr class="my-4">
+                    <p class="lead">We have a wide selection of tools for you to use in your musical pursuits.</p>
+                </div>
+              </div>
+            </a>
+
+            <% instId = cmod.Category.objects.get(name='Instruments').id %>
+
+            <a href="/catalog/index/${ instId }">
+              <div class="grid-item">
+                <div class="jumbotron">
+                    <h2 class="display-4">Instruments</h2>
+                    <hr class="my-4">
+                    <p class="lead">View our selection of instruments that you can rent or buy.</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="/catalog/index/"><div class="grid-item">
+                <div class="jumbotron">
+                    <h2 class="display-4">And More!</h2>
+                    <hr class="my-4">
+                    <p class="lead">View our assortment of other tools and products available for you.</p>
+                </div>
+            </div>
+          </a>
+
+        </div>
+    </div>
+</div>
+</%block>

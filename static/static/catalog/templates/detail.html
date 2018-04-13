@@ -1,0 +1,50 @@
+<%inherit file="catalog/templates/app_base.htm" />
+<%! from catalog import models as m %>
+
+<%block name="center">
+
+<div class="content">
+    <div class="container flexobjs">
+
+        <ul class="product-images">
+            %for url in product.image_urls():
+                <li class="small-image"><img src="${url}" alt=${product.name}></li>
+            %endfor
+        </ul>
+
+      <div class="productTile">
+          <img class="big-image" src="${product.image_url()}" alt=${product.name}>
+
+          <div class="action top-buffer">
+              ${ form }
+          </div>
+      </div>
+
+      <div class="detailCont">
+        <h1>${product.name}</h1>
+        <p>${product.description}</p>
+        <p class="bold">Quantity Remaining: ${ int(product.quantity) }
+      </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+</%block>
+
+
+<!-- <form action="">
+    %if type(product) is m.BulkProduct:
+    <select name="quantity">
+        %for n in range(5):
+            <option value="${n+1}">${n+1}</option>
+        %endfor
+        <br><br>
+    </select>
+    %endif
+    <input type="submit" class="btn btn-react-white" value="Purchase" />
+</form> -->

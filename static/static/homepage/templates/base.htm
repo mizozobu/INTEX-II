@@ -1,0 +1,92 @@
+## this is the skeleton of all pages on in this app - it defines the basic html tags
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <head>
+        <title>FOMO</title>
+
+        ## icon
+        <link rel="icon" href="${ STATIC_URL }homepage/media/favicon.ico" type="image/x-icon"/>
+
+        ## custome bootstrap
+        <link rel="stylesheet" type="text/css" href="${ STATIC_URL }homepage/media/bootstrap/css/bootstrap-grid.min.css">
+        <link rel="stylesheet" type="text/css" href="${ STATIC_URL }homepage/media/bootstrap/css/bootstrap-grid.css">
+        <link rel="stylesheet" type="text/css" href="${ STATIC_URL }homepage/media/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="${ STATIC_URL }homepage/media/bootstrap/css/bootstrap.css">
+        <link href="https://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet">
+        <%block name="addonlink"></%block>
+        ## add any site-wide scripts or CSS here; for example, jquery:
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        ## render the static file links with the same name as this template
+        <script src="/django_mako_plus/dmp-common.min.js"></script>
+        ${ django_mako_plus.links(self) }
+    </head>
+    <body>
+        <div id="page">
+
+            <a class="d-none" href="#content">skip to content</a>
+
+            <div class="container">
+              <div class="row">
+                <div class="row">
+                    <%block name="maintenanceMessage"></%block>
+                </div>
+              </div>
+            </div>
+
+            <header>
+                <%block name="header"></%block>
+            </header>
+
+            <main class="mainBox">
+
+              <div class="row">
+                  <div class="col-md-12" id="top">
+                      <%block name="top"></%block>
+                  </div>
+              </div>
+
+
+            <div class="row top-buffer">
+                <div class="col-md-2" id="left">
+                  <div class="content">
+                    <%block name="left"></%block>
+                  </div>
+                </div>
+              <div class="col-md-8"  id="center">
+                  <div class="content">
+                    <%block name="center"></%block>
+                  </div>
+                </div>
+
+                <div class="col-md-2" id="right">
+                  <div class="content">
+                    <%block name="right"></%block>
+                  </div>
+                </div>
+            </div>
+
+            ## bottom
+            <div class="row top-buffer">
+                <div class="col-md-12" id="bottom">
+                    <%block name="bottom"></%block>
+                </div>
+            </div>
+
+        </main>
+
+        </div>
+
+        <div id="loader-container">
+            <span id="loader"></span>
+            <p>LOADING ...</p>
+        </div>
+
+    </body>
+
+    <footer>
+        <%block name="footer"></%block>
+    </footer>
+
+</html>

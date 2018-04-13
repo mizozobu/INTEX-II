@@ -1,0 +1,14 @@
+<%inherit file="manager/templates/app_base.htm" />
+
+<%block name="center">
+    <div class="content top-buffer">
+        <div class="col-sm-6 col-centered">
+            <h1>Create</h1>
+            <br />
+            <form action="/manager/create/" method="POST">
+                ${ form }
+            </form>
+            <br />
+        </div>
+    </div>
+</%block>

@@ -1,0 +1,34 @@
+.navbar.fixed-top.navbar-light.bg-faded {
+  height: 70px;
+  background-color: black;
+  color: white;
+  opacity: 10%; }
+
+a {
+  color: #FF9900; }
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: #FF9900;
+  color: black;
+  font-weight: bold; }
+
+.nav-pills .nav-link {
+  background-color: black;
+  color: #FF9900;
+  border: 1px solid black; }
+  .nav-pills .nav-link:hover {
+    border: 1px solid #FF9900; }
+
+.footer-text {
+  font-size: 13px;
+  position: absolute;
+  bottom: 2%;
+  right: 2%; }
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+/*# sourceMappingURL=app_base.css.map */

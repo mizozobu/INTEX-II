@@ -1,0 +1,152 @@
+// cd desktop/s0/fomo/catalog/styles
+// sass --watch scss/index.scss:index.css
+
+$reactsky: #FF9900;
+$mygray: #f2f2f2;
+
+.btn-react-sm{
+    background-color: black;
+    color: $reactsky;
+    font-size: 10px;
+    font-weight: bold;
+    border: 1px solid $reactsky;
+    padding: 3px 6px;
+    border-radius: 0.45rem;
+    &:hover{
+        background-color: $reactsky;
+        color: black;
+        border: 1px solid $reactsky;
+    }
+}
+
+.btn-holder{
+    padding: 0 12px;
+}
+
+//center
+.page-navigator{
+    margin: 2%;
+    text-align: right;
+    $size: 4px;
+    #pagenator{
+        background-color: $reactsky;
+        color: $mygray;
+        border-bottom-right-radius: $size * 2;
+        border-top-right-radius: $size * 2;
+        border-bottom-left-radius: $size * 2;
+        border-top-left-radius: $size * 2;
+        .arrow{
+            padding: 0 0.5%;
+            height: $size * 2;
+            width: $size;
+            border: 2px solid $reactsky;
+            background-color: $reactsky;
+            color: $mygray;
+            cursor: pointer;
+            &:hover{
+                background-color: $mygray;
+                color: $reactsky;
+            }
+        }
+        #left-arrow{
+            border-bottom-left-radius: $size * 2;
+            border-top-left-radius: $size * 2;
+            z-index: -1;
+        }
+        #right-arrow{
+            border-bottom-right-radius: $size * 2;
+            border-top-right-radius: $size * 2;
+            margin-left: -5px;
+            &:hover{
+                text-decoration: none;
+            }
+        }
+        #page_text{
+            border: 2px solid $reactsky;
+            background-color: $reactsky;
+            padding: 0 0.5%;
+            margin-left: -6px;
+            z-index: 1;
+        }
+    }
+}
+
+.category{
+    text-align: left;
+    width: 50%;
+}
+
+.navigator{
+
+    display: inline;
+    border: 2px solid $reactsky;
+
+}
+
+.catalog{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li{
+        background-color: white;
+        display: inline-block;
+        border: none;
+        box-shadow: 5px 5px $reactsky;
+        border-radius: 25px;
+        height: auto;
+        max-height: 400px;
+        width: auto;
+        max-width: 290px;
+        position: relative;
+        margin: 1% 2% 7% 0;
+        img{
+            max-width: 100%;
+            border-radius: 25px;
+        }
+        .name{
+            font-size: 25px;
+            padding: 2% 5%;
+        }
+        .price{
+            background-color: white;
+            font-size: 15px;
+            position: absolute;
+            right: -5%;
+            top: -5%;
+            border: 2px solid $reactsky;
+            padding: 2% 5%;
+        }
+        .cover-container{
+            position: absolute;
+            top:0;
+            bottom:0;
+            right:0;
+            left:0;
+            background-color: $reactsky;
+            background: rgba(255,153,0,0.5);
+            border-radius: 25px;
+            .cover{
+                position: relative;
+                width: 100%;
+                height: 100%;
+            }
+            .cover-name{
+                font-size: 25px;
+                padding: 2% 5%;
+            }
+            .cover-price{
+                color: black;
+                font-size: 40px;
+                position: absolute;
+                width: 50%;
+                left: 25%;
+                top: 40%;
+            }
+        }
+    }
+}
+//right
+.right{
+    color: black;
+    height: 100%;
+}

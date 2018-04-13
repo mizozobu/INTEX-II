@@ -1,0 +1,121 @@
+.btn-react-sm {
+  background-color: black;
+  color: #FF9900;
+  font-size: 10px;
+  font-weight: bold;
+  border: 1px solid #FF9900;
+  padding: 3px 6px;
+  border-radius: 0.45rem; }
+  .btn-react-sm:hover {
+    background-color: #FF9900;
+    color: black;
+    border: 1px solid #FF9900; }
+
+.btn-holder {
+  padding: 0 12px; }
+
+.page-navigator {
+  margin: 2%;
+  text-align: right; }
+  .page-navigator #pagenator {
+    background-color: #FF9900;
+    color: #f2f2f2;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px; }
+    .page-navigator #pagenator .arrow {
+      padding: 0 0.5%;
+      height: 8px;
+      width: 4px;
+      border: 2px solid #FF9900;
+      background-color: #FF9900;
+      color: #f2f2f2;
+      cursor: pointer; }
+      .page-navigator #pagenator .arrow:hover {
+        background-color: #f2f2f2;
+        color: #FF9900; }
+    .page-navigator #pagenator #left-arrow {
+      border-bottom-left-radius: 8px;
+      border-top-left-radius: 8px;
+      z-index: -1; }
+    .page-navigator #pagenator #right-arrow {
+      border-bottom-right-radius: 8px;
+      border-top-right-radius: 8px;
+      margin-left: -5px; }
+      .page-navigator #pagenator #right-arrow:hover {
+        text-decoration: none; }
+    .page-navigator #pagenator #page_text {
+      border: 2px solid #FF9900;
+      background-color: #FF9900;
+      padding: 0 0.5%;
+      margin-left: -6px;
+      z-index: 1; }
+
+.category {
+  text-align: left;
+  width: 50%; }
+
+.navigator {
+  display: inline;
+  border: 2px solid #FF9900; }
+
+.catalog {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+  .catalog li {
+    background-color: white;
+    display: inline-block;
+    border: none;
+    box-shadow: 5px 5px #FF9900;
+    border-radius: 25px;
+    height: auto;
+    max-height: 400px;
+    width: auto;
+    max-width: 290px;
+    position: relative;
+    margin: 1% 2% 7% 0; }
+    .catalog li img {
+      max-width: 100%;
+      border-radius: 25px; }
+    .catalog li .name {
+      font-size: 25px;
+      padding: 2% 5%; }
+    .catalog li .price {
+      background-color: white;
+      font-size: 15px;
+      position: absolute;
+      right: -5%;
+      top: -5%;
+      border: 2px solid #FF9900;
+      padding: 2% 5%; }
+    .catalog li .cover-container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-color: #FF9900;
+      background: rgba(255, 153, 0, 0.5);
+      border-radius: 25px; }
+      .catalog li .cover-container .cover {
+        position: relative;
+        width: 100%;
+        height: 100%; }
+      .catalog li .cover-container .cover-name {
+        font-size: 25px;
+        padding: 2% 5%; }
+      .catalog li .cover-container .cover-price {
+        color: black;
+        font-size: 40px;
+        position: absolute;
+        width: 50%;
+        left: 25%;
+        top: 40%; }
+
+.right {
+  color: black;
+  height: 100%; }
+
+/*# sourceMappingURL=index.css.map */
